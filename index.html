@@ -3,172 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>影子跟读H5</title>
+    <title>影子跟读 - 完整功能版</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary-color: #52c41a; --text-main: #333; --text-sub: #999; --bg-gray: #f7f8fa; }
-        
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg-gray); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
-
-        /* 1. 顶部视频区 */
+        
+        /* 视频固定区域 */
         .video-fixed { width: 100%; background: #000; position: sticky; top: 0; z-index: 100; }
         video { width: 100%; aspect-ratio: 16 / 9; display: block; }
 
-        /* 2. 模式切换 Tab */
+        /* 页签导航 */
         .mode-tabs { display: flex; background: #fff; border-bottom: 1px solid #eee; }
         .tab-item { flex: 1; text-align: center; padding: 15px 0; font-size: 15px; color: var(--text-sub); cursor: pointer; position: relative; }
         .tab-item.active { color: var(--text-main); font-weight: bold; }
         .tab-item.active::after { content: ""; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--primary-color); border-radius: 2px; }
 
-        /* 3. 内容显示区 */
+        /* 字幕滚动区 */
         .content-container { flex: 1; overflow-y: auto; padding: 10px; padding-bottom: 100px; -webkit-overflow-scrolling: touch; }
-        
-        /* 字幕卡片样式 */
-        .subtitle-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 10px; border: 2px solid transparent; transition: 0.3s; }
+        .subtitle-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 10px; border: 2px solid transparent; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; transition: all 0.2s; }
         .subtitle-card.highlight { border-color: var(--primary-color); background: #f6ffed; }
-        .time-tag { font-size: 11px; color: #ccc; margin-bottom: 5px; }
-        .en-text { font-size: 16px; color: var(--text-main); margin-bottom: 8px; line-height: 1.4; }
-        /* 重点词样式 */
-        .keyword { color: var(--primary-color); font-weight: bold; border-bottom: 1px solid var(--primary-color); cursor: pointer; }
-        .cn-text { font-size: 14px; color: var(--text-sub); }
+        .en-text { color: var(--text-main); line-height: 1.4; font-size: 17px; margin-bottom: 6px; font-weight: 500; }
+        .cn-text { color: var(--text-sub); font-size: 14px; display: block; } /* 初始显示中文 */
+        .keyword { color: var(--primary-color); font-weight: bold; border-bottom: 1.5px solid var(--primary-color); padding: 0 2px; }
 
-        /* 4. 底部播放控制栏 */
-        .control-bar { position: fixed; bottom: 0; width: 100%; height: 80px; background: #fff; border-top: 1px solid #eee; display: flex; align-items: center; justify-content: space-around; padding-bottom: env(safe-area-inset-bottom); }
-        .ctrl-btn { display: flex; flex-direction: column; align-items: center; font-size: 11px; color: #666; cursor: pointer; }
-        .ctrl-btn i { font-size: 20px; margin-bottom: 4px; }
-        .play-main { width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 10px rgba(82,196,26,0.3); }
+        /* 底部控制栏 - 五等分布局修正 */
+        .control-bar { 
+            position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
+            background: #fff; border-top: 1px solid #eee; 
+            display: flex; align-items: center; justify-content: space-between; 
+            z-index: 1000; padding: 0 5px calc(env(safe-area-inset-bottom) / 2) 5px;
+            box-sizing: border-box;
+        }
+        .ctrl-btn { flex: 1; display: flex; flex-direction: column; align-items: center; font-size: 10px; color: #666; cursor: pointer; gap: 4px; }
+        .ctrl-btn.active-mode { color: var(--primary-color); }
+        .play-main-wrapper { flex: 1.2; display: flex; justify-content: center; }
+        .play-main { width: 48px; height: 48px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; box-shadow: 0 4px 10px rgba(82,196,26,0.3); }
 
-        /* 隐藏其他模式的内容 */
-        .mode-section { display: none; }
-        .mode-section.show { display: block; }
+        /* 菜单抽屉 */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1001; }
+        .menu-drawer { position: fixed; bottom: -600px; left: 0; width: 100%; background: #f0f1f3; border-top-left-radius: 20px; border-top-right-radius: 20px; z-index: 1002; transition: bottom 0.3s ease; padding: 20px 15px; box-sizing: border-box; }
+        .menu-drawer.show { bottom: 0; }
+        .btn-group { display: flex; background: #e4e4e4; border-radius: 10px; padding: 2px; }
+        .group-btn { flex: 1; border: none; background: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+        .group-btn.active { background: #fff; color: var(--primary-color); font-weight: bold; }
     </style>
 </head>
 <body>
 
     <div class="video-fixed">
-        <video id="mainVideo" src="https://bbbbbb11111.oss-cn-beijing.aliyuncs.com/lesson1.mp4" playsinline controls></video>
+        <video id="mainVideo" playsinline controls preload="auto"></video>
     </div>
 
     <div class="mode-tabs">
-        <div class="tab-item active" onclick="changeMode(0)">字幕</div>
-        <div class="tab-item" onclick="changeMode(1)">跟读</div>
-        <div class="tab-item" onclick="changeMode(2)">听写</div>
-        <div class="tab-item" onclick="changeMode(3)">词卡</div>
+        <div class="tab-item active">字幕</div>
+        <div class="tab-item">跟读</div>
+        <div class="tab-item">听写</div>
+        <div class="tab-item">词卡</div>
     </div>
 
-    <div class="content-container">
-        <div id="section-0" class="mode-section show">
-            <div id="subtitle-list"></div>
-        </div>
-        
-        <div id="section-1" class="mode-section" style="text-align: center; padding-top: 50px; color: #ccc;">跟读练习功能开发中...</div>
-        <div id="section-2" class="mode-section" style="text-align: center; padding-top: 50px; color: #ccc;">听写模式开发中...</div>
-        <div id="section-3" class="mode-section" style="text-align: center; padding-top: 50px; color: #ccc;">核心词卡开发中...</div>
-    </div>
+    <div class="content-container" id="subtitle-list"></div>
 
     <div class="control-bar">
-        <div class="ctrl-btn"><i class="fa-solid fa-language"></i><span>双语</span></div>
-        <div class="ctrl-btn" onclick="changeSpeed()"><i class="fa-solid fa-gauge-high"></i><span id="speedTxt">1.0x</span></div>
-        <div class="play-main" onclick="togglePlay()"><i id="playIcon" class="fa-solid fa-play"></i></div>
-        <div class="ctrl-btn"><i class="fa-solid fa-rotate-right"></i><span>单句循环</span></div>
-        <div class="ctrl-btn"><i class="fa-solid fa-book-open"></i><span>精读</span></div>
+        <div class="ctrl-btn" id="langBtn" onclick="toggleLangMode()">
+            <i class="fa-solid fa-language"></i>
+            <span id="langText">双语</span>
+        </div>
+
+        <div class="ctrl-btn" onclick="openDrawer('setting')">
+            <i class="fa-solid fa-gauge-high"></i>
+            <span id="speedText">1.0x</span>
+        </div>
+
+        <div class="play-main-wrapper">
+            <div class="play-main" onclick="togglePlay()">
+                <i id="playIcon" class="fa-solid fa-play"></i>
+            </div>
+        </div>
+
+        <div class="ctrl-btn" id="loopBtn" onclick="toggleLoop()">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>单句循环</span>
+        </div>
+
+        <div class="ctrl-btn" onclick="openDrawer('intensive')">
+            <i class="fa-solid fa-book-open"></i>
+            <span>精读</span>
+        </div>
     </div>
 
-<script>
-    // 1. 获取网页元素
-    const video = document.getElementById('mainVideo');
-    const subtitleList = document.getElementById('subtitle-list');
-    const playIcon = document.getElementById('playIcon');
-    const speedTxt = document.getElementById('speedTxt');
+    <div class="modal-overlay" id="globalOverlay" onclick="closeAll()"></div>
+    
+    <div class="menu-drawer" id="settingDrawer">
+        <div style="background:#fff; border-radius:15px; padding:15px;">
+            <p style="margin-top:0;"><strong>播放倍速</strong></p>
+            <div class="btn-group">
+                <button class="group-btn" onclick="setSpeed(0.8, this)">0.8x</button>
+                <button class="group-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                <button class="group-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+        </div>
+    </div>
 
-    // 2. 准备数据：这里模拟你的 Excel 数据
-    // 注意：en 中的 [[word]] 用来标记重点词卡
-    // 自动从文件夹读取 JSON 数据
-    fetch('assets/subtitle/lesson1.json')
-        .then(response => response.json())
-        .then(data => {
-            subtitleData = data; // 把读取到的数据给变量
-            renderSubtitles();   // 开始渲染
-        })
-        .catch(err => console.error("加载字幕失败:", err));
+    <div class="menu-drawer" id="intensiveDrawer">
+        <div style="background:#fff; border-radius:15px; padding:5px;">
+            <div style="padding:15px; border-bottom:1px solid #eee;">英语卡片库</div>
+            <div style="padding:15px; text-align:center; color:red;" onclick="closeAll()">取消</div>
+        </div>
+    </div>
 
-    // 3. 渲染字幕到页面
-    function renderSubtitles() {
-        subtitleList.innerHTML = '';
-        subtitleData.forEach((item, index) => {
-            const card = document.createElement('div');
-            card.className = 'subtitle-card';
-            card.id = `line-${index}`;
-            
-            // 处理重点词高亮逻辑
-            const processedEn = item.en.replace(/\[\[(.*?)\]\]/g, '<span class="keyword">$1</span>');
-            
-            card.innerHTML = `
-                <div class="time-tag">0:${item.start < 10 ? '0'+item.start : item.start}</div>
-                <div class="en-text">${processedEn}</div>
-                <div class="cn-text">${item.cn}</div>
-            `;
-            
-            // 点击跳转功能
-            card.onclick = () => {
-                video.currentTime = item.start;
-                video.play();
-            };
-            subtitleList.appendChild(card);
-        });
-    }
+    <script>
+        const video = document.getElementById('mainVideo');
+        video.src = "https://bbbbbb11111.oss-cn-beijing.aliyuncs.com/%E6%B2%B9%E7%AE%A1%281%29.mp4";
 
-    // 4. 视频播放实时高亮逻辑
-    video.ontimeupdate = () => {
-        const now = video.currentTime;
-        subtitleData.forEach((item, index) => {
-            const card = document.getElementById(`line-${index}`);
-            if (now >= item.start && now < item.end) {
-                if (!card.classList.contains('highlight')) {
-                    // 移除其他高亮
-                    document.querySelectorAll('.subtitle-card').forEach(el => el.classList.remove('highlight'));
-                    // 添加当前高亮
-                    card.classList.add('highlight');
-                    // 自动滚动到中间
-                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
-        });
-    };
+        const SUBTITLE_DATA = [
+            { start: 0.5, end: 1.7, en: "good morning world", cn: "早上好呀，全世界～" },
+            { start: 2.1, end: 6.0, en: "I have eggs I have bacon", cn: "我有鸡蛋，还有培根" },
+            { start: 6.6, end: 9.8, en: "and I have you here [[learning English]] with me", cn: "更开心的是，有你在这里和我一起学英语" },
+            { start: 10.2, end: 13.0, en: "and what [[could be better]] than that not much", cn: "还有什么比这更棒的呢？没多少啦" },
+            { start: 16.0, end: 17.6, en: "my name is Nikki", cn: "我叫尼基" },
+            { start: 17.8, end: 20.4, en: "and I cannot wait to share this", cn: "我已经迫不及待要和你分享" },
+            { start: 20.4, end: 22.3, en: "little breakfast moment with you", cn: "这个小小的早餐时光啦" },
+            { start: 22.8, end: 24.7, en: "let's start with a [[smoothie]]", cn: "我们先从一杯奶昔开始吧" },
+            { start: 25.2, end: 28.9, en: "it's my favorite way to [[wake up]] in the mornings", cn: "这是我早上唤醒自己最爱的方式" },
+            { start: 29.2, end: 31.9, en: "so we are going to start with [[strawberries]]", cn: "所以我们先从草莓开始" },
+            { start: 32.1, end: 33.9, en: "strawberries are", cn: "草莓可是" },
+            { start: 34.4, end: 36.9, en: "very very [[nutritious]]", cn: "超级超级有营养的" },
+            { start: 37.6, end: 41.0, en: "actually all of these fruits are very nutritious", cn: "其实这些水果都很有营养" },
+            { start: 41.3, end: 45.4, en: "but strawberries and [[blueberries]]", cn: "但草莓和蓝莓" },
+            { start: 46.2, end: 49.9, en: "have a lot of [[antioxidants]]", cn: "富含大量的抗氧化剂" },
+            { start: 51.2, end: 53.6, en: "strawberries are filled", cn: "草莓里满满都是" },
+            { start: 53.7, end: 57.9, en: "with vitamins and [[nutrients]] that are essential", cn: "至关重要的维生素和营养物质" },
+            { start: 57.9, end: 59.3, en: "for our bodies", cn: "对我们身体来说" },
+            { start: 60.0, end: 63.0, en: "once we are finished cutting the strawberries", cn: "等我们切完草莓" },
+            { start: 63.2, end: 65.6, en: "I'm just gonna throw the tips", cn: "我就把草莓蒂" },
+            { start: 66.0, end: 67.7, en: "of the strawberries away", cn: "扔掉" },
+            { start: 68.8, end: 70.4, en: "into the [[trash can]]", cn: "丢进垃圾桶里" },
+            { start: 71.2, end: 75.6, en: "I also love to include at least one [[banana]]", cn: "我还喜欢往奶昔里加至少一根香蕉" },
+            { start: 75.8, end: 77.0, en: "into the smoothie", cn: "倒进冰沙里" },
+            { start: 77.4, end: 81.1, en: "so we are going to [[peel]] the banana", cn: "所以我们来剥香蕉皮" },
+            { start: 85.8, end: 86.6, en: "hmm", cn: "嗯···" },
+            { start: 87.4, end: 88.8, en: "I actually want to bite", cn: "我其实好想咬一口" },
+            { start: 89.8, end: 90.8, en: "I can't wait", cn: "等不及啦" },
+            { start: 93.0, end: 93.8, en: "mmm", cn: "嗯" },
+            { start: 95.4, end: 96.7, en: "that is so [[yummy]]", cn: "也太好吃了吧" },
+            { start: 98.0, end: 102.7, en: "I always forget how delicious bananas are on their own", cn: "我总忘记香蕉单吃就这么美味" },
+            { start: 103.2, end: 105.2, en: "next we need a [[blender]]", cn: "接下来我们需要一台搅拌机" },
+            { start: 107.5, end: 111.6, en: "I'm just going to move the bacon and the eggs over", cn: "我把培根和鸡蛋挪到" },
+            { start: 111.7, end: 113.3, en: "to the [[stovetop]]", cn: "炉灶那边" },
+            { start: 113.4, end: 116.7, en: "because we will get to those after our smoothie", cn: "因为做完奶昔我们再弄这些" },
+            { start: 119.0, end: 125.3, en: "so now we have all of the [[ingredients]] for our smoothie", cn: "现在我们奶昔的所有食材都备齐啦" },
+            { start: 125.3, end: 129.8, en: "I also brought [[protein]] and [[collagen]]", cn: "我还准备了蛋白粉和胶原蛋白粉" },
+            { start: 130.4, end: 134.3, en: "because I like to put these in my smoothie to make them", cn: "因为我喜欢加这些到奶昔里，让它" },
+            { start: 134.5, end: 137.9, en: "creamier and again to make sure that I get", cn: "更绵密，同时也确保我能摄入" },
+            { start: 137.9, end: 139.3, en: "all the protein that I need", cn: "身体所需的全部蛋白质" }
+        ];
 
-    // 5. 底部按钮功能实现
-    function togglePlay() {
-        if (video.paused) {
-            video.play();
-            playIcon.className = "fa-solid fa-pause";
-        } else {
-            video.pause();
-            playIcon.className = "fa-solid fa-play";
+        let currentLineIdx = -1;
+        let config = { isLoop: false, langMode: 'both' };
+
+        function renderSubtitles() {
+            const list = document.getElementById('subtitle-list');
+            list.innerHTML = '';
+            SUBTITLE_DATA.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = `subtitle-card ${index === currentLineIdx ? 'highlight' : ''}`;
+                card.id = `line-${index}`;
+                const enFormatted = item.en.replace(/\[\[(.*?)\]\]/g, '<span class="keyword">$1</span>');
+                const cnDisplay = config.langMode === 'both' ? 'block' : 'none';
+                card.innerHTML = `<div class="en-text">${enFormatted}</div><div class="cn-text" style="display:${cnDisplay}">${item.cn}</div>`;
+                card.onclick = () => { video.currentTime = item.start; video.play(); };
+                list.appendChild(card);
+            });
         }
-    }
 
-    let speeds = [1.0, 0.8, 1.2, 1.5];
-    let speedIdx = 0;
-    function changeSpeed() {
-        speedIdx = (speedIdx + 1) % speeds.length;
-        video.playbackRate = speeds[speedIdx];
-        speedTxt.innerText = speeds[speedIdx] + 'x';
-    }
+        video.ontimeupdate = () => {
+            const now = video.currentTime;
+            const idx = SUBTITLE_DATA.findIndex(line => now >= line.start && now < line.end);
+            if (idx !== -1 && idx !== currentLineIdx) {
+                currentLineIdx = idx;
+                renderSubtitles();
+                const activeCard = document.getElementById(`line-${idx}`);
+                if (activeCard) activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            if (config.isLoop && currentLineIdx !== -1 && now >= SUBTITLE_DATA[currentLineIdx].end) {
+                video.currentTime = SUBTITLE_DATA[currentLineIdx].start;
+            }
+        };
 
-    function changeMode(index) {
-        // 切换Tab样式
-        document.querySelectorAll('.tab-item').forEach((tab, i) => {
-            i === index ? tab.classList.add('active') : tab.classList.remove('active');
-        });
-        // 切换内容显示
-        document.querySelectorAll('.mode-section').forEach((sec, i) => {
-            i === index ? sec.classList.add('show') : sec.classList.remove('show');
-        });
-    }
+        // 功能函数
+        function toggleLangMode() {
+            config.langMode = config.langMode === 'both' ? 'en' : 'both';
+            document.getElementById('langText').innerText = config.langMode === 'both' ? '双语' : '英文';
+            renderSubtitles();
+        }
 
-    // 初始化运行
-    renderSubtitles();
-</script>
+        function togglePlay() { video.paused ? video.play() : video.pause(); }
+        video.onplay = () => document.getElementById('playIcon').className = "fa-solid fa-pause";
+        video.onpause = () => document.getElementById('playIcon').className = "fa-solid fa-play";
+
+        function setSpeed(val, btn) { 
+            video.playbackRate = val; 
+            document.getElementById('speedText').innerText = val + 'x'; 
+            document.querySelectorAll('.group-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function toggleLoop() { 
+            config.isLoop = !config.isLoop; 
+            document.getElementById('loopBtn').classList.toggle('active-mode', config.isLoop);
+        }
+
+        function openDrawer(id) { 
+            document.getElementById('globalOverlay').style.display = 'block'; 
+            document.getElementById(id + 'Drawer').classList.add('show'); 
+        }
+
+        function closeAll() { 
+            document.getElementById('globalOverlay').style.display = 'none'; 
+            document.querySelectorAll('.menu-drawer').forEach(d => d.classList.remove('show')); 
+        }
+
+        renderSubtitles();
+    </script>
 </body>
-
 </html>
