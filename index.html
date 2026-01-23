@@ -9,25 +9,21 @@
         :root { --primary-color: #52c41a; --text-main: #333; --text-sub: #999; --bg-gray: #f7f8fa; }
         body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg-gray); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
         
-        /* 视频固定区域 */
         .video-fixed { width: 100%; background: #000; position: sticky; top: 0; z-index: 100; }
         video { width: 100%; aspect-ratio: 16 / 9; display: block; }
 
-        /* 页签导航 */
         .mode-tabs { display: flex; background: #fff; border-bottom: 1px solid #eee; }
         .tab-item { flex: 1; text-align: center; padding: 15px 0; font-size: 15px; color: var(--text-sub); cursor: pointer; position: relative; }
         .tab-item.active { color: var(--text-main); font-weight: bold; }
         .tab-item.active::after { content: ""; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--primary-color); border-radius: 2px; }
 
-        /* 字幕滚动区 */
         .content-container { flex: 1; overflow-y: auto; padding: 10px; padding-bottom: 100px; -webkit-overflow-scrolling: touch; }
         .subtitle-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 10px; border: 2px solid transparent; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; transition: all 0.2s; }
         .subtitle-card.highlight { border-color: var(--primary-color); background: #f6ffed; }
         .en-text { color: var(--text-main); line-height: 1.4; font-size: 17px; margin-bottom: 6px; font-weight: 500; }
-        .cn-text { color: var(--text-sub); font-size: 14px; display: block; } /* 初始显示中文 */
+        .cn-text { color: var(--text-sub); font-size: 14px; display: block; }
         .keyword { color: var(--primary-color); font-weight: bold; border-bottom: 1.5px solid var(--primary-color); padding: 0 2px; }
 
-        /* 底部控制栏 - 五等分布局修正 */
         .control-bar { 
             position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
             background: #fff; border-top: 1px solid #eee; 
@@ -40,7 +36,6 @@
         .play-main-wrapper { flex: 1.2; display: flex; justify-content: center; }
         .play-main { width: 48px; height: 48px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; box-shadow: 0 4px 10px rgba(82,196,26,0.3); }
 
-        /* 菜单抽屉 */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1001; }
         .menu-drawer { position: fixed; bottom: -600px; left: 0; width: 100%; background: #f0f1f3; border-top-left-radius: 20px; border-top-right-radius: 20px; z-index: 1002; transition: bottom 0.3s ease; padding: 20px 15px; box-sizing: border-box; }
         .menu-drawer.show { bottom: 0; }
@@ -116,47 +111,33 @@
         const video = document.getElementById('mainVideo');
         video.src = "https://bbbbbb11111.oss-cn-beijing.aliyuncs.com/%E6%B2%B9%E7%AE%A1%281%29.mp4";
 
+        // 更新后的字幕数据
         const SUBTITLE_DATA = [
-            { start: 0.5, end: 1.7, en: "good morning world", cn: "早上好呀，全世界～" },
-            { start: 2.1, end: 6.0, en: "I have eggs I have bacon", cn: "我有鸡蛋，还有培根" },
-            { start: 6.6, end: 9.8, en: "and I have you here [[learning English]] with me", cn: "更开心的是，有你在这里和我一起学英语" },
-            { start: 10.2, end: 13.0, en: "and what [[could be better]] than that not much", cn: "还有什么比这更棒的呢？没多少啦" },
-            { start: 16.0, end: 17.6, en: "my name is Nikki", cn: "我叫尼基" },
-            { start: 17.8, end: 20.4, en: "and I cannot wait to share this", cn: "我已经迫不及待要和你分享" },
-            { start: 20.4, end: 22.3, en: "little breakfast moment with you", cn: "这个小小的早餐时光啦" },
-            { start: 22.8, end: 24.7, en: "let's start with a [[smoothie]]", cn: "我们先从一杯奶昔开始吧" },
-            { start: 25.2, end: 28.9, en: "it's my favorite way to [[wake up]] in the mornings", cn: "这是我早上唤醒自己最爱的方式" },
-            { start: 29.2, end: 31.9, en: "so we are going to start with [[strawberries]]", cn: "所以我们先从草莓开始" },
-            { start: 32.1, end: 33.9, en: "strawberries are", cn: "草莓可是" },
-            { start: 34.4, end: 36.9, en: "very very [[nutritious]]", cn: "超级超级有营养的" },
-            { start: 37.6, end: 41.0, en: "actually all of these fruits are very nutritious", cn: "其实这些水果都很有营养" },
-            { start: 41.3, end: 45.4, en: "but strawberries and [[blueberries]]", cn: "但草莓和蓝莓" },
-            { start: 46.2, end: 49.9, en: "have a lot of [[antioxidants]]", cn: "富含大量的抗氧化剂" },
-            { start: 51.2, end: 53.6, en: "strawberries are filled", cn: "草莓里满满都是" },
-            { start: 53.7, end: 57.9, en: "with vitamins and [[nutrients]] that are essential", cn: "至关重要的维生素和营养物质" },
-            { start: 57.9, end: 59.3, en: "for our bodies", cn: "对我们身体来说" },
-            { start: 60.0, end: 63.0, en: "once we are finished cutting the strawberries", cn: "等我们切完草莓" },
-            { start: 63.2, end: 65.6, en: "I'm just gonna throw the tips", cn: "我就把草莓蒂" },
-            { start: 66.0, end: 67.7, en: "of the strawberries away", cn: "扔掉" },
-            { start: 68.8, end: 70.4, en: "into the [[trash can]]", cn: "丢进垃圾桶里" },
-            { start: 71.2, end: 75.6, en: "I also love to include at least one [[banana]]", cn: "我还喜欢往奶昔里加至少一根香蕉" },
-            { start: 75.8, end: 77.0, en: "into the smoothie", cn: "倒进冰沙里" },
-            { start: 77.4, end: 81.1, en: "so we are going to [[peel]] the banana", cn: "所以我们来剥香蕉皮" },
-            { start: 85.8, end: 86.6, en: "hmm", cn: "嗯···" },
-            { start: 87.4, end: 88.8, en: "I actually want to bite", cn: "我其实好想咬一口" },
-            { start: 89.8, end: 90.8, en: "I can't wait", cn: "等不及啦" },
-            { start: 93.0, end: 93.8, en: "mmm", cn: "嗯" },
-            { start: 95.4, end: 96.7, en: "that is so [[yummy]]", cn: "也太好吃了吧" },
-            { start: 98.0, end: 102.7, en: "I always forget how delicious bananas are on their own", cn: "我总忘记香蕉单吃就这么美味" },
-            { start: 103.2, end: 105.2, en: "next we need a [[blender]]", cn: "接下来我们需要一台搅拌机" },
-            { start: 107.5, end: 111.6, en: "I'm just going to move the bacon and the eggs over", cn: "我把培根和鸡蛋挪到" },
-            { start: 111.7, end: 113.3, en: "to the [[stovetop]]", cn: "炉灶那边" },
-            { start: 113.4, end: 116.7, en: "because we will get to those after our smoothie", cn: "因为做完奶昔我们再弄这些" },
-            { start: 119.0, end: 125.3, en: "so now we have all of the [[ingredients]] for our smoothie", cn: "现在我们奶昔的所有食材都备齐啦" },
-            { start: 125.3, end: 129.8, en: "I also brought [[protein]] and [[collagen]]", cn: "我还准备了蛋白粉和胶原蛋白粉" },
-            { start: 130.4, end: 134.3, en: "because I like to put these in my smoothie to make them", cn: "因为我喜欢加这些到奶昔里，让它" },
-            { start: 134.5, end: 137.9, en: "creamier and again to make sure that I get", cn: "更绵密，同时也确保我能摄入" },
-            { start: 137.9, end: 139.3, en: "all the protein that I need", cn: "身体所需的全部蛋白质" }
+            { start: 0.26, end: 4.06, en: "let's start with our [[strawberries]]", cn: "我们先从草莓开始吧" },
+            { start: 5.30, end: 6.93, en: "this is about", cn: "大概是" },
+            { start: 7.40, end: 12.73, en: "half a cup next we're going to add the [[blueberries]]", cn: "半杯，接下来我们要加蓝莓" },
+            { start: 12.93, end: 16.46, en: "about 1 cup of blueberries for this", cn: "大概放一杯蓝莓" },
+            { start: 16.60, end: 19.70, en: "and then let's include that [[banana]]", cn: "然后再放一根香蕉" },
+            { start: 19.73, end: 21.86, en: "that is filled with [[potassium]]", cn: "富含钾元素的那种" },
+            { start: 22.60, end: 27.46, en: "and I'm also going to add one scoop of [[protein]]", cn: "我还要加一勺蛋白粉" },
+            { start: 30.56, end: 34.50, en: "and one scoop of [[collagen]]", cn: "再加一勺胶原蛋白粉" },
+            { start: 34.96, end: 38.20, en: "collagen is [[essential]] for", cn: "胶原蛋白对..." },
+            { start: 38.33, end: 42.06, en: "growing your hair longer for your nails", cn: "头发长长、指甲养护至关重要" },
+            { start: 42.36, end: 43.73, en: "also for your skin", cn: "对皮肤也一样" },
+            { start: 45.20, end: 48.00, en: "got to have that collagen and protein", cn: "胶原蛋白和蛋白粉可不能少" },
+            { start: 48.50, end: 53.70, en: "Alrighty now we need to add 2 cups of water", cn: "好啦，现在要加两杯水" },
+            { start: 54.56, end: 55.66, en: "1 cup", cn: "一杯" },
+            { start: 56.53, end: 57.66, en: "2 cups", cn: "两杯" },
+            { start: 59.30, end: 64.06, en: "oh I almost forgot I also love to add some [[ice]] in there", cn: "哦，我差点忘了，我还喜欢加些冰块进去" },
+            { start: 65.93, end: 68.66, en: "and now we are ready to [[blend]]", cn: "现在可以开始搅拌啦" },
+            { start: 71.30, end: 72.10, en: "tight", cn: "盖紧（盖子）" },
+            { start: 73.73, end: 77.73, en: "ready it's gonna be loud 3 2 1", cn: "准备好，声音会很大哦，3、2、1" },
+            { start: 87.33, end: 88.80, en: "oh that looks [[delicious]]", cn: "哇，看起来好好喝" },
+            { start: 90.66, end: 93.73, en: "I'm just gonna put a lid on this smoothie", cn: "我给这杯奶昔盖个盖子" },
+            { start: 94.36, end: 97.70, en: "so that it doesn't [[spill]] everywhere as we", cn: "这样等下做..." },
+            { start: 97.86, end: 100.36, en: "continue to make our eggs and bacon", cn: "鸡蛋和培根的时候就不会洒得到处都是" },
+            { start: 100.50, end: 101.93, en: "let me get a straw", cn: "我拿根吸管" },
+            { start: 102.10, end: 105.33, en: "well and lastly a straw", cn: "嗯，最后再来根吸管" }
         ];
 
         let currentLineIdx = -1;
@@ -191,7 +172,6 @@
             }
         };
 
-        // 功能函数
         function toggleLangMode() {
             config.langMode = config.langMode === 'both' ? 'en' : 'both';
             document.getElementById('langText').innerText = config.langMode === 'both' ? '双语' : '英文';
