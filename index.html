@@ -3,27 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>影子跟读 - 完整功能版</title>
+    <title>ShadowTalk - 影子跟读</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --primary-color: #52c41a; --text-main: #333; --text-sub: #999; --bg-gray: #f7f8fa; }
-        body { font-family: -apple-system, sans-serif; margin: 0; background: var(--bg-gray); display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
         
-        .video-fixed { width: 100%; background: #000; position: sticky; top: 0; z-index: 100; }
+        /* 核心布局：禁止整体滚动，由 content-container 承载滚动 */
+        body { 
+            font-family: -apple-system, sans-serif; 
+            margin: 0; 
+            background: var(--bg-gray); 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; 
+            overflow: hidden; 
+        }
+
+        /* 1. 视频区域固定 */
+        .video-fixed { width: 100%; background: #000; flex-shrink: 0; z-index: 100; }
         video { width: 100%; aspect-ratio: 16 / 9; display: block; }
 
-        .mode-tabs { display: flex; background: #fff; border-bottom: 1px solid #eee; }
-        .tab-item { flex: 1; text-align: center; padding: 15px 0; font-size: 15px; color: var(--text-sub); cursor: pointer; position: relative; }
+        /* 2. 导航栏固定 (不再随字幕滚动消失) */
+        .mode-tabs { 
+            display: flex; 
+            background: #fff; 
+            border-bottom: 1px solid #eee; 
+            flex-shrink: 0; 
+            z-index: 99;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .tab-item { flex: 1; text-align: center; padding: 12px 0; font-size: 15px; color: var(--text-sub); cursor: pointer; position: relative; }
         .tab-item.active { color: var(--text-main); font-weight: bold; }
         .tab-item.active::after { content: ""; position: absolute; bottom: 0; left: 25%; width: 50%; height: 3px; background: var(--primary-color); border-radius: 2px; }
 
-        .content-container { flex: 1; overflow-y: auto; padding: 10px; padding-bottom: 100px; -webkit-overflow-scrolling: touch; }
+        /* 3. 只有这个区域可以滚动 */
+        .content-container { 
+            flex: 1; 
+            overflow-y: auto; 
+            padding: 10px; 
+            padding-bottom: 100px; 
+            -webkit-overflow-scrolling: touch; 
+        }
+
         .subtitle-card { background: #fff; border-radius: 12px; padding: 15px; margin-bottom: 10px; border: 2px solid transparent; box-shadow: 0 2px 8px rgba(0,0,0,0.04); cursor: pointer; transition: all 0.2s; }
         .subtitle-card.highlight { border-color: var(--primary-color); background: #f6ffed; }
         .en-text { color: var(--text-main); line-height: 1.4; font-size: 17px; margin-bottom: 6px; font-weight: 500; }
-        .cn-text { color: var(--text-sub); font-size: 14px; display: block; }
+        .cn-text { color: var(--text-sub); font-size: 14px; }
         .keyword { color: var(--primary-color); font-weight: bold; border-bottom: 1.5px solid var(--primary-color); padding: 0 2px; }
 
+        /* 4. 底部控制栏固定 */
         .control-bar { 
             position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
             background: #fff; border-top: 1px solid #eee; 
@@ -64,23 +92,19 @@
             <i class="fa-solid fa-language"></i>
             <span id="langText">双语</span>
         </div>
-
         <div class="ctrl-btn" onclick="openDrawer('setting')">
             <i class="fa-solid fa-gauge-high"></i>
             <span id="speedText">1.0x</span>
         </div>
-
         <div class="play-main-wrapper">
             <div class="play-main" onclick="togglePlay()">
                 <i id="playIcon" class="fa-solid fa-play"></i>
             </div>
         </div>
-
         <div class="ctrl-btn" id="loopBtn" onclick="toggleLoop()">
             <i class="fa-solid fa-rotate-right"></i>
             <span>单句循环</span>
         </div>
-
         <div class="ctrl-btn" onclick="openDrawer('intensive')">
             <i class="fa-solid fa-book-open"></i>
             <span>精读</span>
@@ -109,35 +133,28 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://bbbbbb11111.oss-cn-beijing.aliyuncs.com/%E6%B2%B9%E7%AE%A1%282%29.mp4";
+        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/1.mp4";
 
-        // 更新后的字幕数据
         const SUBTITLE_DATA = [
-            { start: 0.26, end: 4.06, en: "let's start with our [[strawberries]]", cn: "我们先从草莓开始吧" },
-            { start: 5.30, end: 6.93, en: "this is about", cn: "大概是" },
-            { start: 7.40, end: 12.73, en: "half a cup next we're going to add the [[blueberries]]", cn: "半杯，接下来我们要加蓝莓" },
-            { start: 12.93, end: 16.46, en: "about 1 cup of blueberries for this", cn: "大概放一杯蓝莓" },
-            { start: 16.60, end: 19.70, en: "and then let's include that [[banana]]", cn: "然后再放一根香蕉" },
-            { start: 19.73, end: 21.86, en: "that is filled with [[potassium]]", cn: "富含钾元素的那种" },
-            { start: 22.60, end: 27.46, en: "and I'm also going to add one scoop of [[protein]]", cn: "我还要加一勺蛋白粉" },
-            { start: 30.56, end: 34.50, en: "and one scoop of [[collagen]]", cn: "再加一勺胶原蛋白粉" },
-            { start: 34.96, end: 38.20, en: "collagen is [[essential]] for", cn: "胶原蛋白对..." },
-            { start: 38.33, end: 42.06, en: "growing your hair longer for your nails", cn: "头发长长、指甲养护至关重要" },
-            { start: 42.36, end: 43.73, en: "also for your skin", cn: "对皮肤也一样" },
-            { start: 45.20, end: 48.00, en: "got to have that collagen and protein", cn: "胶原蛋白和蛋白粉可不能少" },
-            { start: 48.50, end: 53.70, en: "Alrighty now we need to add 2 cups of water", cn: "好啦，现在要加两杯水" },
-            { start: 54.56, end: 55.66, en: "1 cup", cn: "一杯" },
-            { start: 56.53, end: 57.66, en: "2 cups", cn: "两杯" },
-            { start: 59.30, end: 64.06, en: "oh I almost forgot I also love to add some [[ice]] in there", cn: "哦，我差点忘了，我还喜欢加些冰块进去" },
-            { start: 65.93, end: 68.66, en: "and now we are ready to [[blend]]", cn: "现在可以开始搅拌啦" },
-            { start: 71.30, end: 72.10, en: "tight", cn: "盖紧（盖子）" },
-            { start: 73.73, end: 77.73, en: "ready it's gonna be loud 3 2 1", cn: "准备好，声音会很大哦，3、2、1" },
-            { start: 87.33, end: 88.80, en: "oh that looks [[delicious]]", cn: "哇，看起来好好喝" },
-            { start: 90.66, end: 93.73, en: "I'm just gonna put a lid on this smoothie", cn: "我给这杯奶昔盖个盖子" },
-            { start: 94.36, end: 97.70, en: "so that it doesn't [[spill]] everywhere as we", cn: "这样等下做..." },
-            { start: 97.86, end: 100.36, en: "continue to make our eggs and bacon", cn: "鸡蛋和培根的时候就不会洒得到处都是" },
-            { start: 100.50, end: 101.93, en: "let me get a straw", cn: "我拿根吸管" },
-            { start: 102.10, end: 105.33, en: "well and lastly a straw", cn: "嗯，最后再来根吸管" }
+            { start: 0.06, end: 1.66, en: "I am in the [[train station]]", cn: "我在火车站" },
+            { start: 1.73, end: 3.40, en: "today we're traveling to [[Busan]]", cn: "今天我们要去釜山旅行" },
+            { start: 3.53, end: 6.10, en: "and we will learn lots of English along the [[journey]]", cn: "我们将在旅途中学习很多英语" },
+            { start: 7.06, end: 8.80, en: "I am standing on the [[platform]]", cn: "我正站在站台上" },
+            { start: 8.86, end: 12.20, en: "which is the place that you wait for your trains", cn: "站台就是你等火车的地方" },
+            { start: 12.46, end: 15.20, en: "and to my right there are the [[tracks]]", cn: "我的右边就是铁轨" },
+            { start: 15.26, end: 18.03, en: "these are the lines that the train runs on", cn: "这些就是火车运行的线路" },
+            { start: 18.86, end: 21.70, en: "each section of the train is called the [[carriage]]", cn: "火车的每一节都叫做车厢" },
+            { start: 21.70, end: 25.46, en: "or the car now time to get on the train", cn: "也可以叫car。好啦，该上车了" },
+            { start: 42.46, end: 44.20, en: "we've just arrived at the [[hotel]]", cn: "我们刚到酒店" },
+            { start: 44.70, end: 47.33, en: "and [[what a view]]", cn: "瞧瞧这景色！" },
+            { start: 48.00, end: 52.03, en: "in the distance I can see huge ships on the [[horizon]]", cn: "远处的地平线上可以看到巨大的船只" },
+            { start: 55.73, end: 58.26, en: "there is a [[statue]] of a whale in the water", cn: "水里有一座鲸鱼雕像" },
+            { start: 58.90, end: 60.83, en: "and there are lots of white birds", cn: "还有很多白色的鸟" },
+            { start: 60.90, end: 63.23, en: "these white birds are called [[seagulls]]", cn: "这些白色的鸟叫做海鸥" },
+            { start: 66.10, end: 68.06, en: "there's also a [[lighthouse]]", cn: "那儿还有一座灯塔" },
+            { start: 70.30, end: 72.43, en: "there are people walking along the [[beach]]", cn: "有人正沿着海滩散步" },
+            { start: 74.43, end: 78.10, en: "cool let's go down to take a [[closer look]] at everything", cn: "走吧，咱们下去近距离观察一下" },
+            { start: 78.13, end: 80.60, en: "and [[explore]] this area", cn: "好好探索一下这个地区" }
         ];
 
         let currentLineIdx = -1;
@@ -165,7 +182,9 @@
                 currentLineIdx = idx;
                 renderSubtitles();
                 const activeCard = document.getElementById(`line-${idx}`);
-                if (activeCard) activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                if (activeCard) {
+                    activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
             if (config.isLoop && currentLineIdx !== -1 && now >= SUBTITLE_DATA[currentLineIdx].end) {
                 video.currentTime = SUBTITLE_DATA[currentLineIdx].start;
