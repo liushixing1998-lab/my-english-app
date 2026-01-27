@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">釜山旅行（3）</span>
+        <span class="video-title">釜山旅行（4）</span>
         <span class="video-level">难度：初级</span>
     </div>
 
@@ -131,56 +131,45 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/27.2%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/28.1%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-            { start: 0.00, end: 1.00, en: "okay this", cn: "好啦，这个..." },
-    { start: 1.83, end: 2.63, en: "is a [[truck]]", cn: "是一辆小卡车" },
-    { start: 3.30, end: 5.60, en: "on the back of the truck there are vegetables", cn: "卡车后座上装满了蔬菜" },
-    { start: 6.26, end: 7.70, en: "sweet potatoes", cn: "有红薯" },
-    { start: 8.53, end: 9.33, en: "and", cn: "还有..." },
-    { start: 11.50, end: 13.83, en: "there is a voice coming out of a [[speaker]]", cn: "喇叭里传出了叫卖声" },
-    { start: 14.23, end: 15.43, en: "a loud speaker", cn: "是一个扩音器" },
-    { start: 16.10, end: 18.73, en: "it's obviously selling fruit and vegetables", cn: "显然是在卖水果和蔬菜" },
-    { start: 19.23, end: 22.06, en: "[[DIY]] DIY stands for", cn: "DIY，DIY代表的是" },
-    { start: 22.13, end: 24.53, en: "[[do it yourself]] and it refers to", cn: "“自己动手”，它指的是" },
-    { start: 24.60, end: 26.26, en: "jobs that you do at home", cn: "你在家里做的那些手工活" },
-    { start: 27.40, end: 29.23, en: "like hanging up a painting", cn: "比如挂一幅画之类的" },
-    { start: 29.80, end: 30.86, en: "do it yourself", cn: "也就是自己动手做" },
-    { start: 33.46, end: 34.26, en: "haha", cn: "哈哈" },
-    { start: 34.60, end: 38.46, en: "we have lots of little toys and [[figures]]", cn: "这家店外面有很多小玩具和人偶模型" },
-    { start: 38.83, end: 40.13, en: "outside this shop", cn: "就在商店门口" },
-    { start: 40.83, end: 41.70, en: "and it's a", cn: "这是一个..." },
-    { start: 41.73, end: 42.53, en: "[[Totoro]] Totoro", cn: "龙猫，是龙猫！" },
-    { start: 44.66, end: 45.46, en: "where is Totoro", cn: "龙猫在哪里呢？" },
-    { start: 49.43, end: 50.90, en: "grandmother's memory", cn: "“奶奶的回忆”（店名）" },
-    { start: 51.40, end: 52.20, en: "wow", cn: "哇" },
-    { start: 55.83, end: 60.03, en: "so this is kind of like fun and unusual this place", cn: "所以这个地方既有趣又与众不同" },
-    { start: 60.10, end: 62.66, en: "a great way a great word", cn: "有一个非常棒的词" },
-    { start: 62.73, end: 66.06, en: "we can use to describe something fun and unusual is", cn: "我们可以用来形容这种有趣且奇特的事物" },
-    { start: 66.06, end: 69.40, en: "[[quirky]] I am a little bit quirky as well", cn: "就是 Quirky（古怪有趣的），我本人也有点古怪" },
-    { start: 69.70, end: 71.26, en: "I'll try not to fall over again", cn: "我得小心点，别再摔倒了" },
-    { start: 75.20, end: 76.00, en: "and", cn: "还有..." },
-    { start: 76.70, end: 78.66, en: "it's very [[hilly]]", cn: "这里的坡路非常多" },
-    { start: 79.30, end: 80.13, en: "this area", cn: "这一片区域" },
-    { start: 80.83, end: 83.06, en: "hilly means it has lots of hills", cn: "Hilly 的意思就是这里有很多山坡" },
-    { start: 83.43, end: 85.33, en: "and we can use it as an adjective", cn: "我们可以把它当作形容词来用" },
-    { start: 87.86, end: 89.63, en: "this area is very hilly", cn: "这一带的地势非常崎岖" },
-    { start: 93.40, end: 94.20, en: "she goes through here", cn: "她从这里穿过去" },
-    { start: 96.20, end: 97.00, en: "wow", cn: "哇" },
-    { start: 100.00, end: 102.06, en: "this really is quirky it's very unusual", cn: "这真的很别致，非常少见" },
-    { start: 104.00, end: 106.33, en: "there aren't many places in the world that you see", cn: "世界上很少有地方能让你看到" },
-    { start: 107.40, end: 109.20, en: "colorful houses like this and", cn: "这样色彩斑斓的房子" },
-    { start: 109.60, end: 112.40, en: "lots of hills [[winding alleys]]", cn: "还有众多的山坡和蜿蜒的小巷" },
-    { start: 113.83, end: 115.06, en: "beautiful sunlight", cn: "还有这迷人的阳光" },
-    { start: 115.43, end: 116.33, en: "I mean look at that", cn: "我是说，快看那景色" },
-    { start: 118.63, end: 121.30, en: "good word to describe a view [[stunning]]", cn: "形容风景极美的一个词：Stunning（惊艳的）" },
-    { start: 122.23, end: 123.43, en: "you can describe a view", cn: "你可以用它形容美景" },
-    { start: 124.26, end: 125.13, en: "person", cn: "形容人" },
-    { start: 125.60, end: 126.40, en: "or food", cn: "或者是食物" },
-    { start: 127.10, end: 128.23, en: "that is stunning", cn: "用 Stunning 来表示美极了" },
-    { start: 129.33, end: 130.33, en: "oh hello", cn: "噢，你好呀！" }
+            { start: 0.00, end: 0.80, en: "wow", cn: "哇哦" },
+    { start: 4.00, end: 7.73, en: "up there there is a woman painting the wall yellow", cn: "看上面，有个女人正把墙涂成黄色" },
+    { start: 8.16, end: 9.90, en: "she's painting the wall yellow with a", cn: "她正在用一个..." },
+    { start: 9.90, end: 11.73, en: "giant [[paint roller]]", cn: "巨大的油漆滚筒刷墙" },
+    { start: 12.70, end: 13.90, en: "now it's time", cn: "现在是时候..." },
+    { start: 14.80, end: 15.60, en: "time", cn: "是时候" },
+    { start: 17.86, end: 19.16, en: "for [[photo shoots]]", cn: "拍几张大片啦" },
+    { start: 20.36, end: 21.16, en: "yeah", cn: "没错" },
+    { start: 22.66, end: 23.46, en: "chilly", cn: "挺凉快的" },
+    { start: 23.73, end: 24.46, en: "in this picture", cn: "在这张照片里" },
+    { start: 24.46, end: 27.26, en: "a blond man wearing a white [[puffer jacket]]", cn: "一个穿着白色羽绒服的金发男子" },
+    { start: 27.26, end: 30.90, en: "is looking into the distance at the colorful houses", cn: "正眺望着远方那些五彩斑斓的房子" },
+    { start: 32.10, end: 33.26, en: "in this picture", cn: "在这张照片里" },
+    { start: 33.53, end: 35.70, en: "Chang is walking uphill", cn: "阿昌正往坡上走" },
+    { start: 35.73, end: 38.96, en: "holding a handbag and looking towards the sun", cn: "拎着手提包，迎着阳光望去" },
+    { start: 39.96, end: 43.50, en: "behind me is [[Gamcheon Culture Village]]", cn: "我身后就是甘川洞文化村" },
+    { start: 43.76, end: 46.53, en: "a village built on a hill", cn: "这是一座建在山坡上的村庄" },
+    { start: 46.66, end: 50.56, en: "with loads of colorful houses [[clustered]] together", cn: "许多彩色的房子密密麻麻地簇拥在一起" },
+    { start: 50.80, end: 54.13, en: "clustered means they are all very close together", cn: "Clustered 的意思就是它们挨得非常近" },
+    { start: 54.56, end: 57.50, en: "you can see the rooftops of the houses", cn: "你可以看到房子的层层屋顶" },
+    { start: 57.86, end: 60.76, en: "and right now the sun is setting", cn: "现在夕阳西下" },
+    { start: 61.13, end: 63.16, en: "it's [[dipping]] behind the hill", cn: "太阳正缓缓沉落到山坡后面" },
+    { start: 63.53, end: 65.56, en: "and everything looks pretty", cn: "万物看起来都如此美好" },
+    { start: 66.70, end: 67.50, en: "where's your glove", cn: "你的手套呢？" },
+    { start: 67.93, end: 69.46, en: "my gloves they're in my pocket", cn: "我的手套？在口袋里呢" },
+    { start: 70.40, end: 71.56, en: "yeah my gloves", cn: "是的，手套" },
+    { start: 71.86, end: 74.60, en: "I'm putting on my gloves now because I'm [[chilly]]", cn: "我现在要把手套戴上，因为我觉得有点冷" },
+    { start: 74.60, end: 76.30, en: "chilly means slightly cold", cn: "Chilly 的意思是稍微有点冷" },
+    { start: 76.56, end: 78.73, en: "I'm not [[freezing]] that means very cold", cn: "我还没到 Freezing 的程度，那代表极度寒冷" },
+    { start: 78.96, end: 80.13, en: "I'm just a bit chilly", cn: "我现在只是觉得有点凉飕飕的" },
+    { start: 80.96, end: 83.70, en: "bit [[nippy]] actually we say nippy in the UK", cn: "其实有点刺骨，在英国我们会用 Nippy 这个词" },
+    { start: 84.53, end: 85.33, en: "that's better", cn: "舒服多了" },
+    { start: 85.86, end: 89.50, en: "feeling good I want a drink some hot drink", cn: "感觉不错，我想喝点热饮" },
+    { start: 89.60, end: 90.96, en: "I don't know let's go find one", cn: "不知道哪有，咱们去找找吧" },
+    { start: 91.76, end: 95.00, en: "a pink house just what I've always wanted", cn: "一栋粉红色的房子，正是我梦寐以求的" }
         ];
 
         let currentLineIdx = -1;
