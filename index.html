@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">釜山旅行（8）</span>
+        <span class="video-title">釜山旅行（9）</span>
         <span class="video-level">难度：初级</span>
     </div>
 
@@ -131,58 +131,48 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/30.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/30.2.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 0.00, end: 1.00, en: "good morning world", cn: "早安，世界" },
-    { start: 1.43, end: 3.46, en: "it's day 2 in Busan", cn: "这是在釜山的第二天" },
-    { start: 3.63, end: 6.00, en: "the sun is shining it's a gorgeous day", cn: "阳光明媚，真是个灿烂的日子" },
-    { start: 6.06, end: 9.16, en: "and we have found a very cute coffee shop", cn: "我们找到了一家非常可爱的咖啡店" },
-    { start: 9.16, end: 11.46, en: "so we're gonna get some brunch now", cn: "所以我们现在要去吃早午餐了" },
-    { start: 11.46, end: 13.93, en: "[[brunch]] breakfast lunch brunch", cn: "早午餐（Brunch），就是早餐加午餐" },
-    { start: 40.20, end: 41.40, en: "so pretty in here", cn: "这里面真漂亮" },
-    { start: 42.23, end: 43.13, en: "just [[chilling]]", cn: "悠闲地坐一会儿" },
-    { start: 43.36, end: 44.46, en: "next to the plants", cn: "就在这些植物旁边" },
-    { start: 44.86, end: 47.20, en: "and this place is beautiful", cn: "这个地方太美了" },
-    { start: 47.83, end: 49.33, en: "Cheng just ordered", cn: "阿昌刚刚点了" },
-    { start: 50.46, end: 51.73, en: "[[eggs in hell]]", cn: "“地狱之蛋”（北非蛋）" },
-    { start: 51.80, end: 55.13, en: "which is like eggs in tomato sauce with sourdough bread", cn: "就是番茄酱炖蛋，配上酸面包" },
-    { start: 55.63, end: 58.26, en: "I ordered a [[hummus bowl]]", cn: "我点了一份鹰嘴豆泥碗" },
-    { start: 59.26, end: 61.46, en: "hummus is mashed chickpeas", cn: "Hummus（鹰嘴豆泥）就是捣碎的鹰嘴豆" },
-    { start: 62.20, end: 64.76, en: "and then we got two coffees", cn: "然后我们要了两杯咖啡" },
-    { start: 64.93, end: 68.00, en: "and then after we I'm gonna show you guys around", cn: "吃完之后，我带你们四处看看" },
-    { start: 68.00, end: 70.26, en: "they have a very cute dog as well which is", cn: "这里还有一只非常可爱的狗狗" },
-    { start: 71.96, end: 72.76, en: "thank you", cn: "谢谢" },
-    { start: 74.40, end: 75.20, en: "there's over there", cn: "它在那边呢" },
-    { start: 75.93, end: 77.53, en: "so breakfast has arrived", cn: "早餐上桌啦" },
-    { start: 77.53, end: 79.66, en: "not only does it look delicious", cn: "不仅看起来很好吃" },
-    { start: 79.66, end: 82.86, en: "but there's also some delicious English right now", cn: "现在还有一些“美味”的英语知识" },
-    { start: 83.73, end: 86.43, en: "this is a coffee in a glass", cn: "这是一杯装在玻璃杯里的咖啡" },
-    { start: 86.83, end: 88.73, en: "and it sits on a [[saucer]]", cn: "下面垫着一个小茶托" },
-    { start: 89.40, end: 90.53, en: "this is a saucer", cn: "这就是 Saucer（杯托/小碟）" },
-    { start: 92.46, end: 94.13, en: "I have [[cutlery]]", cn: "我有餐具" },
-    { start: 94.56, end: 95.76, en: "to eat my food", cn: "用来吃我的东西" },
-    { start: 96.13, end: 99.86, en: "a knife a fork and a spoon [[cutlery]]", cn: "刀、叉和勺子，统称为 Cutlery（餐具）" },
-    { start: 100.76, end: 102.93, en: "I've ordered a hummus bowl", cn: "我点的是鹰嘴豆泥碗" },
-    { start: 102.93, end: 104.93, en: "there is half an [[avocado]]", cn: "里面有半个牛油果" },
-    { start: 105.93, end: 107.93, en: "homemade [[sourdough bread]]", cn: "自制的酸面包" },
-    { start: 108.60, end: 113.06, en: "hummus with pistachio nuts and olive oil on", cn: "鹰嘴豆泥撒上了开心果仁和橄榄油" },
-    { start: 113.40, end: 116.56, en: "and then a lovely green salad with kale", cn: "还有一份很赞的绿植沙拉，有羽衣甘蓝" },
-    { start: 116.83, end: 119.26, en: "lettuce grapes [[dill]]", cn: "生菜、葡萄、莳萝" },
-    { start: 119.43, end: 120.53, en: "radish", cn: "小红萝卜" },
-    { start: 120.53, end: 121.80, en: "and walnuts", cn: "还有核桃" },
-    { start: 122.33, end: 126.23, en: "we have some sourdough breads in a metal dish", cn: "金属盘里还有一些酸面包" },
-    { start: 126.66, end: 130.46, en: "to dip into Chang's dish which is", cn: "用来蘸着阿昌的那道菜吃" },
-    { start: 130.63, end: 132.06, en: "a tomato sauce with broccoli and cheese on top", cn: "那是番茄酱汁，顶上铺了西兰花和奶酪" },
-    { start: 136.76, end: 138.76, en: "there are also some eggs inside", cn: "里面还有几个鸡蛋" },
-    { start: 139.13, end: 142.36, en: "and this is very hot I can't touch this", cn: "这个非常烫，我没法直接碰" },
-    { start: 142.63, end: 145.53, en: "this is called a [[cast iron dish]]", cn: "这叫作铸铁锅" },
-    { start: 145.66, end: 146.63, en: "a cast iron dish", cn: "铸铁盘" },
-    { start: 146.63, end: 149.23, en: "iron is metal and it's the material that's made from", cn: "Iron 是铁，也就是制作它的材料" },
-    { start: 149.73, end: 150.53, en: "and finally", cn: "最后" },
-    { start: 150.83, end: 152.33, en: "a bottle of [[Tabasco]]", cn: "一瓶塔巴斯科辣椒酱" },
-    { start: 153.20, end: 154.13, en: "cheers guys", cn: "开饭啦，伙计们" }
+{ start: 0.00, end: 3.56, en: "a person who makes coffees is called a [[barista]]", cn: "制作咖啡的人被称为咖啡师（Barista）" },
+    { start: 4.10, end: 5.13, en: "a person who serves you", cn: "为你提供服务的人" },
+    { start: 5.13, end: 7.66, en: "food is called a [[waiter]]", cn: "若是端菜上桌的男性，叫作服务员（Waiter）" },
+    { start: 8.00, end: 8.93, en: "if it's a male", cn: "如果是男性的话" },
+    { start: 9.40, end: 11.56, en: "and a [[waitress]] if it's a female", cn: "如果是女性，则被称为女服务员（Waitress）" },
+    { start: 27.06, end: 27.93, en: "be kind", cn: "心怀善意" },
+    { start: 28.13, end: 29.13, en: "eat good food", cn: "品尝美食" },
+    { start: 29.56, end: 31.86, en: "smile a lot pet the dog", cn: "多微笑，摸摸狗" },
+    { start: 32.36, end: 33.16, en: "be you", cn: "做你自己" },
+    { start: 33.90, end: 34.70, en: "say thank you", cn: "常说谢谢" },
+    { start: 36.96, end: 39.53, en: "the [[baubles]] are hanging by the window", cn: "窗边挂着一些装饰彩球" },
+    { start: 41.00, end: 42.00, en: "watching the view", cn: "欣赏着窗外的景色" },
+    { start: 45.33, end: 48.70, en: "the wine bottles are wearing [[woolly hats]]", cn: "酒瓶子上还戴着针织小帽子" },
+    { start: 50.76, end: 53.93, en: "the washing is hanging on the [[washing line]]", cn: "洗好的衣服晾在晾衣绳上" },
+    { start: 56.93, end: 60.30, en: "it's a sunny day and in the distance", cn: "今天阳光明媚，在不远处" },
+    { start: 60.53, end: 63.66, en: "the bridge stretches from one side of the river", cn: "大桥从河的一岸延伸" },
+    { start: 63.66, end: 64.50, en: "to the other", cn: "到另一岸" },
+    { start: 67.70, end: 70.40, en: "there is more washing hanging from the washing line", cn: "晾衣绳上还挂着更多的衣服" },
+    { start: 70.56, end: 73.40, en: "and there is a [[kettlebell]] on the floor", cn: "地板上还有一个壶铃" },
+    { start: 73.76, end: 77.46, en: "so maybe the person who hung these clothes", cn: "所以大概那个晾衣服的人" },
+    { start: 77.53, end: 79.96, en: "liked to work out while they waited", cn: "喜欢在等待衣服晾干时锻炼身体" },
+    { start: 80.86, end: 82.56, en: "I love this place they", cn: "我太喜欢这里了，他们" },
+    { start: 82.56, end: 84.86, en: "[[pay close attention to detail]]", cn: "非常注重细节" },
+    { start: 85.20, end: 88.26, en: "which means every little detail is well thought of", cn: "这意味着每一个小细节都经过了深思熟虑" },
+    { start: 88.26, end: 89.33, en: "well thought about", cn: "考虑得非常周到" },
+    { start: 89.36, end: 92.53, en: "they have the bookshelves the quotes on the wall", cn: "这里有书架，墙上印着名言" },
+    { start: 92.76, end: 93.76, en: "good music", cn: "动听的音乐" },
+    { start: 94.50, end: 96.80, en: "the wooden [[ceiling fans]]", cn: "还有木质的吊扇" },
+    { start: 97.26, end: 99.53, en: "the large [[lampshades]]", cn: "大大的灯罩" },
+    { start: 100.16, end: 101.26, en: "great furniture", cn: "极具品味的家具" },
+    { start: 101.50, end: 102.70, en: "great decoration", cn: "精美的装饰" },
+    { start: 103.56, end: 104.46, en: "and", cn: "而且..." },
+    { start: 104.50, end: 106.00, en: "there's a really warm", cn: "这里散发出一种非常温暖" },
+    { start: 106.16, end: 107.86, en: "[[cozy]] light", cn: "舒适宜人的光芒" },
+    { start: 107.86, end: 110.70, en: "bright feeling in here it's lovely", cn: "明快的感觉，真的太迷人了" },
+    { start: 112.10, end: 113.36, en: "if you ever come to Busan", cn: "如果你来釜山" },
+    { start: 113.36, end: 115.10, en: "I would highly recommend this place", cn: "我强烈推荐这里" },
+    { start: 115.26, end: 116.06, en: "go shopping", cn: "去逛逛吧" }
         ];
 
         let currentLineIdx = -1;
