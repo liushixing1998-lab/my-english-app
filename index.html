@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">釜山旅行（1）</span>
+        <span class="video-title">釜山旅行（2）</span>
         <span class="video-level">难度：初级</span>
     </div>
 
@@ -131,32 +131,43 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/1.mp4";
+        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/%E4%B8%8A%E4%BC%A027.1.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-            { start: 0.06, end: 1.66, en: "I am in the [[train station]]", cn: "我在火车站" },
-            { start: 1.73, end: 3.40, en: "today we're traveling to [[Busan]]", cn: "今天我们要去釜山旅行" },
-            { start: 3.53, end: 6.10, en: "and we will learn lots of English along the [[journey]]", cn: "我们将在旅途中学习很多英语" },
-            { start: 7.06, end: 8.80, en: "I am standing on the [[platform]]", cn: "我正站在站台上" },
-            { start: 8.86, end: 10.80, en: "which is the place that you wait", cn: "站台就是你等车的地方" },
-            { start: 11.06, end: 12.20, en: "for your trains", cn: "等候你的列车" },
-            { start: 12.46, end: 15.20, en: "and to my right there are the [[tracks]]", cn: "我的右边就是铁轨" },
-            { start: 15.26, end: 18.03, en: "these are the lines that the train runs on", cn: "这些就是火车运行的线路" },
-            { start: 18.86, end: 21.70, en: "each section of the train is called the [[carriage]]", cn: "火车的每一节都叫做车厢" },
-            { start: 21.70, end: 25.46, en: "or the car now time to get on the train", cn: "也可以叫car。好啦，该上车了" },
-            { start: 42.46, end: 44.20, en: "we've just arrived at the [[hotel]]", cn: "我们刚到酒店" },
-            { start: 44.70, end: 45.60, en: "and", cn: "而且..." },
-            { start: 46.50, end: 47.33, en: "[[what a view]]", cn: "瞧瞧这景色！" },
-            { start: 48.00, end: 52.03, en: "in the distance I can see huge ships on the [[horizon]]", cn: "远处的地平线上可以看到巨大的船只" },
-            { start: 55.73, end: 58.26, en: "there is a [[statue]] of a whale in the water", cn: "水里有一座鲸鱼雕像" },
-            { start: 58.90, end: 60.83, en: "and there are lots of white birds", cn: "还有很多白色的鸟" },
-            { start: 60.90, end: 63.23, en: "these white birds are called [[seagulls]]", cn: "这些白色的鸟叫做海鸥" },
-            { start: 64.90, end: 65.70, en: "oh", cn: "噢" },
-            { start: 66.10, end: 68.06, en: "there's also a [[lighthouse]]", cn: "那儿还有一座灯塔" },
-            { start: 70.30, end: 72.43, en: "there are people walking along the [[beach]]", cn: "有人正沿着海滩散步" },
-            { start: 74.43, end: 78.10, en: "cool let's go down to take a [[closer look]] at everything", cn: "走吧，咱们下去近距离观察一下" },
-            { start: 78.13, end: 80.60, en: "and [[explore]] this area", cn: "好好探索一下这个地区" }
+            { start: 0.00, end: 4.20, en: "so we are in [[Gamcheon Culture Village]] which is", cn: "我们现在在甘川洞文化村，这里是" },
+        { start: 4.76, end: 7.00, en: "a giant village full of colorful houses", cn: "一个到处都是彩色房子的大村庄" },
+        { start: 7.00, end: 8.53, en: "cute little [[alleyways]]", cn: "还有可爱的小巷子" },
+        { start: 8.76, end: 11.46, en: "and right now we are on the [[viewpoints]]", cn: "现在我们站在观景台上" },
+        { start: 11.80, end: 12.86, en: "looking over the view", cn: "俯瞰整个美景" },
+        { start: 13.53, end: 14.33, en: "we're gonna go in", cn: "我们要进去啦" },
+        { start: 14.76, end: 15.56, en: "check it out", cn: "去一探究竟" },
+        { start: 15.90, end: 18.00, en: "the sun is setting so everything is beautiful", cn: "夕阳正在下山，一切都显得格外美丽" },
+        { start: 18.53, end: 20.93, en: "let's go see inside", cn: "咱们进里面看看吧" },
+        { start: 20.93, end: 23.86, en: "there's lots of art and colorful things", cn: "这里有很多艺术品和五彩斑斓的装饰" },
+        { start: 26.66, end: 30.73, en: "I'm walking down the steps and through the wooden gates", cn: "我正走下台阶，穿过这道木门" },
+        { start: 31.60, end: 32.40, en: "can't close that", cn: "那扇门关不上" },
+        { start: 35.20, end: 37.16, en: "we're walking down a small [[alley]]", cn: "我们正走在一条小巷里" },
+        { start: 37.96, end: 42.10, en: "and this is actually a [[corrugated roof]]", cn: "这实际上是一个波纹状的屋顶" },
+        { start: 42.70, end: 43.86, en: "it's made of metal", cn: "它是金属材质的" },
+        { start: 44.80, end: 48.20, en: "and corrugated means it has wavy lines or [[ridges]]", cn: "Corrugated 的意思是它有波浪线或棱纹" },
+        { start: 48.20, end: 51.30, en: "so the rain can run off and drain out", cn: "这样雨水就能流下来排走" },
+        { start: 52.73, end: 55.13, en: "these stairs are [[pastel]] pink", cn: "这些楼梯是淡粉色的" },
+        { start: 55.53, end: 57.56, en: "and this wall is pastel green", cn: "这面墙是淡绿色的" },
+        { start: 58.16, end: 61.20, en: "pastel is a lighter version of a color", cn: "Pastel 是指一种颜色较浅的版本" },
+        { start: 61.93, end: 64.86, en: "it has more white in it it's more [[pale]]", cn: "里面加了更多白色，看起来更柔和苍白" },
+        { start: 65.13, end: 66.70, en: "just like my skin", cn: "就像我的皮肤一样" },
+        { start: 71.00, end: 73.30, en: "you'll notice guys I have [[fewer layers]] on", cn: "大家会注意到我穿得没那么厚了" },
+        { start: 73.60, end: 77.90, en: "I'm not as wrapped up because it's warmer here in Busan", cn: "我没有裹得很严实，因为釜山这里比较暖和" },
+        { start: 77.90, end: 78.70, en: "which is nice", cn: "这种感觉真好" },
+        { start: 82.70, end: 86.33, en: "this is a [[mural]] which is wall art", cn: "这是一幅壁画，也就是墙上的艺术" },
+        { start: 86.66, end: 89.13, en: "and it's a mural of the [[Little Prince]]", cn: "这是一幅《小王子》的壁画" },
+        { start: 89.16, end: 91.60, en: "which is a book that I read in my French class actually", cn: "实际上这是我在法语课上读过的一本书" },
+        { start: 92.06, end: 92.96, en: "and this phrase", cn: "而这句话的意思是" },
+        { start: 95.46, end: 98.50, en: "means you will be uniquely mine in the world", cn: "对我而言，你将是世界上唯一的" },
+        { start: 98.50, end: 100.60, en: "and I will be uniquely yours", cn: "对你而言，我也将是世界上唯一的" },
+        { start: 100.76, end: 104.33, en: "it's a beautiful book and if you haven't read it I would [[recommend]] it", cn: "这是一本很棒的书，如果你还没读过，我强烈推荐" },
+        { start: 106.60, end: 107.40, en: "haha", cn: "哈哈" }
         ];
 
         let currentLineIdx = -1;
