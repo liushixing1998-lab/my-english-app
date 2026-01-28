@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">釜山旅行（12）</span>
+        <span class="video-title">釜山旅行（13）</span>
         <span class="video-level">难度：初级</span>
     </div>
 
@@ -131,51 +131,59 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/3.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://aabbccdd11.oss-cn-beijing.aliyuncs.com/2.1.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 0.00, end: 0.80, en: "hello", cn: "哈啰" },
- { start: 0.00, end: 1.96, en: "Philadelphia cheese ice cream", cn: "费城奶酪味冰淇淋" },
-    { start: 2.60, end: 4.66, en: "ordering an ice cream of course", cn: "当然要点个冰淇淋啦" },
-    { start: 5.33, end: 6.66, en: "it's just about warm enough", cn: "天气刚好暖和到可以吃冰淇淋" },
-    { start: 7.90, end: 8.70, en: "hmm", cn: "嗯~" },
-    { start: 9.10, end: 9.90, en: "be right back", cn: "马上回来" },
-    { start: 15.30, end: 19.53, en: "vanilla ice cream with melted chocolate on top", cn: "香草冰淇淋，上面淋着融化的巧克力" },
-    { start: 19.80, end: 20.80, en: "and the chocolate", cn: "然后这些巧克力..." },
-    { start: 20.90, end: 22.20, en: "[[solidifies]]", cn: "凝固了" },
-    { start: 22.26, end: 23.66, en: "meaning it [[hardens]]", cn: "意思就是它变硬了" },
-    { start: 24.20, end: 25.90, en: "it goes from melted to solid", cn: "它从液态变成了固态" },
-    { start: 30.06, end: 30.93, en: "ice cream", cn: "冰淇淋" },
-    { start: 31.60, end: 34.36, en: "in a [[tub]] we call this a tub", cn: "装在杯子里，我们叫它 Tub（纸杯/桶）" },
-    { start: 34.80, end: 36.76, en: "small tub", cn: "小杯装" },
-    { start: 36.96, end: 38.13, en: "different than a [[cone]]", cn: "这和蛋筒（Cone）不一样" },
-    { start: 39.33, end: 40.90, en: "a cone is a triangle one", cn: "蛋筒是那种三角形的" },
-    { start: 41.20, end: 43.40, en: "that is made of [[wafer]] and you eat it", cn: "由威化制成的，可以直接吃掉" },
-    { start: 44.00, end: 44.90, en: "this is a tub", cn: "而这个是杯装的" },
-    { start: 45.86, end: 47.80, en: "ice cream in a tub or ice cream in a cone", cn: "你可以选纸杯装，也可以选蛋筒装" },
-    { start: 48.46, end: 49.26, en: "this one's a tub", cn: "这个是纸杯装的" },
-    { start: 54.80, end: 59.00, en: "we just stopped to get some stickers for the fridge", cn: "我们停下来想买点贴在冰箱上的东西" },
-    { start: 61.26, end: 65.50, en: "some [[fridge magnets]] for decorating our fridge back home and", cn: "买些冰箱贴，回去装饰我们家的冰箱" },
-    { start: 69.50, end: 72.13, en: "the best thing ever had to come back for this", cn: "这是最棒的东西了，必须折回来买它" },
-    { start: 73.60, end: 77.50, en: "it's Mario in a [[tuxedo]] and Peach", cn: "是穿着燕尾服的马里奥和碧姬公主" },
-    { start: 78.86, end: 81.06, en: "so that's gonna [[take pride of place]] on", cn: "它将会被摆放在最显眼的位置" },
-    { start: 81.56, end: 83.80, en: "a shelf in our house cool", cn: "就在我们家的架子上，真酷" },
-    { start: 84.96, end: 86.06, en: "and this is a gift shop", cn: "这是一家礼品店" },
-    { start: 89.20, end: 90.60, en: "this is a [[sign]]", cn: "这是一个招牌" },
-    { start: 91.10, end: 96.00, en: "for a cafe on the sign it has Korean writing", cn: "一家咖啡馆的招牌，上面写着韩文" },
-    { start: 96.53, end: 103.06, en: "and an image of a champagne glass or a [[champagne flute]]", cn: "还有香槟杯，或者叫细长香槟杯的图案" },
-    { start: 104.00, end: 105.66, en: "this is another cocktail glass", cn: "这是另一种鸡尾酒杯" },
-    { start: 109.00, end: 109.80, en: "you okay there", cn: "你还好吧？" },
-    { start: 110.86, end: 111.80, en: "Johnna hand me something", cn: "乔娜递给我个东西" },
-    { start: 111.93, end: 116.13, en: "alright guys we're going up some very very [[steep stairs]]", cn: "好了伙计们，我们要爬上一段非常陡峭的楼梯" },
-    { start: 116.26, end: 117.73, en: "steep means it's whoop", cn: "“Steep”的意思就是坡度特别大" },
-    { start: 118.70, end: 119.73, en: "you alright there Jake", cn: "你还好吧，杰克？" },
-    { start: 119.96, end: 120.93, en: "I want to grab the camera", cn: "我想拿一下相机" },
-    { start: 124.20, end: 125.80, en: "I feel like I'm pulling you up a mountain", cn: "我觉得我简直是在拽着你爬山" },
-    { start: 127.60, end: 129.96, en: "there we go steep stairs", cn: "瞧这陡峭的楼梯" },
-    { start: 130.50, end: 133.16, en: "to the probably too bright view for you", cn: "通往对你来说可能光线太强的景色" },
-    { start: 133.56, end: 134.70, en: "but that looks incredible", cn: "但那看起来真的不可思议" }
+{ start: 0.00, end: 1.33, en: "we just left the cafe", cn: "我们刚离开咖啡馆" },
+    { start: 1.33, end: 3.20, en: "and look how cute these [[alleys]] are", cn: "看看这些小巷多可爱" },
+    { start: 3.73, end: 6.76, en: "the sunlight is shining on the bricks and making them", cn: "阳光洒在砖墙上，使它们呈现出" },
+    { start: 6.76, end: 9.33, en: "a really [[vibrant]] orange", cn: "一种非常鲜艳的橙色" },
+    { start: 10.33, end: 13.96, en: "here we have the plants outside somebody's house", cn: "这里有邻居家门口摆放的盆栽" },
+    { start: 14.86, end: 16.00, en: "a green [[ladder]]", cn: "一把绿色的梯子" },
+    { start: 16.36, end: 18.53, en: "or some steps leading up to a platform", cn: "或者是通往露台的几级台阶" },
+    { start: 18.76, end: 21.66, en: "and this house is the white and blue", cn: "这房子是蓝白相间的" },
+    { start: 21.86, end: 23.40, en: "it really looks like Greece", cn: "看起来真的很像希腊" },
+    { start: 23.96, end: 25.96, en: "and there's a mysterious woman", cn: "那儿还有位神秘女子" },
+    { start: 26.86, end: 27.86, en: "this is a map", cn: "这是一张地图" },
+    { start: 28.23, end: 30.63, en: "and it's showing us where we are", cn: "它标示出了我们的所在地" },
+    { start: 30.93, end: 35.56, en: "and all the different sites and locations like cafes", cn: "以及咖啡馆等各种景点和位置" },
+    { start: 35.63, end: 39.16, en: "restaurants and places to walk", cn: "还有餐厅和适合散步的小道" },
+    { start: 40.03, end: 41.23, en: "what's Chang found", cn: "阿昌发现了什么？" },
+    { start: 42.76, end: 44.00, en: "she's looking at", cn: "她正在看..." },
+    { start: 46.20, end: 49.36, en: "a [[metal grate]] with [[padlocks]]", cn: "一个挂满挂锁的金属网格" },
+    { start: 49.76, end: 50.60, en: "people have", cn: "人们用这些..." },
+    { start: 51.53, end: 54.53, en: "declared their love for each other with these padlocks", cn: "用这些爱情锁来表达对彼此的爱意" },
+    { start: 54.80, end: 56.40, en: "just like the ones we saw in Seoul", cn: "就像我们在首尔看到的一样" },
+    { start: 60.26, end: 61.40, en: "a [[wheelbarrow]]", cn: "一个独轮手推车" },
+    { start: 62.06, end: 65.23, en: "classic remember wherever you are in the world", cn: "经典名句请记住：无论你身处世界何地" },
+    { start: 67.26, end: 68.16, en: "have a nice day", cn: "都要拥有美好的一天" },
+    { start: 74.46, end: 75.26, en: "I was just saying", cn: "我刚才是在说..." },
+    { start: 75.33, end: 76.96, en: "keep your voice down alright", cn: "小声点，好吗？" },
+    { start: 77.36, end: 78.56, en: "I need to keep my voice down", cn: "我得放低音量" },
+    { start: 80.36, end: 82.03, en: "okay we got our first artwork", cn: "好了，我们看到了第一件艺术品" },
+    { start: 82.53, end: 83.73, en: "there is a shark", cn: "有一条鲨鱼" },
+    { start: 84.43, end: 86.23, en: "sticking out his pink tongue", cn: "正吐着粉红色的舌头" },
+    { start: 86.53, end: 87.86, en: "holding a coconut", cn: "手里抱着个椰子" },
+    { start: 88.43, end: 90.60, en: "and smiling in a [[seedy]] way", cn: "露出了有点搞怪不正经的微笑" },
+    { start: 91.03, end: 94.56, en: "he's wearing a [[sailor's hat]] or a captain's hat", cn: "它戴着水手帽，或者叫船长帽" },
+    { start: 95.33, end: 96.16, en: "very cool", cn: "酷毙了" },
+    { start: 96.53, end: 99.33, en: "and when artwork is painted on the wall like this", cn: "当艺术品像这样被画在墙上时" },
+    { start: 99.33, end: 100.86, en: "we call it a [[mural]]", cn: "我们称之为壁画（Mural）" },
+    { start: 101.56, end: 103.80, en: "and this one is a picture of a dolphin", cn: "这幅画是一只海豚" },
+    { start: 103.86, end: 105.83, en: "wearing a [[Hawaiian shirt]]", cn: "穿着一件夏威夷衬衫" },
+    { start: 106.56, end: 109.53, en: "there are [[flamingos]] on his shirt", cn: "衬衫上印着火烈鸟" },
+    { start: 110.13, end: 114.66, en: "he's holding a cocktail with a [[lime wedge]] in", cn: "它手里拿着一杯加了青柠角的鸡尾酒" },
+    { start: 116.66, end: 118.56, en: "ah it's a little kitty cat", cn: "啊，是一只小猫咪" },
+    { start: 120.13, end: 120.93, en: "hello", cn: "你好呀" },
+    { start: 122.00, end: 123.06, en: "look guys", cn: "大伙看" },
+    { start: 124.03, end: 125.60, en: "we got a sleepy kitty", cn: "有一只困倦的小猫" },
+    { start: 126.16, end: 127.43, en: "that is [[chilling]]", cn: "正在那儿悠闲地待着" },
+    { start: 128.43, end: 129.53, en: "there is a cat", cn: "有只猫咪" },
+    { start: 129.73, end: 132.33, en: "[[sunbathing]] enjoying", cn: "正在沐浴阳光，享受..." },
+    { start: 134.53, end: 136.06, en: "this sunset", cn: "这抹日落" },
+    { start: 138.93, end: 141.16, en: "how beautiful this is", cn: "这景色多美啊" },
+    { start: 144.73, end: 146.16, en: "C'est incroyable in French", cn: "法语里管这叫“不可思议”（C'est incroyable）" }
         ];
 
         let currentLineIdx = -1;
