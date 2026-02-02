@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">韩国旅行（2）</span>
+        <span class="video-title">韩国旅行（3）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,61 +131,57 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/3.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/3.2s%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 0.00, end: 2.90, en: "we just got a ticket to the [[sky capsule]]", cn: "我们刚买到了空中胶囊小火车的票" },
-    { start: 3.13, end: 6.16, en: "so I'll see you there in 3 2 1", cn: "咱们 3 2 1 之后在那儿见" },
-    { start: 7.46, end: 8.53, en: "the magic of editing", cn: "这就是剪辑的魔力" },
-    { start: 9.13, end: 13.06, en: "we're on the Sky Capsules now in Busan", cn: "我们现在坐上了釜山的空中胶囊" },
-    { start: 14.40, end: 16.40, en: "an [[Instagrammer's dream]] on this thing", cn: "这绝对是拍照达人们的梦想之地" },
-    { start: 16.86, end: 18.16, en: "we've wanted to do this for a while", cn: "我们想体验这个已经很久了" },
-    { start: 18.16, end: 18.96, en: "we've seen it on YouTube", cn: "之前在 YouTube 上看到过" },
-    { start: 18.96, end: 22.26, en: "it looks beautiful and it [[doesn't disappoint]]", cn: "它看起来很美，而且完全没有让我们失望" },
-    { start: 22.26, end: 23.60, en: "it's [[bloody gorgeous]]", cn: "简直美炸了" },
-    { start: 28.00, end: 30.46, en: "we are on the rail moving forward", cn: "我们正在轨道上缓缓前行" },
-    { start: 30.70, end: 32.96, en: "on the left there are green pine trees", cn: "左边是郁郁葱葱的松树" },
-    { start: 33.36, end: 35.80, en: "and a red sky capsule is passing", cn: "一辆红色的空中胶囊正与我们擦肩而过" },
-    { start: 38.93, end: 40.33, en: "clear blue skies", cn: "晴空万里" },
-    { start: 40.96, end: 42.60, en: "crystal blue waters", cn: "海水清澈蔚蓝" },
-    { start: 44.53, end: 46.06, en: "hmm wow", cn: "嗯，哇哦" },
-    { start: 47.40, end: 52.60, en: "down there there are waves crashing against the rocks", cn: "下面有海浪不断拍打着礁石" },
-    { start: 56.80, end: 59.10, en: "this is a communications pole", cn: "这是一个通讯杆" },
-    { start: 63.86, end: 65.53, en: "it's just about [[as good as it gets]]", cn: "这景色简直好到极致了" },
-    { start: 66.13, end: 67.60, en: "the view is beautiful", cn: "视野非常棒" },
-    { start: 69.16, end: 70.66, en: "it's so clear as well", cn: "而且能见度也非常高" },
-    { start: 70.80, end: 72.73, en: "today's such a pleasant sunny", cn: "今天真是个宜人的晴天" },
-    { start: 73.13, end: 74.20, en: "and clear day", cn: "天气非常清爽" },
-    { start: 75.56, end: 76.50, en: "down here", cn: "看下面" },
-    { start: 77.33, end: 82.30, en: "is a forest and these large trees are called pine trees", cn: "是一片森林，这些高大的树叫松树" },
-    { start: 82.66, end: 85.33, en: "you can see some parts are in the [[shadow]] or the [[shade]]", cn: "你可以看到有些部分在阴影里" },
-    { start: 85.66, end: 88.30, en: "and other parts are being lit by the sun", cn: "而其他部分则被阳光照亮" },
-    { start: 89.13, end: 92.20, en: "they are bright green and gorgeous", cn: "它们呈现出亮绿色，美极了" },
-    { start: 92.30, end: 93.10, en: "love that", cn: "我很喜欢这种色调" },
-    { start: 95.56, end: 96.60, en: "it's very [[scenic]]", cn: "风景如画" },
-    { start: 97.16, end: 98.76, en: "Sun's catching your face nicely", cn: "阳光正好洒在你的脸上" },
-    { start: 99.80, end: 101.53, en: "in the distance as you can see", cn: "在远处你可以看到..." },
-    { start: 101.66, end: 103.33, en: "the words from earlier do you remember", cn: "还记得我们之前学过的词吗？" },
-    { start: 103.96, end: 107.46, en: "3 2 1 lighthouses", cn: "3 2 1，灯塔！" },
-    { start: 107.80, end: 109.73, en: "there is a red lighthouse on the left", cn: "左边有一座红色的灯塔" },
-    { start: 109.73, end: 111.90, en: "and a white lighthouse", cn: "还有一座白色的灯塔" },
-    { start: 112.06, end: 115.00, en: "on the right and down below on the path", cn: "就在右边。而在下方的步道上" },
-    { start: 115.13, end: 117.66, en: "you can see people taking a [[stroll]]", cn: "你可以看到人们正在散步" },
-    { start: 118.40, end: 120.16, en: "the stroll is a gentle walk", cn: "Stroll 指的就是那种轻快的散步" },
-    { start: 121.66, end: 122.80, en: "we're not strolling", cn: "我们不是在散步" },
-    { start: 123.36, end: 124.30, en: "we're [[rolling]]", cn: "我们是在轨道上滑行" },
-    { start: 125.33, end: 127.70, en: "say hello having a good time", cn: "打个招呼，玩得开心点" },
-    { start: 129.00, end: 130.33, en: "beautiful sunny day", cn: "阳光明媚的好天气" },
-    { start: 130.53, end: 134.13, en: "and we are thoroughly enjoying this ride", cn: "我们非常享受这段旅程" },
-    { start: 135.76, end: 136.80, en: "pretty awesome isn't it", cn: "非常棒，不是吗？" },
-    { start: 137.46, end: 138.26, en: "yeah", cn: "没错" },
-    { start: 138.70, end: 140.66, en: "got the shot right at the snap the red ones passed", cn: "正好拍到了红色胶囊经过的瞬间" },
-    { start: 145.93, end: 147.13, en: "well that was a [[massive fail]]", cn: "额，刚才那是彻底的翻车" },
-    { start: 147.20, end: 148.80, en: "we tried to take a photo and film ourselves", cn: "我们想拍张照片，顺便拍下" },
-    { start: 148.80, end: 149.36, en: "taking the photo", cn: "拍照的过程" },
-    { start: 149.36, end: 150.93, en: "but didn't really work", cn: "但显然没成功" },
-    { start: 150.93, end: 152.90, en: "anyway now we need to get off now and head back so", cn: "不管怎样，我们现在该下车回去了" }
+{ start: 0.00, end: 1.53, en: "so guys we just got these", cn: "伙计们，我们刚买到了这些" },
+    { start: 1.60, end: 3.70, en: "beautiful buttery breads", cn: "色泽诱人的黄油面包" },
+    { start: 4.66, end: 7.23, en: "and if you never got these before here's the brand", cn: "如果你以前没买过，这就是它的品牌" },
+    { start: 7.23, end: 8.33, en: "I can't read what it says", cn: "虽然我不认识上面的字" },
+    { start: 8.33, end: 9.83, en: "but it says something in Korean", cn: "但上面写的是韩语" },
+    { start: 10.06, end: 11.30, en: "and they're [[bloody delicious]]", cn: "而且简直美味极了" },
+    { start: 11.30, end: 12.66, en: "Chang's opening it", cn: "阿昌正在拆包装" },
+    { start: 12.73, end: 14.33, en: "this is a this is a [[string]]", cn: "这上面有一根细绳" },
+    { start: 15.00, end: 16.23, en: "it's in a paper bag", cn: "装在纸袋子里" },
+    { start: 17.23, end: 20.13, en: "all right look at this guys this is [[next level]]", cn: "好了大家看这个，这简直绝了" },
+    { start: 20.33, end: 21.40, en: "you've got this", cn: "瞧瞧这个" },
+    { start: 22.10, end: 23.66, en: "wow look at the sunshine and that", cn: "哇，看这阳光洒在上面的样子" },
+    { start: 23.66, end: 24.90, en: "I don't need to say anything", cn: "我什么都不用说了" },
+    { start: 25.10, end: 26.33, en: "let the bread do the talking", cn: "让面包自己“说话”吧（美到无言）" },
+    { start: 27.06, end: 29.13, en: "smell that guys can you smell it through the screen", cn: "闻闻这个，大家能隔着屏幕闻到香味吗？" },
+    { start: 30.10, end: 30.93, en: "smells good", cn: "闻着真香" },
+    { start: 31.20, end: 32.26, en: "smells so tasty", cn: "味道闻起来好极了" },
+    { start: 32.26, end: 34.20, en: "and you can see it's super soft", cn: "你可以看到它超级柔软" },
+    { start: 34.30, end: 36.43, en: "as I can [[squidge]] it down in my hands", cn: "我用手就能把它捏扁" },
+    { start: 36.63, end: 37.50, en: "how's it taste", cn: "味道怎么样？" },
+    { start: 38.13, end: 39.00, en: "[[top notch]]", cn: "顶级水平" },
+    { start: 39.93, end: 40.73, en: "top bread", cn: "极品面包" },
+    { start: 42.03, end: 42.83, en: "hmm", cn: "嗯..." },
+    { start: 44.90, end: 46.03, en: "so buttery", cn: "黄油味好浓" },
+    { start: 46.73, end: 47.66, en: "so soft", cn: "口感好软" },
+    { start: 48.80, end: 50.50, en: "it's like a [[croissant]]", cn: "它有点像羊角面包" },
+    { start: 51.03, end: 52.23, en: "but bread", cn: "但又是面包的质感" },
+    { start: 53.46, end: 54.70, en: "[[crispy]] on the outside", cn: "外皮酥脆" },
+    { start: 54.86, end: 56.40, en: "soft and [[squishy]] in the middle", cn: "中间软糯 Q 弹" },
+    { start: 57.43, end: 60.43, en: "the butter and then just salt on top", cn: "浓郁黄油加上顶部的微咸海盐" },
+    { start: 60.86, end: 63.00, en: "simple delicious", cn: "简单却美味" },
+    { start: 65.63, end: 66.53, en: "chef's approval", cn: "得到了厨师（我）的认可" },
+    { start: 67.66, end: 68.46, en: "ouch", cn: "哎哟" },
+    { start: 69.83, end: 71.80, en: "all right guys we're on the edge of the beach now", cn: "好了大家，我们现在来到了海滩边" },
+    { start: 71.93, end: 73.43, en: "and the seagulls are [[flocking]]", cn: "海鸥正成群结队地聚集" },
+    { start: 73.73, end: 75.06, en: "somebody's got some food", cn: "有人拿了些吃的" },
+    { start: 75.33, end: 78.40, en: "and the woman and the child are feeding the seagulls", cn: "那位女士和孩子正在喂海鸥" },
+    { start: 78.40, end: 79.33, en: "they [[go mental]]", cn: "海鸥们都抢疯了" },
+    { start: 81.83, end: 82.86, en: "and they are hahaha", cn: "它们正... 哈哈哈" },
+    { start: 87.13, end: 88.40, en: "look at that is beautiful", cn: "看那场面，太壮观了" },
+    { start: 101.20, end: 102.60, en: "as a [[feeding frenzy]]", cn: "简直是疯狂争食的现场" },
+    { start: 103.53, end: 104.73, en: "this is called the feeding frenzy", cn: "这就叫做“进食狂潮”" },
+    { start: 104.73, end: 106.20, en: "when animals are going mental", cn: "指动物们陷入疯狂抢食的状态" },
+    { start: 108.03, end: 109.93, en: "[[pandemonium]] crazy", cn: "一片混乱，太疯狂了" },
+    { start: 110.83, end: 112.20, en: "and here's a little [[calm]] pigeon", cn: "这儿还有只淡定的小鸽子" },
+    { start: 114.30, end: 115.46, en: "you're chilled out aren't you", cn: "你挺悠闲的，是不是？" },
+    { start: 116.63, end: 118.23, en: "not gonna fight with them nasty seagulls", cn: "才不跟那些讨厌的海鸥打架呢" }
         ];
 
         let currentLineIdx = -1;
