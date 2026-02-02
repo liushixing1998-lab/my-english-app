@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">韩国旅行（6）</span>
+        <span class="video-title">韩国旅行（7）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,62 +131,40 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/5.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/5.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 0.00, end: 1.16, en: "just left the cafe", cn: "刚从咖啡馆出来" },
-    { start: 1.80, end: 4.20, en: "the plan now is enjoy the sunset", cn: "现在的计划是去欣赏日落" },
-    { start: 4.53, end: 6.83, en: "go see the sunsets on the beach", cn: "去海滩上看夕阳西下" },
-    { start: 7.03, end: 10.53, en: "and then probably go for a [[cheeky drink]] and some food", cn: "然后可能去随性喝上一杯，再吃点东西" },
-    { start: 12.03, end: 14.36, en: "here's a mysterious lady crossing the road", cn: "这儿有一位正过马路的神秘女士" },
-    { start: 15.66, end: 16.63, en: "17:09", cn: "现在是下午 5 点 09 分" },
-    { start: 17.43, end: 19.43, en: "time for a [[pint]]", cn: "该去喝杯啤酒了" },
-    { start: 21.26, end: 22.43, en: "that's the British way", cn: "这就是地道的英国生活方式" },
-    { start: 24.00, end: 26.43, en: "[[after 5 come alive]]", cn: "五点之后，生活才算开始" },
-    { start: 26.56, end: 28.80, en: "Bang Bang private wine place", cn: "Bang Bang 私藏酒馆" },
-    { start: 29.36, end: 30.16, en: "hmm", cn: "嗯..." },
-    { start: 30.40, end: 31.73, en: "sound do sound fishy", cn: "听起来有点可疑（Fishy 意为可疑/有鱼腥味）" },
-    { start: 32.20, end: 33.00, en: "Bang bang", cn: "Bang bang" },
-    { start: 33.23, end: 34.03, en: "this way Chang", cn: "这边走，阿昌" },
-    { start: 35.06, end: 35.86, en: "Chang Chang", cn: "阿昌，阿昌" },
-    { start: 37.33, end: 38.13, en: "Bang bang", cn: "Bang bang" },
-    { start: 38.96, end: 40.40, en: "oh yes", cn: "噢耶" },
-    { start: 42.23, end: 43.93, en: "nice cold pint cheers", cn: "来一杯冰凉的啤酒，干杯" },
-    { start: 46.20, end: 48.06, en: "pints with a view", cn: "伴着美景畅饮" },
-    { start: 53.43, end: 54.16, en: "mmm", cn: "嗯..." },
-    { start: 54.16, end: 54.96, en: "[[crisp]]", cn: "口感清爽" },
-    { start: 55.00, end: 55.80, en: "golden", cn: "色泽金黄" },
-    { start: 56.13, end: 56.93, en: "refreshing", cn: "沁人心脾" },
-    { start: 57.60, end: 58.40, en: "a", cn: "啊..." },
-    { start: 58.96, end: 61.23, en: "nice pint after a long day", cn: "劳累一天后喝上一杯真舒服" },
-    { start: 61.86, end: 63.33, en: "what's a very British thing to do", cn: "什么是典型的英国式做法？" },
-    { start: 63.60, end: 66.26, en: "to drink on an [[empty stomach]] so", cn: "就是空腹喝酒，这样的话..." },
-    { start: 66.86, end: 68.00, en: "you get a little bit drunk", cn: "你会醉得快一点" },
-    { start: 68.00, end: 68.86, en: "bit [[tipsy]]", cn: "带点微醺的感觉" },
-    { start: 69.06, end: 69.96, en: "then you go eat", cn: "然后才去吃正餐" },
-    { start: 77.96, end: 80.23, en: "so we just arrived at this seafood restaurant", cn: "我们刚到这家海鲜餐厅" },
-    { start: 80.23, end: 83.76, en: "and we have lots of [[side dishes]]", cn: "这里有好多小菜（韩式餐前小碟）" },
-    { start: 83.76, end: 85.43, en: "she just brought us lots of side dishes", cn: "服务员刚给我们端上来一大堆配菜" },
-    { start: 86.73, end: 87.43, en: "in the UK", cn: "在英国" },
-    { start: 87.43, end: 89.93, en: "it's not common to share so many dishes", cn: "分享这么多菜并不常见" },
-    { start: 89.93, end: 92.03, en: "we actually we have our own dish", cn: "我们通常是各吃各的" },
-    { start: 92.20, end: 94.20, en: "usually [[fish and chips]] by the sea", cn: "比如在海边通常吃炸鱼薯条" },
-    { start: 94.43, end: 96.16, en: "and we eat it to ourselves", cn: "而且是每人点一份自己吃" },
-    { start: 96.16, end: 98.76, en: "so this is new to me to", cn: "所以这对我来说很新鲜" },
-    { start: 99.33, end: 101.76, en: "experience this and share a hot pot", cn: "体验这种文化，大家围着吃一锅菜" },
-    { start: 102.06, end: 103.13, en: "I'm excited to try", cn: "我很期待尝试一下" },
-    { start: 103.26, end: 106.00, en: "so just some people who arrive next to us", cn: "刚才有几个人坐在了我们旁边" },
-    { start: 106.00, end: 109.86, en: "and again in England we don't like to be near people", cn: "再说一次，在英国我们不太习惯离陌生人这么近" },
-    { start: 109.86, end: 110.66, en: "we like to have", cn: "我们喜欢拥有" },
-    { start: 110.80, end: 111.80, en: "what do we call it", cn: "那个叫什么来着？" },
-    { start: 112.60, end: 113.60, en: "[[personal space]]", cn: "个人空间" },
-    { start: 113.60, end: 115.03, en: "we like to be far away from each other", cn: "我们习惯彼此保持距离" },
-    { start: 115.03, end: 117.86, en: "we also have a good amount of personal space but yeah", cn: "虽然我们也讲究个人空间，但在这里..." },
-    { start: 118.36, end: 119.46, en: "it's not such a thing", cn: "那种距离感似乎没那么重要" },
-    { start: 119.73, end: 120.83, en: "so here we go", cn: "那么，这就开始了" },
-    { start: 120.93, end: 122.20, en: "experiencing new things", cn: "去体验新鲜事物" },
-    { start: 122.40, end: 123.76, en: "[[broadening my minds]]", cn: "以此来开阔我的眼界" }
+{ start: 0.00, end: 2.83, en: "so I'm [[swirling]] or swirling the rice wine around", cn: "我正摇晃着碗里的米酒" },
+    { start: 3.90, end: 4.86, en: "this is a bottle of", cn: "这是一瓶..." },
+    { start: 4.86, end: 6.93, en: "rice wine which we distilled last night", cn: "我们昨晚亲自酿造的米酒" },
+    { start: 7.26, end: 8.86, en: "and it's very delicious actually", cn: "实际上它非常美味" },
+    { start: 9.70, end: 11.93, en: "if you're drinking it with spicy things it really", cn: "如果你配着辣的东西喝，它真的能..." },
+    { start: 12.40, end: 13.66, en: "[[soothes]] the tongue", cn: "安抚被辣到的舌头" },
+    { start: 14.13, end: 16.20, en: "makes it feel less spicy less intense", cn: "让辛辣感没那么强烈" },
+    { start: 16.20, end: 19.33, en: "the ramen has arrived in a silver [[saucepan]]", cn: "拉面盛在一个银色的小锅里端上来了" },
+    { start: 20.26, end: 21.30, en: "it's boiling hot", cn: "还是滚烫的" },
+    { start: 22.13, end: 24.80, en: "still waiting for the hot pot we're gonna [[dig in]]", cn: "还在等火锅，不过我们要先开动了" },
+    { start: 25.23, end: 27.33, en: "to the ramen so I've got my [[tongs]]", cn: "先吃拉面，我拿好了夹子" },
+    { start: 28.06, end: 28.93, en: "tongs", cn: "夹子" },
+    { start: 29.60, end: 31.46, en: "got my [[ladle]]", cn: "拿好了汤勺" },
+    { start: 32.60, end: 33.40, en: "ladle", cn: "汤勺" },
+    { start: 34.40, end: 36.00, en: "let's get some broth first of all", cn: "先来点热汤吧" },
+    { start: 36.43, end: 38.40, en: "I'm [[ladling]] the broth", cn: "我正在舀汤" },
+    { start: 39.73, end: 40.86, en: "taking a clam", cn: "夹一个蛤蜊" },
+    { start: 45.30, end: 46.93, en: "this is a hot pot and", cn: "这就是热气腾腾的火锅" },
+    { start: 47.03, end: 49.03, en: "I think it's definitely gonna get eaten", cn: "我想它肯定会被我们一扫而光" },
+    { start: 51.23, end: 53.86, en: "there are staff taking care of the", cn: "这里有工作人员专门负责打理" },
+    { start: 54.93, end: 55.73, en: "hot pot", cn: "火锅" },
+    { start: 56.00, end: 57.33, en: "which again is very strange", cn: "这对我来说又是一件新鲜事" },
+    { start: 57.33, end: 59.23, en: "in England they usually just gives you food", cn: "在英国，他们通常把菜端上来" },
+    { start: 59.33, end: 60.13, en: "then leave you", cn: "然后就走开了" },
+    { start: 61.60, end: 65.10, en: "okay so the final word of the day is to [[chow down]]", cn: "好了，今天的最后一个词是 Chow down" },
+    { start: 65.86, end: 69.06, en: "Chow down is an informal saying and it means to eat", cn: "这是一个非正式的俚语，意思是吃东西" },
+    { start: 69.46, end: 71.46, en: "eagerly enthusiastically", cn: "带着热情、迫不及待地大吃" },
+    { start: 71.93, end: 73.60, en: "and you might say it like this", cn: "你可以这样使用它：" },
+    { start: 74.23, end: 76.30, en: "let's [[chow down]] on some hot pots", cn: "“让我们对着火锅大快朵颐吧！”" },
+    { start: 81.30, end: 82.10, en: "see you next time", cn: "下次见！" }
         ];
 
         let currentLineIdx = -1;
