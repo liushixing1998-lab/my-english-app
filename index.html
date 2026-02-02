@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">韩国旅行（4）</span>
+        <span class="video-title">韩国旅行（5）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,58 +131,47 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/4.1%E4%B8%8A%E7%A9%BF.mp4";
+        video.src = "https://aasdfggg.oss-cn-beijing.aliyuncs.com/4.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 0.00, end: 0.80, en: "hello guys", cn: "大家好" },
-    { start: 1.43, end: 5.50, en: "well up there are two giant [[skyscrapers]] probably", cn: "在那上面可能有两座巨大的摩天大楼" },
-    { start: 6.73, end: 9.00, en: "the biggest buildings that I've ever seen in my life", cn: "那可能是我这辈子见过最大的建筑了" },
-    { start: 9.10, end: 11.33, en: "and now we are walking", cn: "现在我们正走着" },
-    { start: 12.63, end: 13.73, en: "along the beach", cn: "沿着海滩漫步" },
-    { start: 15.63, end: 16.93, en: "we're gonna go find a cafe", cn: "我们要去找一家咖啡馆" },
-    { start: 17.93, end: 19.83, en: "get warm it's very cold", cn: "暖和一下，天儿太冷了" },
-    { start: 20.90, end: 21.86, en: "Chang needs a [[wee]]", cn: "阿昌想去“方便”一下" },
-    { start: 22.73, end: 24.83, en: "a wee is a pee a pee is a piss", cn: "Wee 就是尿尿，Pee 也是，而 Piss..." },
-    { start: 25.43, end: 26.46, en: "piss is a rude word", cn: "Piss 是个比较粗鲁的词" },
-    { start: 26.90, end: 28.06, en: "yeah", cn: "没错" },
-    { start: 28.70, end: 31.06, en: "find a cafe drink some coffee rest relax", cn: "找个咖啡馆，喝杯咖啡，休息放松一下" },
-    { start: 31.06, end: 33.40, en: "so on the right here this is a [[promenade]]", cn: "在右边这里，这是一条海滨漫步道" },
-    { start: 33.53, end: 35.73, en: "which is a walkway along the beach", cn: "也就是沿着海滩的人行道" },
-    { start: 36.10, end: 38.43, en: "and on the beach on the sand", cn: "在那边的沙滩上" },
-    { start: 38.86, end: 40.06, en: "there are three people", cn: "有三个人" },
-    { start: 40.26, end: 44.73, en: "playing a casual game of volleyball she is", cn: "正在随性地打排球，你看她" },
-    { start: 46.30, end: 47.90, en: "hitting the volleyball", cn: "正击打着排球" },
-    { start: 48.33, end: 49.46, en: "over the net", cn: "让球过网" },
-    { start: 50.13, end: 53.73, en: "and screaming and Kimmy is a very fluffy white dog", cn: "还在尖叫。Kimmy 是只非常毛茸茸的白狗" },
-    { start: 54.73, end: 56.93, en: "over there is a [[fountain]]", cn: "那边有一个喷泉" },
-    { start: 57.46, end: 59.70, en: "the water is [[gushing out]]", cn: "水正喷涌而出" },
-    { start: 59.73, end: 62.90, en: "good word that gush is gushing out", cn: "这个词用得好，“Gushing out”就是涌出来的意思" },
-    { start: 63.46, end: 64.73, en: "this is a path", cn: "这是一条小路" },
-    { start: 65.13, end: 66.40, en: "that we are walking on", cn: "我们正走在上面" },
-    { start: 67.53, end: 69.66, en: "and either side of the path", cn: "道路的两旁" },
-    { start: 70.06, end: 71.26, en: "there are trees", cn: "都种满了树" },
-    { start: 72.66, end: 75.00, en: "they are [[lining]] either side of the path", cn: "它们伫立在小路的两边" },
-    { start: 79.03, end: 82.90, en: "in the distance is a statue of an [[astronaut]]", cn: "远处是一个宇航员的雕像" },
-    { start: 83.26, end: 85.43, en: "sitting on a planet", cn: "正坐在一个星球上" },
-    { start: 85.73, end: 87.33, en: "the planet looks like", cn: "那个星球看起来" },
-    { start: 87.73, end: 88.80, en: "maybe Mars", cn: "也许是火星" },
-    { start: 89.73, end: 93.86, en: "to the right of the astronauts we have a giant statue", cn: "在宇航员右边，有一个巨大的雕像" },
-    { start: 94.70, end: 97.63, en: "of the earth the [[globe]]", cn: "是地球，一个大地球仪" },
-    { start: 97.90, end: 100.26, en: "and we all live on this", cn: "我们所有人都生活在上面" },
-    { start: 100.83, end: 101.80, en: "massive", cn: "这个巨大的..." },
-    { start: 102.46, end: 105.50, en: "but [[tiny blue dot]]", cn: "却又渺小的“蓝点”之上" },
-    { start: 105.90, end: 107.50, en: "[[puts things into perspective]] doesn't it", cn: "这让人反思人类的渺小，不是吗？" },
-    { start: 107.73, end: 110.10, en: "and what I find mad is that this is massive", cn: "我觉得疯狂的是，这雕像看着很大" },
-    { start: 110.93, end: 113.13, en: "or this is massive", cn: "或者建筑看着很大" },
-    { start: 113.46, end: 115.93, en: "but really compared to that up there", cn: "但实际上和外面的宇宙相比" },
-    { start: 116.83, end: 117.70, en: "we're tiny", cn: "我们微不足道" },
-    { start: 118.26, end: 121.03, en: "and that just goes on for miles and miles and miles", cn: "宇宙无边无际，一直延伸向远方" },
-    { start: 121.30, end: 122.13, en: "and maybe", cn: "也许" },
-    { start: 123.20, end: 125.60, en: "people like astronauts will discover it", cn: "像宇航员这样的人会去探索它" },
-    { start: 125.83, end: 127.93, en: "who knows the world is a tiny place", cn: "谁知道呢，世界其实很小" },
-    { start: 128.83, end: 130.53, en: "and we are even tinier", cn: "而我们人类更加渺小" },
-    { start: 132.53, end: 133.60, en: "that's quite cool", cn: "这感觉挺酷的" }
+{ start: 0.00, end: 5.63, en: "and over here we have some more spheres or [[orbs]]", cn: "在这里，我们能看到更多的球体或圆珠" },
+    { start: 6.23, end: 9.16, en: "you can see the color of them it's purple and blue", cn: "你可以看到它们的颜色，是紫色和蓝色交织的" },
+    { start: 9.40, end: 12.00, en: "and it changes as the light hits it", cn: "随着光线的照射，颜色还会发生变化" },
+    { start: 12.60, end: 14.53, en: "we call this [[iridescent]]", cn: "我们称这种色彩为“虹彩色”" },
+    { start: 14.96, end: 18.26, en: "the color is iridescent which means it changes", cn: "虹彩意味着颜色会随着角度" },
+    { start: 19.40, end: 21.00, en: "as the light hits it", cn: "和光线的变化而改变" },
+    { start: 22.53, end: 25.06, en: "now I have a question for you to practice your writing", cn: "现在我想请大家在评论区" },
+    { start: 25.06, end: 26.06, en: "in the comments", cn: "练习一下英语写作" },
+    { start: 26.43, end: 28.86, en: "if you had the [[chance]] to go to space", cn: "如果你有机会去外太空" },
+    { start: 29.06, end: 29.86, en: "would you", cn: "你会去吗？" },
+    { start: 32.06, end: 33.03, en: "you can reply", cn: "你可以这样回复：" },
+    { start: 33.13, end: 35.56, en: "if I had the chance to go to space I would", cn: "“如果有机会去太空，我会去...”" },
+    { start: 35.56, end: 37.56, en: "or I wouldn't because", cn: "或者“我不会去，因为...”" },
+    { start: 38.96, end: 40.20, en: "let me know in the comments", cn: "在评论区告诉我你的想法吧" },
+    { start: 42.46, end: 43.56, en: "push", cn: "按一下" },
+    { start: 44.66, end: 45.46, en: "ding dong", cn: "叮咚" },
+    { start: 48.66, end: 53.40, en: "okay we get a view of the street and the lift goes up", cn: "好了，随着电梯上升，我们可以俯瞰街道" },
+    { start: 53.96, end: 56.83, en: "you can see the sea you can see a giant billboard", cn: "能看到大海，还有一个巨大的广告牌" },
+    { start: 57.26, end: 58.06, en: "let's go", cn: "我们走" },
+    { start: 58.83, end: 60.33, en: "we've arrived at the cafe", cn: "我们到咖啡馆了" },
+    { start: 67.86, end: 69.63, en: "I hope you have great memories", cn: "我希望你有美好的回忆" },
+    { start: 70.13, end: 71.23, en: "in working holiday", cn: "在你的打工度假之旅中" },
+    { start: 71.86, end: 74.00, en: "like I had good memories while working holiday", cn: "就像我也在那段时光里留下了美好回忆一样" },
+    { start: 82.36, end: 84.20, en: "okay this is a [[beeper]]", cn: "好了，这就是那个取餐呼叫器" },
+    { start: 84.63, end: 85.76, en: "let's call it a beeper", cn: "我们可以叫它 beeper" },
+    { start: 85.93, end: 86.86, en: "a beeping thing", cn: "或者“会哔哔响的小玩意”" },
+    { start: 87.16, end: 87.96, en: "no idea", cn: "哈哈我也不知道确切叫啥" },
+    { start: 90.33, end: 92.23, en: "Chang is taking a [[sip]]", cn: "阿昌正喝了一口" },
+    { start: 92.40, end: 93.20, en: "of the coffee", cn: "热咖啡" },
+    { start: 94.40, end: 99.40, en: "we just got an almond cream latte take a sip", cn: "我们点了一杯杏仁奶油拿铁，尝一口" },
+    { start: 106.93, end: 107.86, en: "[[milk moustache]]", cn: "喔，弄出一圈“牛奶胡子”" },
+    { start: 109.00, end: 110.56, en: "hmm that's very good", cn: "嗯，味道很棒" },
+    { start: 112.43, end: 113.60, en: "this cafe is very cute", cn: "这家咖啡馆非常可爱" },
+    { start: 115.46, end: 117.56, en: "the sunlight is [[pouring in]] through the blinds", cn: "阳光透过百叶窗洒了进来" },
+    { start: 117.56, end: 118.40, en: "really pretty", cn: "真的很漂亮" },
+    { start: 118.40, end: 119.60, en: "we have a view of the sea", cn: "还能看到海景" },
+    { start: 121.53, end: 122.33, en: "feeling good", cn: "感觉棒极了" }
         ];
 
         let currentLineIdx = -1;
