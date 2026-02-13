@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（5）</span>
+        <span class="video-title">新加坡旅行（6）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,52 +131,55 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/15.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/15.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
   const SUBTITLE_DATA = [
-    { start: 0.06, end: 1.06, en: "good morning guys", cn: "大家早安" },
-    { start: 1.33, end: 4.86, en: "I'm standing on Jared's [[balcony]]", cn: "我正站在 Jared 的[[阳台]]上" },
-    { start: 5.30, end: 8.63, en: "and enjoying my morning", cn: "享受我的清晨时间" },
-    { start: 9.83, end: 10.63, en: "cup of", cn: "喝一杯..." },
-    { start: 12.73, end: 14.10, en: "a [[cuppa]] is a cup of tea", cn: "[[cuppa]] 指的就是一杯茶" },
-    { start: 14.10, end: 16.86, en: "and it's a very British thing to drink on a morning", cn: "早起喝杯茶是非常有英国特色的习惯" },
-    { start: 17.70, end: 21.63, en: "and the plan for today is to take a walk", cn: "今天的计划是出去散散步" },
-    { start: 21.63, end: 24.06, en: "we're gonna get some breakfast and then", cn: "我们会去吃个早餐，然后" },
-    { start: 24.06, end: 27.03, en: "we're gonna go to the [[botanical gardens]]", cn: "我们要去[[植物园]]" },
-    { start: 27.06, end: 30.20, en: "Jared's gonna show me more of Singapore", cn: "Jared 会带我多逛逛新加坡" },
-    { start: 30.26, end: 33.33, en: "so I'm excited for the day ahead", cn: "我很期待接下来的这一天" },
-    { start: 33.33, end: 36.13, en: "I'm gonna try film as much as I can and", cn: "我会尽量多拍些视频" },
-    { start: 36.83, end: 40.50, en: "bring you guys along teach us some English and have fun", cn: "带大家一起逛逛，教点英语，玩得开心" },
-    { start: 40.50, end: 43.10, en: "one word well two words actually", cn: "我们要学一个词，哦不，其实是两个词" },
-    { start: 43.30, end: 46.90, en: "the first one is I'm here on a [[balcony]]", cn: "第一个词：我现在所在的这个[[阳台]]" },
-    { start: 47.23, end: 48.63, en: "and a balcony is the", cn: "阳台就是" },
-    { start: 49.20, end: 53.20, en: "outside part of the house that looks out onto the view", cn: "房屋外部可以向外远眺风景的部分" },
-    { start: 53.53, end: 54.63, en: "and over there", cn: "看那边" },
-    { start: 55.30, end: 57.73, en: "this is a [[construction site]]", cn: "这是一个[[施工现场]]" },
-    { start: 57.90, end: 60.00, en: "you can see two [[cranes]]", cn: "你可以看到两台[[起重机/吊车]]" },
-    { start: 60.43, end: 61.86, en: "towering above", cn: "高高地耸立着" },
-    { start: 62.13, end: 65.10, en: "a construction site is where they are building a new", cn: "施工现场就是他们盖新楼的地方" },
-    { start: 65.10, end: 68.86, en: "and on the streets you can see a stop sign", cn: "在街道上你可以看到一个停止标志" },
-    { start: 69.33, end: 70.43, en: "for cars to stop", cn: "让车辆停下（视频口误念成cows，翻译按语境修正为车）" },
-    { start: 71.26, end: 75.00, en: "over there is some wall art or we can say a [[mural]]", cn: "那边有一些墙壁艺术，或者我们可以叫它[[壁画]]" },
-    { start: 75.63, end: 77.90, en: "this is called a [[crossroads]]", cn: "这被称作[[十字路口]]" },
-    { start: 85.66, end: 86.73, en: "dog paw cute", cn: "狗狗的爪子，真可爱" },
-    { start: 87.60, end: 88.73, en: "a [[paw print]]", cn: "一个[[爪印]]" },
-    { start: 90.43, end: 91.26, en: "from a dog", cn: "狗狗留下的" },
-    { start: 91.90, end: 92.70, en: "good dog", cn: "乖狗狗" },
-    { start: 92.73, end: 95.93, en: "a mat with two fat cats", cn: "一张画着两只肥猫的地垫" },
-    { start: 96.26, end: 99.43, en: "Jared is wearing a green shirt with an orange bag", cn: "Jared 穿着绿衬衫，背着橙色的包" },
-    { start: 101.20, end: 102.50, en: "look at this tree guys", cn: "大家看这棵树" },
-    { start: 102.80, end: 104.23, en: "wow what do you think of that Jared", cn: "哇，Jared 你觉得这树怎么样？" },
-    { start: 107.00, end: 108.50, en: "yeah these trees are really cool", cn: "是啊，这些树真的很酷" },
-    { start: 108.50, end: 110.83, en: "their [[branches]] and their [[limbs]] stretch out", cn: "它们的[[树枝]]和[[大枝干]]向外伸展" },
-    { start: 110.83, end: 112.50, en: "like veins in the human body", cn: "就像人体内的静脉一样" },
-    { start: 112.93, end: 115.00, en: "or like [[roots]] in the ground", cn: "或者像地底下的[[根]]" },
-    { start: 115.30, end: 117.73, en: "create a really interesting pattern", cn: "形成了一种非常有趣的图案" },
-    { start: 118.80, end: 119.60, en: "very cool", cn: "太酷了" },
-    { start: 119.93, end: 120.90, en: "I love the trees here", cn: "我喜欢这里的树" },
-    { start: 121.20, end: 122.26, en: "feels like [[Jungle Book]]", cn: "感觉就像走进了《[[奇幻森林]]》" }
+    { start: 0.06, end: 3.06, en: "we're waiting in a [[queue]] to eat breakfast at", cn: "我们正在[[排队]]等着吃早餐" },
+    { start: 3.06, end: 4.43, en: "[[Ya Kun Kaya Toast]]", cn: "是在[[亚坤咖椰吐司]]" },
+    { start: 5.43, end: 8.66, en: "a super famous Singapore place for [[kaya toast]]", cn: "新加坡一家非常有名的吃[[咖椰吐司]]的地方" },
+    { start: 8.80, end: 11.20, en: "butter and [[soft boiled eggs]]", cn: "有黄油和[[半熟蛋]]" },
+    { start: 12.83, end: 15.03, en: "Jared is bringing me here for the first time", cn: "Jared 第一次带我来这里" },
+    { start: 15.66, end: 17.93, en: "I'm excited because I'm trying a [[classic]]", cn: "我很兴奋，因为我要尝试最[[经典]]的" },
+    { start: 17.93, end: 20.26, en: "local Singaporean breakfast", cn: "新加坡当地早餐" },
+    { start: 20.26, end: 23.40, en: "and I'm curious if it tastes as good as everyone says", cn: "我很想知道它是不是像大家说的那么好吃" },
+    { start: 24.63, end: 27.13, en: "the steam from the boiling eggs is rising", cn: "煮蛋的蒸汽正在升腾" },
+    { start: 28.63, end: 31.83, en: "the numbers in red tell you when your order is ready", cn: "红色的数字会提示你取餐" },
+    { start: 32.50, end: 33.90, en: "ours is coming now", cn: "我们的马上就好了" },
+    { start: 34.46, end: 36.93, en: "Jared is arriving with the [[kopi]]s", cn: "Jared 端着[[咖啡]]走过来了" },
+    { start: 37.13, end: 38.06, en: "best time of the day", cn: "这是一天中最棒的时刻" },
+    { start: 39.90, end: 40.70, en: "yep", cn: "没错" },
+    { start: 43.33, end: 46.80, en: "lovely Jared got a hot coffee", cn: "太棒了，Jared 点了杯热咖啡" },
+    { start: 47.23, end: 48.70, en: "I've gone iced coffee", cn: "我选了冰咖啡" },
+    { start: 50.13, end: 50.93, en: "cheers", cn: "干杯" },
+    { start: 54.40, end: 55.20, en: "good", cn: "好喝" },
+    { start: 56.26, end: 57.40, en: "the man with the food", cn: "带吃的的那个人（Jared）来了" },
+    { start: 57.86, end: 59.70, en: "this is toast", cn: "这就是吐司" },
+    { start: 60.73, end: 64.23, en: "toasted bread and some wet and [[runny eggs]]", cn: "烤吐司和一些湿润且[[流心/未凝固的蛋]]" },
+    { start: 65.66, end: 66.83, en: "good word [[runny]]", cn: "[[Runny]] 是个好词" },
+    { start: 67.00, end: 68.10, en: "they are wet and runny", cn: "它们（蛋液）是湿润且流动的" },
+    { start: 68.46, end: 70.63, en: "Jared is pouring the soy sauce on the eggs", cn: "Jared 正在往蛋里倒酱油" },
+    { start: 70.80, end: 71.86, en: "can you put it on mine too", cn: "也能帮我那份加点吗？" },
+    { start: 73.20, end: 74.00, en: "thanks", cn: "谢啦" },
+    { start: 74.60, end: 75.40, en: "nice one", cn: "太棒了" },
+    { start: 76.33, end: 77.26, en: "all right let's [[dig in]]", cn: "好了，让我们[[开吃吧]]" },
+    { start: 77.66, end: 79.23, en: "Jared is breaking", cn: "Jared 正在掰开" },
+    { start: 79.46, end: 82.40, en: "breaking it in half and good word good verb", cn: "把它掰成两半。这也是个好动词" },
+    { start: 82.43, end: 83.53, en: "[[dipping]] it", cn: "[[蘸]]着吃" },
+    { start: 84.30, end: 85.10, en: "I am", cn: "我也在..." },
+    { start: 86.03, end: 87.90, en: "[[dipping]] the egg and look at that", cn: "正在[[蘸]]蛋液，快看这个" },
+    { start: 87.90, end: 90.93, en: "that is an [[egg yolk]] excellent", cn: "那是[[蛋黄]]，太赞了" },
+    { start: 91.60, end: 93.00, en: "so this is really good", cn: "这真的很好吃" },
+    { start: 93.00, end: 96.20, en: "and you have these like thin crispy toasts", cn: "这有薄薄的、脆脆的吐司" },
+    { start: 97.53, end: 100.43, en: "with butter and [[kaya]] spread inside", cn: "里面涂了黄油和[[咖椰]]酱" },
+    { start: 100.43, end: 102.26, en: "it's like honey sweet", cn: "像蜂蜜一样甜" },
+    { start: 102.53, end: 106.13, en: "and you [[dip]] it in the eggs", cn: "然后你把它[[蘸]]进蛋液里" },
+    { start: 106.90, end: 109.20, en: "you [[dip]] it in the yolk in the runny eggs", cn: "你把它[[蘸]]在蛋黄里，蘸在流心的蛋液里" },
+    { start: 112.23, end: 113.03, en: "hmm", cn: "嗯~" },
+    { start: 113.90, end: 114.70, en: "it's sweet", cn: "甜甜的" },
+    { start: 114.80, end: 116.53, en: "it's salty", cn: "咸咸的" },
+    { start: 117.03, end: 118.53, en: "it's really good", cn: "真的非常棒" },
+    { start: 120.00, end: 121.20, en: "unique breakfast", cn: "非常独特的早餐" }
 ];
 
         let currentLineIdx = -1;
