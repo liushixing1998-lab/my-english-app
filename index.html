@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（4）</span>
+        <span class="video-title">新加坡旅行（5）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,26 +131,52 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/14.2%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/15.1%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
-     const SUBTITLE_DATA = [
-    { start: 0.06, end: 1.83, en: "okay now we're in the [[MBS]]", cn: "好了，我们现在进入了[[滨海湾金沙酒店]]" },
-    { start: 2.00, end: 4.20, en: "[[Marina Bay Sands]] Hotel", cn: "[[滨海湾金沙]]大酒店" },
-    { start: 4.33, end: 6.43, en: "and this is [[massive]]", cn: "这地方真是[[巨大无比]]" },
-    { start: 7.50, end: 9.50, en: "this is just one of the [[pillars]] there's three of these", cn: "这只是其中一根[[柱子]]，总共有三根" },
-    { start: 9.86, end: 12.40, en: "three of these [[holy moly]]", cn: "三根这样的柱子，[[我的天呐]]" },
-    { start: 18.73, end: 19.66, en: "you come here often", cn: "你经常来这儿吗？" },
-    { start: 25.93, end: 29.80, en: "we just arrived on the [[rooftop]] and check this view out", cn: "我们刚到[[顶层露台]]，快看看这风景" },
-    { start: 32.00, end: 35.43, en: "[[madness]] we are on the 57th floor", cn: "[[太疯狂了]]，我们现在在 57 楼" },
-    { start: 35.70, end: 36.66, en: "let's get a [[cocktail]]", cn: "咱们点杯[[鸡尾酒]]吧" },
-    { start: 37.46, end: 39.26, en: "this is called the bar", cn: "这里就是酒吧" },
-    { start: 40.46, end: 42.20, en: "we are looking at the [[menu]]", cn: "我们正在看[[菜单]]" },
-    { start: 42.90, end: 46.10, en: "and now Jared is talking to the [[bartender]]", cn: "现在 Jared 正在跟[[调酒师]]聊天" },
-    { start: 47.70, end: 48.50, en: "alright cheers up", cn: "好了，干杯" },
-    { start: 50.03, end: 50.83, en: "cheers [[Amigo]]", cn: "干杯，[[朋友]]" },
-    { start: 52.93, end: 54.60, en: "and cheers to you behind the screen", cn: "也敬屏幕前的你们" },
-    { start: 55.13, end: 57.10, en: "I'll see you tomorrow in day 2", cn: "第二天的行程我们明天见" }
+  const SUBTITLE_DATA = [
+    { start: 0.06, end: 1.06, en: "good morning guys", cn: "大家早安" },
+    { start: 1.33, end: 4.86, en: "I'm standing on Jared's [[balcony]]", cn: "我正站在 Jared 的[[阳台]]上" },
+    { start: 5.30, end: 8.63, en: "and enjoying my morning", cn: "享受我的清晨时间" },
+    { start: 9.83, end: 10.63, en: "cup of", cn: "喝一杯..." },
+    { start: 12.73, end: 14.10, en: "a [[cuppa]] is a cup of tea", cn: "[[cuppa]] 指的就是一杯茶" },
+    { start: 14.10, end: 16.86, en: "and it's a very British thing to drink on a morning", cn: "早起喝杯茶是非常有英国特色的习惯" },
+    { start: 17.70, end: 21.63, en: "and the plan for today is to take a walk", cn: "今天的计划是出去散散步" },
+    { start: 21.63, end: 24.06, en: "we're gonna get some breakfast and then", cn: "我们会去吃个早餐，然后" },
+    { start: 24.06, end: 27.03, en: "we're gonna go to the [[botanical gardens]]", cn: "我们要去[[植物园]]" },
+    { start: 27.06, end: 30.20, en: "Jared's gonna show me more of Singapore", cn: "Jared 会带我多逛逛新加坡" },
+    { start: 30.26, end: 33.33, en: "so I'm excited for the day ahead", cn: "我很期待接下来的这一天" },
+    { start: 33.33, end: 36.13, en: "I'm gonna try film as much as I can and", cn: "我会尽量多拍些视频" },
+    { start: 36.83, end: 40.50, en: "bring you guys along teach us some English and have fun", cn: "带大家一起逛逛，教点英语，玩得开心" },
+    { start: 40.50, end: 43.10, en: "one word well two words actually", cn: "我们要学一个词，哦不，其实是两个词" },
+    { start: 43.30, end: 46.90, en: "the first one is I'm here on a [[balcony]]", cn: "第一个词：我现在所在的这个[[阳台]]" },
+    { start: 47.23, end: 48.63, en: "and a balcony is the", cn: "阳台就是" },
+    { start: 49.20, end: 53.20, en: "outside part of the house that looks out onto the view", cn: "房屋外部可以向外远眺风景的部分" },
+    { start: 53.53, end: 54.63, en: "and over there", cn: "看那边" },
+    { start: 55.30, end: 57.73, en: "this is a [[construction site]]", cn: "这是一个[[施工现场]]" },
+    { start: 57.90, end: 60.00, en: "you can see two [[cranes]]", cn: "你可以看到两台[[起重机/吊车]]" },
+    { start: 60.43, end: 61.86, en: "towering above", cn: "高高地耸立着" },
+    { start: 62.13, end: 65.10, en: "a construction site is where they are building a new", cn: "施工现场就是他们盖新楼的地方" },
+    { start: 65.10, end: 68.86, en: "and on the streets you can see a stop sign", cn: "在街道上你可以看到一个停止标志" },
+    { start: 69.33, end: 70.43, en: "for cars to stop", cn: "让车辆停下（视频口误念成cows，翻译按语境修正为车）" },
+    { start: 71.26, end: 75.00, en: "over there is some wall art or we can say a [[mural]]", cn: "那边有一些墙壁艺术，或者我们可以叫它[[壁画]]" },
+    { start: 75.63, end: 77.90, en: "this is called a [[crossroads]]", cn: "这被称作[[十字路口]]" },
+    { start: 85.66, end: 86.73, en: "dog paw cute", cn: "狗狗的爪子，真可爱" },
+    { start: 87.60, end: 88.73, en: "a [[paw print]]", cn: "一个[[爪印]]" },
+    { start: 90.43, end: 91.26, en: "from a dog", cn: "狗狗留下的" },
+    { start: 91.90, end: 92.70, en: "good dog", cn: "乖狗狗" },
+    { start: 92.73, end: 95.93, en: "a mat with two fat cats", cn: "一张画着两只肥猫的地垫" },
+    { start: 96.26, end: 99.43, en: "Jared is wearing a green shirt with an orange bag", cn: "Jared 穿着绿衬衫，背着橙色的包" },
+    { start: 101.20, end: 102.50, en: "look at this tree guys", cn: "大家看这棵树" },
+    { start: 102.80, end: 104.23, en: "wow what do you think of that Jared", cn: "哇，Jared 你觉得这树怎么样？" },
+    { start: 107.00, end: 108.50, en: "yeah these trees are really cool", cn: "是啊，这些树真的很酷" },
+    { start: 108.50, end: 110.83, en: "their [[branches]] and their [[limbs]] stretch out", cn: "它们的[[树枝]]和[[大枝干]]向外伸展" },
+    { start: 110.83, end: 112.50, en: "like veins in the human body", cn: "就像人体内的静脉一样" },
+    { start: 112.93, end: 115.00, en: "or like [[roots]] in the ground", cn: "或者像地底下的[[根]]" },
+    { start: 115.30, end: 117.73, en: "create a really interesting pattern", cn: "形成了一种非常有趣的图案" },
+    { start: 118.80, end: 119.60, en: "very cool", cn: "太酷了" },
+    { start: 119.93, end: 120.90, en: "I love the trees here", cn: "我喜欢这里的树" },
+    { start: 121.20, end: 122.26, en: "feels like [[Jungle Book]]", cn: "感觉就像走进了《[[奇幻森林]]》" }
 ];
 
         let currentLineIdx = -1;
