@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（3）</span>
+        <span class="video-title">新加坡旅行（4）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,38 +131,26 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/14.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/14.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
-      const SUBTITLE_DATA = [
-    { start: 0.06, end: 2.90, en: "alright we've arrived at the [[Gardens by the Bay]]", cn: "好了，我们已经到达了[[滨海湾花园]]" },
-    { start: 3.63, end: 5.20, en: "these are [[spectacular]]", cn: "这些建筑真是[[壮观]]" },
-    { start: 5.30, end: 9.30, en: "and we're right here in time for a light show up there", cn: "我们来得正好，赶上了上面的灯光秀" },
-    { start: 9.30, end: 13.90, en: "you have giant structures with plants crawling up them", cn: "你可以看到巨大的结构体，上面爬满了植物" },
-    { start: 14.43, end: 20.43, en: "and there is a bridge with a neon blue light underneath it", cn: "那儿有一座桥，桥底亮着霓虹蓝的光" },
-    { start: 21.00, end: 21.53, en: "and very soon", cn: "很快" },
-    { start: 21.53, end: 22.63, en: "there's gonna be a light show", cn: "灯光秀就要开始了" },
-    { start: 22.66, end: 23.80, en: "it's nice and cool as well", cn: "这儿也很凉快" },
-    { start: 23.80, end: 24.60, en: "there's a [[breeze]]", cn: "还有一阵[[微风]]" },
-    { start: 25.20, end: 26.13, en: "there's a good word for you guys", cn: "这儿有个好词推荐给你们" },
-    { start: 26.13, end: 28.50, en: "a [[breeze]] a light wind", cn: "[[Breeze]]（微风），就是淡淡的风" },
-    { start: 28.80, end: 29.90, en: "it's called a breeze", cn: "这被称作微风" },
-    { start: 30.73, end: 32.10, en: "ah that breeze is nice", cn: "啊，这阵微风吹得真舒服" },
-    { start: 32.46, end: 38.13, en: "so we need to go find a seat and get ready to watch", cn: "所以我们需要去找个位子坐下，准备观看" },
-    { start: 38.13, end: 38.93, en: "this light show", cn: "这场灯光秀" },
-    { start: 44.80, end: 45.90, en: "so in this environment", cn: "在这个环境下" },
-    { start: 45.90, end: 50.10, en: "you can see giant structures that look like trees", cn: "你可以看到像大树一样的巨型结构" },
-    { start: 50.23, end: 53.33, en: "and the lights are flashing in time with the music", cn: "灯光正伴随着音乐的节拍闪烁" },
-    { start: 54.00, end: 57.03, en: "there are lots of people gathered around and we call this a [[crowd]]", cn: "周围聚集了很多人，我们把这称为[[人群]]" },
-    { start: 57.40, end: 58.93, en: "this area is [[crowded]]", cn: "这个区域非常[[拥挤]]" },
-    { start: 71.60, end: 74.13, en: "ha ha ha", cn: "哈哈哈" },
-    { start: 83.26, end: 87.10, en: "everyone is [[clapping]] or [[applauding]] the spectacular light show", cn: "所有人都在为这场壮观的灯光秀[[鼓掌]]或[[喝彩]]" },
-    { start: 88.90, end: 90.66, en: "now we're gonna go to the top of [[MBS]]", cn: "现在我们要去[[滨海湾金沙酒店]]的顶层" },
-    { start: 90.66, end: 93.00, en: "which is a large building up there", cn: "就是那边那座高大的建筑" },
-    { start: 93.63, end: 97.50, en: "and we're [[navigating]] our way through a crowd", cn: "我们正穿梭在人群中寻找出路" },
-    { start: 98.20, end: 99.06, en: "busy crowd", cn: "繁忙的人群" },
-    { start: 99.06, end: 100.46, en: "you can say it's very [[hectic]]", cn: "你可以说这儿非常[[忙碌混乱]]" },
-    { start: 100.63, end: 101.53, en: "very busy here", cn: "这里人真的很多" }
+     const SUBTITLE_DATA = [
+    { start: 0.06, end: 1.83, en: "okay now we're in the [[MBS]]", cn: "好了，我们现在进入了[[滨海湾金沙酒店]]" },
+    { start: 2.00, end: 4.20, en: "[[Marina Bay Sands]] Hotel", cn: "[[滨海湾金沙]]大酒店" },
+    { start: 4.33, end: 6.43, en: "and this is [[massive]]", cn: "这地方真是[[巨大无比]]" },
+    { start: 7.50, end: 9.50, en: "this is just one of the [[pillars]] there's three of these", cn: "这只是其中一根[[柱子]]，总共有三根" },
+    { start: 9.86, end: 12.40, en: "three of these [[holy moly]]", cn: "三根这样的柱子，[[我的天呐]]" },
+    { start: 18.73, end: 19.66, en: "you come here often", cn: "你经常来这儿吗？" },
+    { start: 25.93, end: 29.80, en: "we just arrived on the [[rooftop]] and check this view out", cn: "我们刚到[[顶层露台]]，快看看这风景" },
+    { start: 32.00, end: 35.43, en: "[[madness]] we are on the 57th floor", cn: "[[太疯狂了]]，我们现在在 57 楼" },
+    { start: 35.70, end: 36.66, en: "let's get a [[cocktail]]", cn: "咱们点杯[[鸡尾酒]]吧" },
+    { start: 37.46, end: 39.26, en: "this is called the bar", cn: "这里就是酒吧" },
+    { start: 40.46, end: 42.20, en: "we are looking at the [[menu]]", cn: "我们正在看[[菜单]]" },
+    { start: 42.90, end: 46.10, en: "and now Jared is talking to the [[bartender]]", cn: "现在 Jared 正在跟[[调酒师]]聊天" },
+    { start: 47.70, end: 48.50, en: "alright cheers up", cn: "好了，干杯" },
+    { start: 50.03, end: 50.83, en: "cheers [[Amigo]]", cn: "干杯，[[朋友]]" },
+    { start: 52.93, end: 54.60, en: "and cheers to you behind the screen", cn: "也敬屏幕前的你们" },
+    { start: 55.13, end: 57.10, en: "I'll see you tomorrow in day 2", cn: "第二天的行程我们明天见" }
 ];
 
         let currentLineIdx = -1;
