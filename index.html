@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（6）</span>
+        <span class="video-title">新加坡旅行（7）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,55 +131,50 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/15.2%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/16.1%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
   const SUBTITLE_DATA = [
-    { start: 0.06, end: 3.06, en: "we're waiting in a [[queue]] to eat breakfast at", cn: "我们正在[[排队]]等着吃早餐" },
-    { start: 3.06, end: 4.43, en: "[[Ya Kun Kaya Toast]]", cn: "是在[[亚坤咖椰吐司]]" },
-    { start: 5.43, end: 8.66, en: "a super famous Singapore place for [[kaya toast]]", cn: "新加坡一家非常有名的吃[[咖椰吐司]]的地方" },
-    { start: 8.80, end: 11.20, en: "butter and [[soft boiled eggs]]", cn: "有黄油和[[半熟蛋]]" },
-    { start: 12.83, end: 15.03, en: "Jared is bringing me here for the first time", cn: "Jared 第一次带我来这里" },
-    { start: 15.66, end: 17.93, en: "I'm excited because I'm trying a [[classic]]", cn: "我很兴奋，因为我要尝试最[[经典]]的" },
-    { start: 17.93, end: 20.26, en: "local Singaporean breakfast", cn: "新加坡当地早餐" },
-    { start: 20.26, end: 23.40, en: "and I'm curious if it tastes as good as everyone says", cn: "我很想知道它是不是像大家说的那么好吃" },
-    { start: 24.63, end: 27.13, en: "the steam from the boiling eggs is rising", cn: "煮蛋的蒸汽正在升腾" },
-    { start: 28.63, end: 31.83, en: "the numbers in red tell you when your order is ready", cn: "红色的数字会提示你取餐" },
-    { start: 32.50, end: 33.90, en: "ours is coming now", cn: "我们的马上就好了" },
-    { start: 34.46, end: 36.93, en: "Jared is arriving with the [[kopi]]s", cn: "Jared 端着[[咖啡]]走过来了" },
-    { start: 37.13, end: 38.06, en: "best time of the day", cn: "这是一天中最棒的时刻" },
-    { start: 39.90, end: 40.70, en: "yep", cn: "没错" },
-    { start: 43.33, end: 46.80, en: "lovely Jared got a hot coffee", cn: "太棒了，Jared 点了杯热咖啡" },
-    { start: 47.23, end: 48.70, en: "I've gone iced coffee", cn: "我选了冰咖啡" },
-    { start: 50.13, end: 50.93, en: "cheers", cn: "干杯" },
-    { start: 54.40, end: 55.20, en: "good", cn: "好喝" },
-    { start: 56.26, end: 57.40, en: "the man with the food", cn: "带吃的的那个人（Jared）来了" },
-    { start: 57.86, end: 59.70, en: "this is toast", cn: "这就是吐司" },
-    { start: 60.73, end: 64.23, en: "toasted bread and some wet and [[runny eggs]]", cn: "烤吐司和一些湿润且[[流心/未凝固的蛋]]" },
-    { start: 65.66, end: 66.83, en: "good word [[runny]]", cn: "[[Runny]] 是个好词" },
-    { start: 67.00, end: 68.10, en: "they are wet and runny", cn: "它们（蛋液）是湿润且流动的" },
-    { start: 68.46, end: 70.63, en: "Jared is pouring the soy sauce on the eggs", cn: "Jared 正在往蛋里倒酱油" },
-    { start: 70.80, end: 71.86, en: "can you put it on mine too", cn: "也能帮我那份加点吗？" },
-    { start: 73.20, end: 74.00, en: "thanks", cn: "谢啦" },
-    { start: 74.60, end: 75.40, en: "nice one", cn: "太棒了" },
-    { start: 76.33, end: 77.26, en: "all right let's [[dig in]]", cn: "好了，让我们[[开吃吧]]" },
-    { start: 77.66, end: 79.23, en: "Jared is breaking", cn: "Jared 正在掰开" },
-    { start: 79.46, end: 82.40, en: "breaking it in half and good word good verb", cn: "把它掰成两半。这也是个好动词" },
-    { start: 82.43, end: 83.53, en: "[[dipping]] it", cn: "[[蘸]]着吃" },
-    { start: 84.30, end: 85.10, en: "I am", cn: "我也在..." },
-    { start: 86.03, end: 87.90, en: "[[dipping]] the egg and look at that", cn: "正在[[蘸]]蛋液，快看这个" },
-    { start: 87.90, end: 90.93, en: "that is an [[egg yolk]] excellent", cn: "那是[[蛋黄]]，太赞了" },
-    { start: 91.60, end: 93.00, en: "so this is really good", cn: "这真的很好吃" },
-    { start: 93.00, end: 96.20, en: "and you have these like thin crispy toasts", cn: "这有薄薄的、脆脆的吐司" },
-    { start: 97.53, end: 100.43, en: "with butter and [[kaya]] spread inside", cn: "里面涂了黄油和[[咖椰]]酱" },
-    { start: 100.43, end: 102.26, en: "it's like honey sweet", cn: "像蜂蜜一样甜" },
-    { start: 102.53, end: 106.13, en: "and you [[dip]] it in the eggs", cn: "然后你把它[[蘸]]进蛋液里" },
-    { start: 106.90, end: 109.20, en: "you [[dip]] it in the yolk in the runny eggs", cn: "你把它[[蘸]]在蛋黄里，蘸在流心的蛋液里" },
-    { start: 112.23, end: 113.03, en: "hmm", cn: "嗯~" },
-    { start: 113.90, end: 114.70, en: "it's sweet", cn: "甜甜的" },
-    { start: 114.80, end: 116.53, en: "it's salty", cn: "咸咸的" },
-    { start: 117.03, end: 118.53, en: "it's really good", cn: "真的非常棒" },
-    { start: 120.00, end: 121.20, en: "unique breakfast", cn: "非常独特的早餐" }
+    { start: 0.06, end: 0.83, en: "there he is", cn: "他在那儿" },
+    { start: 1.53, end: 3.20, en: "we have just finished breakfast", cn: "我们刚吃完早餐" },
+    { start: 3.23, end: 6.20, en: "four bellies and now we're gonna go to", cn: "肚子填得饱饱的，现在我们要去" },
+    { start: 7.23, end: 8.86, en: "the [[Botanical Gardens]]", cn: "[[植物园]]" },
+    { start: 9.60, end: 10.40, en: "let's go", cn: "出发吧" },
+    { start: 11.13, end: 11.93, en: "can we go up here", cn: "我们可以从这里上去吗？" },
+    { start: 12.63, end: 13.80, en: "all right that's you sir", cn: "好的，请带路，先生" },
+    { start: 16.30, end: 18.93, en: "and we're gonna take the [[Metro]] the Metro", cn: "我们要搭乘[[地铁]]，地铁" },
+    { start: 20.46, end: 21.26, en: "oh", cn: "噢！" },
+    { start: 24.90, end: 27.60, en: "look at that chess board in the Metro station", cn: "看地铁站里的那个棋盘" },
+    { start: 27.80, end: 30.10, en: "so now we get an [[I-Juice]] which is a", cn: "现在我们要买杯 [[I-Juice]]，也就是" },
+    { start: 30.46, end: 32.43, en: "orange juice in a [[vending machine]]", cn: "[[自动贩卖机]]里的橙汁" },
+    { start: 33.20, end: 35.86, en: "freshly [[squeezed]] orange juice", cn: "现[[榨]]橙汁" },
+    { start: 36.66, end: 40.00, en: "and we are going to [[quench our thirst]]", cn: "我们要来[[解解渴]]" },
+    { start: 40.00, end: 41.46, en: "to [[quench your thirst]] is to", cn: "[[Quench your thirst]] 的意思是" },
+    { start: 41.73, end: 43.53, en: "go from thirsty to not thirsty", cn: "从口渴的状态变成不渴了" },
+    { start: 58.53, end: 59.80, en: "there we go going out the metro", cn: "好了，从地铁站出来了" },
+    { start: 62.10, end: 63.50, en: "Jared's putting on the sunglasses", cn: "Jared 戴上了太阳镜" },
+    { start: 63.60, end: 64.40, en: "it's a bit bright", cn: "外面有点晃眼" },
+    { start: 65.66, end: 67.40, en: "let's go see some gardens", cn: "去看看花园吧" },
+    { start: 67.86, end: 69.70, en: "right guys we are on a [[quest]]", cn: "好了大家，我们现在正在进行一项[[任务]]" },
+    { start: 69.70, end: 72.86, en: "a mission to find a [[monitor lizard]]", cn: "一个寻找[[圆鼻巨蜥]]的任务" },
+    { start: 73.13, end: 74.50, en: "which is like a [[Komodo dragon]]", cn: "它有点像[[科莫多巨蜥]]" },
+    { start: 74.50, end: 75.90, en: "but without the poisonous tongue", cn: "但没有那种带毒的舌头" },
+    { start: 76.30, end: 78.70, en: "and apparently there are monitor lizards here", cn: "显然这里有巨蜥出没" },
+    { start: 79.10, end: 81.73, en: "I hope so yeah we'll find them [[by hook or by crook]]", cn: "但愿如此，我们会[[不择手段/想方设法]]找到它们的" },
+    { start: 82.10, end: 83.23, en: "let's go find them", cn: "走，去找找看" },
+    { start: 83.90, end: 85.70, en: "all right first spot of the wildlife", cn: "好了，发现第一个野生动物" },
+    { start: 85.93, end: 87.00, en: "we have a [[rooster]]", cn: "我们发现了一只[[公鸡]]" },
+    { start: 87.80, end: 88.63, en: "on the floor", cn: "在地上" },
+    { start: 91.60, end: 94.00, en: "we are in the [[Botanical Gardens]]", cn: "我们现在在[[植物园]]" },
+    { start: 94.50, end: 96.03, en: "and [[botany]]", cn: "[[Botany]]（植物学）这个词" },
+    { start: 96.70, end: 98.93, en: "is the word for the study of plants", cn: "是指研究植物的学科" },
+    { start: 100.20, end: 102.90, en: "and in here we are surrounded by [[foliage]]", cn: "在这里，我们被[[枝叶/叶群]]所包围" },
+    { start: 103.46, end: 104.43, en: "or [[greenery]]", cn: "或者说是一片[[绿植]]" },
+    { start: 105.43, end: 107.43, en: "and we're looking for the [[orchids]]", cn: "我们正在寻找[[兰花]]" },
+    { start: 107.93, end: 109.66, en: "an [[orchid]] is a type of plant", cn: "[[Orchid]]（兰花）是一种植物" },
+    { start: 110.06, end: 111.20, en: "this type of plant", cn: "就是这一种" },
+    { start: 112.23, end: 113.40, en: "this is an", cn: "这就是一朵" },
+    { start: 113.50, end: 114.13, en: "[[orchid]]", cn: "[[兰花]]" }
 ];
 
         let currentLineIdx = -1;
