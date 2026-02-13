@@ -131,50 +131,55 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/%E6%B2%B9%E7%AE%A1%281%29.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/13%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
         const SUBTITLE_DATA = [
-{ start: 11.76, end: 12.56, en: "hello", cn: "哈喽" },
-    { start: 12.83, end: 14.73, en: "i've just arrived at Singapore airport", cn: "我刚抵达新加坡机场" },
-    { start: 14.73, end: 17.63, en: "and i'm heading to meet my friend Jared", cn: "现在正准备去见我的朋友 Jared" },
-    { start: 18.33, end: 19.23, en: "you might remember Jared", cn: "你们可能还记得 Jared" },
-    { start: 19.23, end: 23.10, en: "from the last episode we're Gonna travel around Singapore", cn: "他在上一集出现过，我们将一起环游新加坡" },
-    { start: 23.10, end: 23.93, en: "explore", cn: "到处探索一下" },
-    { start: 24.10, end: 27.93, en: "and if you like learning English and watching travel content", cn: "如果你喜欢学英语，也喜欢看旅游内容" },
-    { start: 28.03, end: 31.33, en: "then you're in the right place now to get my suitcase", cn: "那你来对地方了，现在我去取行李箱" },
-    { start: 32.30, end: 34.00, en: "so i am waiting for my suitcase", cn: "我正在等我的行李箱" },
-    { start: 34.00, end: 39.90, en: "and this is a [[conveyor belt]] the conveyor belt is moving around", cn: "这就是[[行李传送带]]，传送带正在不停地转动" },
-    { start: 40.00, end: 42.80, en: "and taking people's suitcases", cn: "把大家的行李箱送出来" },
-    { start: 43.03, end: 43.83, en: "what time is it", cn: "现在几点了？" },
-    { start: 44.33, end: 46.16, en: "hmm suitcase... time", cn: "嗯，行李箱... 时间到了" },
-    { start: 48.83, end: 51.90, en: "[[taxi stand]] this is a sign for the taxis", cn: "[[出租车乘车点]]，这是出租车的指示牌" },
-    { start: 51.90, end: 55.80, en: "the taxi stand is a place where you wait for your taxi", cn: "Taxi stand 就是你排队等出租车的地方" },
-    { start: 56.16, end: 57.96, en: "and now in Singapore", cn: "现在在新加坡" },
-    { start: 58.13, end: 59.40, en: "they use grab taxi", cn: "大家都用 Grab 打车" },
-    { start: 59.40, end: 60.33, en: "just like in Vietnam", cn: "就像在越南一样" },
-    { start: 60.33, end: 66.16, en: "so i'm gonna find the taxi stand and all of my grab", cn: "所以我要去找打车点，叫我的 Grab" },
-    { start: 68.60, end: 70.00, en: "yeah the taxi is here", cn: "好极了，车到了" },
-    { start: 70.83, end: 74.23, en: "i'm putting my suitcase in the [[car boot]] thank you", cn: "我正把行李放进[[汽车后备箱]]，谢谢" },
-    { start: 91.90, end: 92.70, en: "there he is", cn: "他在那儿！" },
-    { start: 94.96, end: 95.76, en: "hello mate", cn: "嘿，伙计！" },
-    { start: 98.60, end: 100.00, en: "for a work thank you man", cn: "辛苦了，谢了兄弟" },
-    { start: 102.56, end: 103.20, en: "well hello", cn: "嘿，大家好" },
-    { start: 103.20, end: 105.63, en: "guys look who we have here hello", cn: "大家瞧瞧这是谁，哈喽" },
-    { start: 106.00, end: 109.70, en: "it's Jared and for some context for those who don't know Jared", cn: "是 Jared。给不认识他的朋友介绍下背景" },
-    { start: 109.70, end: 112.53, en: "and i have been friends for twenty six years now", cn: "我和他已经做了 26 年的朋友了" },
-    { start: 112.53, end: 116.56, en: "since we were four years old and yeah what a ride", cn: "从 4 岁起就在一起，真是一段不可思议的历程" },
-    { start: 116.73, end: 118.63, en: "haha many ups and downs", cn: "哈哈，经历了许多起起落落" },
-    { start: 118.63, end: 120.40, en: "many ups and downs mostly ups yeah", cn: "有很多坎坷，但大部分时间都很开心" },
-    { start: 120.40, end: 123.53, en: "a few downs and we've been having a [[catch up]]", cn: "偶尔有些波折，我们刚才一直在[[叙旧]]" },
-    { start: 123.56, end: 124.76, en: "which is the next word", cn: "这就是我们要学的下一个词" },
-    { start: 124.76, end: 127.40, en: "a [[catch up]] is when you haven't seen somebody in a long time", cn: "[[Catch up]] 是指你和很久没见的人碰面" },
-    { start: 127.76, end: 129.20, en: "and you have a conversation", cn: "然后你们聊聊天" },
-    { start: 129.33, end: 132.70, en: "and see what's been going on in their lives now", cn: "了解一下对方最近的生活近况" },
-    { start: 132.70, end: 133.13, en: "the plan is", cn: "现在的计划是" },
-    { start: 133.13, end: 135.90, en: "to go get some food because i've been flying for a while", cn: "去弄点吃的，因为我飞了好一会儿" },
-    { start: 135.93, end: 136.63, en: "i'm hungry so", cn: "我饿坏了，所以..." },
-    { start: 136.63, end: 138.43, en: "we're gonna go to a [[hawker center]]", cn: "我们要去[[熟食中心]]吃饭" }
+   { start: 0.06, end: 3.03, en: "hello I've just arrived at Singapore airport", cn: "哈喽，我刚刚抵达新加坡机场" },
+    { start: 3.03, end: 5.93, en: "and I'm heading to meet my friend Jared", cn: "现在正准备去见我的朋友 Jared" },
+    { start: 6.63, end: 8.23, en: "you might remember Jared from", cn: "你们可能还记得 Jared" },
+    { start: 8.70, end: 9.73, en: "the last episode", cn: "在上一集出现过" },
+    { start: 9.80, end: 12.23, en: "we're gonna travel around Singapore explore", cn: "我们将一起环游新加坡，到处探索一下" },
+    { start: 12.40, end: 15.00, en: "and if you like learning English and", cn: "如果你喜欢学英语" },
+    { start: 15.00, end: 16.23, en: "watching travel content", cn: "也喜欢看旅游内容" },
+    { start: 16.33, end: 19.63, en: "then you're in the right place now to get my suitcase", cn: "那你来对地方了。现在我去取我的行李箱" },
+    { start: 20.60, end: 22.30, en: "so I am waiting for my suitcase", cn: "我正在等我的行李箱" },
+    { start: 22.30, end: 25.30, en: "and this is a [[conveyor belt]]", cn: "这就是[[行李传送带]]" },
+    { start: 26.00, end: 28.20, en: "the conveyor belt is moving around", cn: "传送带正在不停地转动" },
+    { start: 28.30, end: 31.10, en: "and taking people's suitcases", cn: "把大家的行李箱送出来" },
+    { start: 31.33, end: 32.13, en: "what time is it", cn: "现在几点了？" },
+    { start: 32.63, end: 33.43, en: "hmm", cn: "嗯..." },
+    { start: 34.00, end: 34.93, en: "suitcase time", cn: "拿行李的时间到了" },
+    { start: 37.13, end: 40.20, en: "[[taxi stand]] this is a sign for the taxis", cn: "[[出租车乘车点]]，这是出租车的指示牌" },
+    { start: 40.20, end: 44.10, en: "the taxi stand is a place where you wait for your taxi", cn: "Taxi stand 就是你排队等出租车的地方" },
+    { start: 44.46, end: 46.26, en: "and now in Singapore", cn: "现在在新加坡" },
+    { start: 46.43, end: 49.10, en: "they use grab taxi just like in Vietnam so", cn: "大家都用 Grab 打车，就像在越南一样，所以..." },
+    { start: 49.46, end: 51.70, en: "I'm gonna find", cn: "我要去找" },
+    { start: 52.20, end: 54.46, en: "the taxi stand and all of my grab", cn: "打车点并叫我的 Grab" },
+    { start: 56.90, end: 58.30, en: "yeah the taxi is here", cn: "好极了，车到了" },
+    { start: 59.13, end: 62.53, en: "I'm putting my suitcase in the [[car boot]] thank you", cn: "我正把行李放进[[汽车后备箱]]，谢谢" },
+    { start: 80.20, end: 81.00, en: "there he is", cn: "他在那儿！" },
+    { start: 83.26, end: 84.06, en: "hello mate", cn: "嘿，伙计！" },
+    { start: 86.90, end: 88.30, en: "for a work thank you man", cn: "辛苦了，谢了兄弟" },
+    { start: 90.86, end: 91.90, en: "well hello guys", cn: "嘿，大家好" },
+    { start: 91.90, end: 92.86, en: "look who we have here", cn: "大家瞧瞧这是谁" },
+    { start: 93.26, end: 95.03, en: "hello it's Jared", cn: "哈喽，是 Jared" },
+    { start: 95.23, end: 97.70, en: "and for some context for those who don't know", cn: "给不认识他的朋友介绍下背景" },
+    { start: 97.80, end: 100.83, en: "Jared and I have been friends for 26 years now", cn: "我和他已经做了 26 年的朋友了" },
+    { start: 100.83, end: 102.43, en: "since we were 4 years old", cn: "从我们 4 岁起就在一起" },
+    { start: 102.60, end: 105.26, en: "and yeah what a ride haha", cn: "是啊，真是一段不可思议的历程，哈哈" },
+    { start: 105.90, end: 106.93, en: "many UPS and downs", cn: "经历了许多起起落落" },
+    { start: 106.93, end: 107.86, en: "many UPS and downs", cn: "很多坎坷波折" },
+    { start: 108.00, end: 109.46, en: "mostly UPS yeah a few downs", cn: "但大部分时间都很开心，偶尔有些低谷" },
+    { start: 109.60, end: 111.83, en: "and we've been having a [[catch up]]", cn: "我们刚才一直在[[叙旧]]" },
+    { start: 111.86, end: 113.06, en: "which is the next word", cn: "这就是我们要学的下一个词" },
+    { start: 113.06, end: 114.73, en: "a catchup is when you haven't seen somebody", cn: "Catch up 是指当你很久没见某人" },
+    { start: 114.73, end: 115.70, en: "in a long time", cn: "在很长一段时间之后" },
+    { start: 116.06, end: 117.50, en: "and you have a conversation", cn: "你们进行一次交谈" },
+    { start: 117.60, end: 120.43, en: "and see what's been going on in their lives", cn: "了解一下对方最近的生活近况" },
+    { start: 120.60, end: 122.40, en: "now the plan is to go get some food", cn: "现在的计划是去弄点吃的" },
+    { start: 122.40, end: 124.20, en: "because I've been flying for a while", cn: "因为我飞了好一会儿了" },
+    { start: 124.23, end: 126.70, en: "I'm hungry so we're gonna go to a [[hawker centre]]", cn: "我饿坏了，所以我们要去[[熟食中心]]吃饭" }
 ];
 
         let currentLineIdx = -1;
@@ -232,5 +237,6 @@
     </script>
 </body>
 </html>
+
 
 
