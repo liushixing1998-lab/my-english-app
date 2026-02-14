@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（9）</span>
+        <span class="video-title">新加坡旅行（10）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,57 +131,51 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/17.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/17.2%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
-  const SUBTITLE_DATA = [
-    { start: 0.10, end: 3.26, en: "so we are here in the [[botanical gardens]]", cn: "我们现在就在[[植物园]]里" },
-    { start: 3.83, end: 6.46, en: "looking at the beautiful [[scenery]]", cn: "欣赏着美丽的[[风景]]" },
-    { start: 6.66, end: 8.90, en: "the grass the trees the pond the water", cn: "草地、树木、池塘、湖水" },
-    { start: 8.90, end: 10.00, en: "the birds the frogs", cn: "还有小鸟和青蛙" },
-    { start: 10.00, end: 11.83, en: "the butterflies and the [[dragonflies]]", cn: "蝴蝶和[[蜻蜓]]" },
-    { start: 13.13, end: 14.60, en: "and it's really rather beautiful", cn: "这里真的非常漂亮" },
-    { start: 16.26, end: 19.06, en: "so right now Jared is looking at the map", cn: "现在 Jared 正在看地图" },
-    { start: 19.60, end: 20.73, en: "to find out", cn: "为了搞清楚..." },
-    { start: 21.66, end: 24.10, en: "where we are did you find it out this way", cn: "我们在哪儿。找到了吗？是走这边吗？" },
-    { start: 24.43, end: 25.60, en: "this way come with me", cn: "这边，跟我来" },
-    { start: 25.83, end: 28.46, en: "so we're walking along this path and", cn: "我们沿着这条小路走，而且" },
-    { start: 28.73, end: 29.90, en: "there are butterflies", cn: "这儿有蝴蝶" },
-    { start: 30.53, end: 33.43, en: "but it's hard to [[capture]] them because hey", cn: "但很难[[拍到]]它们，因为嘿" },
-    { start: 34.26, end: 36.30, en: "they keep flying everywhere", cn: "它们到处乱飞" },
-    { start: 38.10, end: 41.23, en: "alright guys we are in the [[foliage]] garden", cn: "好了大家，我们现在在[[叶群]]园" },
-    { start: 41.66, end: 42.46, en: "[[foliage]]", cn: "[[Foliage]]（叶子）" },
-    { start: 42.86, end: 45.80, en: "is the term for plant leaves", cn: "是植物叶子的总称" },
-    { start: 45.86, end: 48.00, en: "collectively lots of leaves", cn: "集体性的，很多叶子" },
-    { start: 48.83, end: 50.86, en: "that looks like something from [[Jurassic Park]]", cn: "那看起来就像《[[侏罗纪公园]]》里的场景" },
-    { start: 51.06, end: 53.00, en: "look at these trees they're [[ancient]]", cn: "看这些树，它们非常[[古老]]" },
-    { start: 53.83, end: 56.13, en: "it's mad that that's well older than us", cn: "太不可思议了，它们比我们老得多" },
-    { start: 56.43, end: 57.93, en: "they're at least 10 years old", cn: "它们至少有 10 岁了（冷笑话，实际指很老）" },
-    { start: 58.80, end: 63.20, en: "we are in a [[UNESCO]] World Heritage site Cool", cn: "我们现在是在[[联合国教科文组织]]世界遗产地，真酷" },
-    { start: 66.43, end: 67.66, en: "Jared doing his [[wood pigeon]]", cn: "Jared 正在模仿[[斑尾林鸽]]的叫声" },
-    { start: 69.20, end: 70.00, en: "that's good", cn: "学得真像" },
-    { start: 71.43, end: 74.00, en: "these plants to our left are called [[ferns]]", cn: "我们左边的这些植物叫做[[蕨类]]" },
-    { start: 75.10, end: 76.00, en: "a [[palm leaf]]", cn: "一片[[棕榈叶]]" },
-    { start: 77.93, end: 79.50, en: "look at the [[roots]] on this tree", cn: "看这棵树的[[树根]]" },
-    { start: 80.53, end: 82.13, en: "instead of growing into the ground", cn: "它们没有长进地底" },
-    { start: 82.13, end: 84.90, en: "they are kind of [[sprawled out]] like a spider's legs", cn: "而是像蜘蛛腿一样向四周[[蔓延铺开]]" },
-    { start: 85.83, end: 87.83, en: "very cool and look at this tree", cn: "非常酷，再看看这棵树" },
-    { start: 88.70, end: 91.40, en: "the roots are growing down from the [[trunk]]", cn: "树根正从[[树干]]向下生长" },
-    { start: 91.90, end: 94.90, en: "there's the trunk and the roots are growing down", cn: "那是树干，而根部正向下生长" },
-    { start: 95.13, end: 96.06, en: "into the ground", cn: "长进土里" },
-    { start: 96.30, end: 97.80, en: "this is a beautiful world guys", cn: "大家，这是一个美丽的世界" },
-    { start: 97.93, end: 99.90, en: "not pineapple [[plethora]]", cn: "不是菠萝，是 [[plethora]]（过多/过剩）" },
-    { start: 100.26, end: 102.83, en: "[[plethora]] means there are lots of something", cn: "[[Plethora]] 意思是某样东西非常多" },
-    { start: 103.20, end: 104.40, en: "they are [[abundant]]", cn: "它们非常[[丰富/充沛]]" },
-    { start: 105.50, end: 107.63, en: "trying to give the people the slang term of a pleather", cn: "想教大家一个关于人造革（pleather）的俚语" },
-    { start: 108.70, end: 109.53, en: "clothes", cn: "服装" },
-    { start: 111.20, end: 113.66, en: "so you can see the [[turtle]] guys", cn: "所以你们能看到[[水龟]]，伙计们" },
-    { start: 113.66, end: 114.46, en: "remember", cn: "记得吗" },
-    { start: 115.20, end: 116.06, en: "the [[turtle]]", cn: "[[水龟]]" },
-    { start: 117.23, end: 118.80, en: "is the one that swims in the water", cn: "是在水里游泳的那种" },
-    { start: 120.90, end: 122.46, en: "[[tortoise]] likes to walk us", cn: "而[[陆龟]]喜欢陪我们走路" },
-    { start: 122.83, end: 124.93, en: "and on a turtle is a [[hard shell]]", cn: "在乌龟身上有[[坚硬的壳]]" },
-    { start: 125.46, end: 128.86, en: "the same [[shell]] that you find on an egg or a snail", cn: "和你在鸡蛋或蜗牛身上见到的[[壳]]是同一个词" }
+ const SUBTITLE_DATA = [
+    { start: 0.40, end: 1.20, en: "it's quite hot", cn: "天气挺热的" },
+    { start: 1.40, end: 2.70, en: "sweating it's [[humid]]", cn: "直冒汗，空气很[[潮湿]]" },
+    { start: 3.06, end: 4.10, en: "the air is wet", cn: "空气湿漉漉的" },
+    { start: 5.03, end: 6.63, en: "this is a lake", cn: "这是一个湖" },
+    { start: 7.63, end: 8.86, en: "or a big [[pond]]", cn: "或者说是一个大[[池塘]]" },
+    { start: 13.00, end: 15.06, en: "so the weather is very hot", cn: "所以天气非常炎热" },
+    { start: 15.06, end: 18.03, en: "and when it's hot and wet together we say it's [[humid]]", cn: "当天气又热又湿时，我们称之为[[闷热/潮湿]]" },
+    { start: 18.46, end: 22.50, en: "but there is a [[breeze]] and that breeze is really nice", cn: "不过有一阵[[微风]]，吹起来真舒服" },
+    { start: 22.50, end: 23.86, en: "a [[breeze]] is a light wind", cn: "[[Breeze]] 就是淡淡的风" },
+    { start: 24.43, end: 25.60, en: "and that's [[refreshing]]", cn: "让人[[神清气爽]]" },
+    { start: 26.23, end: 27.40, en: "look at these guys", cn: "看看这些东西" },
+    { start: 27.70, end: 31.23, en: "these are giant [[Lily pads]]", cn: "这些是巨大的[[睡莲叶]]" },
+    { start: 32.30, end: 35.23, en: "and people have thrown coins onto the Lily pads", cn: "人们往睡莲叶上投了硬币" },
+    { start: 40.40, end: 41.53, en: "nice [[make a wish]]", cn: "不错，[[许个愿]]吧" },
+    { start: 41.80, end: 44.13, en: "already have what do you wish for for you to fall in", cn: "已经许了。你许了什么？许愿让你掉进水里！" },
+    { start: 44.60, end: 46.13, en: "hahaha good", cn: "哈哈哈，真行" },
+    { start: 46.83, end: 47.83, en: "this is really cool", cn: "这地方真酷" },
+    { start: 48.46, end: 52.60, en: "so here is a giant pond with [[Lily pads]] on", cn: "这儿有一个长满[[睡莲叶]]的巨型池塘" },
+    { start: 52.86, end: 55.00, en: "and that is a stage", cn: "那是一个舞台" },
+    { start: 100.73, end: 102.26, en: "wow there's a God isn't it", cn: "哇，这儿真美，像有神迹一样" },
+    { start: 103.06, end: 104.43, en: "good with you here guys", cn: "很高兴和你们在一起，伙计们" },
+    { start: 104.66, end: 108.93, en: "[[trickling]] the water is trickling down the stream", cn: "[[细流]]，溪水正从小溪里[[缓缓流淌]]" },
+    { start: 110.10, end: 112.60, en: "we have some more [[orchids]] and", cn: "我们又看到了一些[[兰花]]" },
+    { start: 116.90, end: 118.86, en: "green stuff on the rocks", cn: "岩石上这些绿色的东西" },
+    { start: 119.33, end: 120.70, en: "is called [[moss]]", cn: "叫做[[苔藓]]" },
+    { start: 121.83, end: 122.83, en: "this is [[moss]]", cn: "这就是苔藓" },
+    { start: 123.50, end: 124.63, en: "two good words guys", cn: "有两个好词推荐给你们" },
+    { start: 124.66, end: 126.30, en: "this is [[spongy]]", cn: "这是[[海绵质地的/柔软的]]" },
+    { start: 126.33, end: 128.43, en: "the texture is soft like a [[sponge cake]]", cn: "摸起来像[[海绵蛋糕]]一样软" },
+    { start: 128.83, end: 130.40, en: "these leaves are [[spiky]]", cn: "这些叶子很[[尖]]" },
+    { start: 130.63, end: 133.90, en: "they are sharp and pointy [[spongy]] [[spiky]]", cn: "它们又尖又利。[[柔软的]]和[[带刺的]]" },
+    { start: 134.73, end: 136.30, en: "these orchids are beautiful", cn: "这些兰花真漂亮" },
+    { start: 147.46, end: 149.70, en: "alright guys just found [[monitor lizard]]", cn: "好了大家，刚找到了[[圆鼻巨蜥]]" },
+    { start: 150.46, end: 151.26, en: "check this out", cn: "快看这个" },
+    { start: 153.30, end: 154.20, en: "we did it guys", cn: "伙计们，我们做到了" },
+    { start: 154.20, end: 155.26, en: "found [[monitor lizard]]", cn: "找到[[圆鼻巨蜥]]了" },
+    { start: 158.30, end: 159.73, en: "look at how it [[crawls]]", cn: "看它是怎么[[爬行]]的" },
+    { start: 160.43, end: 162.33, en: "and it's got a [[forked tongue]]", cn: "它还有一条[[分叉的舌头]]" },
+    { start: 163.40, end: 167.06, en: "and the [[monitor lizard]] is [[crawling]] across the grass", cn: "这只[[圆鼻巨蜥]]正[[爬]]过草地" },
+    { start: 168.66, end: 169.93, en: "he's [[sticking his tongue out]]", cn: "它正[[伸出舌头]]" },
+    { start: 170.50, end: 172.46, en: "and I think that's to [[sense]] his environment", cn: "我觉得那是为了[[感知]]周围的环境" }
 ];
 
         let currentLineIdx = -1;
