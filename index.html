@@ -104,7 +104,7 @@
     </div>
 
     <div class="video-info">
-        <span class="video-title">新加坡旅行（10）</span>
+        <span class="video-title">新加坡旅行（11）</span>
         <span class="video-level">难度：中级</span>
     </div>
 
@@ -131,51 +131,59 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/17.2%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/18.1%E4%B8%8A%E4%BC%A0.mp4";
 
         // 这里包含了完整的 22 条润色后的双语字幕数据
  const SUBTITLE_DATA = [
-    { start: 0.40, end: 1.20, en: "it's quite hot", cn: "天气挺热的" },
-    { start: 1.40, end: 2.70, en: "sweating it's [[humid]]", cn: "直冒汗，空气很[[潮湿]]" },
-    { start: 3.06, end: 4.10, en: "the air is wet", cn: "空气湿漉漉的" },
-    { start: 5.03, end: 6.63, en: "this is a lake", cn: "这是一个湖" },
-    { start: 7.63, end: 8.86, en: "or a big [[pond]]", cn: "或者说是一个大[[池塘]]" },
-    { start: 13.00, end: 15.06, en: "so the weather is very hot", cn: "所以天气非常炎热" },
-    { start: 15.06, end: 18.03, en: "and when it's hot and wet together we say it's [[humid]]", cn: "当天气又热又湿时，我们称之为[[闷热/潮湿]]" },
-    { start: 18.46, end: 22.50, en: "but there is a [[breeze]] and that breeze is really nice", cn: "不过有一阵[[微风]]，吹起来真舒服" },
-    { start: 22.50, end: 23.86, en: "a [[breeze]] is a light wind", cn: "[[Breeze]] 就是淡淡的风" },
-    { start: 24.43, end: 25.60, en: "and that's [[refreshing]]", cn: "让人[[神清气爽]]" },
-    { start: 26.23, end: 27.40, en: "look at these guys", cn: "看看这些东西" },
-    { start: 27.70, end: 31.23, en: "these are giant [[Lily pads]]", cn: "这些是巨大的[[睡莲叶]]" },
-    { start: 32.30, end: 35.23, en: "and people have thrown coins onto the Lily pads", cn: "人们往睡莲叶上投了硬币" },
-    { start: 40.40, end: 41.53, en: "nice [[make a wish]]", cn: "不错，[[许个愿]]吧" },
-    { start: 41.80, end: 44.13, en: "already have what do you wish for for you to fall in", cn: "已经许了。你许了什么？许愿让你掉进水里！" },
-    { start: 44.60, end: 46.13, en: "hahaha good", cn: "哈哈哈，真行" },
-    { start: 46.83, end: 47.83, en: "this is really cool", cn: "这地方真酷" },
-    { start: 48.46, end: 52.60, en: "so here is a giant pond with [[Lily pads]] on", cn: "这儿有一个长满[[睡莲叶]]的巨型池塘" },
-    { start: 52.86, end: 55.00, en: "and that is a stage", cn: "那是一个舞台" },
-    { start: 100.73, end: 102.26, en: "wow there's a God isn't it", cn: "哇，这儿真美，像有神迹一样" },
-    { start: 103.06, end: 104.43, en: "good with you here guys", cn: "很高兴和你们在一起，伙计们" },
-    { start: 104.66, end: 108.93, en: "[[trickling]] the water is trickling down the stream", cn: "[[细流]]，溪水正从小溪里[[缓缓流淌]]" },
-    { start: 110.10, end: 112.60, en: "we have some more [[orchids]] and", cn: "我们又看到了一些[[兰花]]" },
-    { start: 116.90, end: 118.86, en: "green stuff on the rocks", cn: "岩石上这些绿色的东西" },
-    { start: 119.33, end: 120.70, en: "is called [[moss]]", cn: "叫做[[苔藓]]" },
-    { start: 121.83, end: 122.83, en: "this is [[moss]]", cn: "这就是苔藓" },
-    { start: 123.50, end: 124.63, en: "two good words guys", cn: "有两个好词推荐给你们" },
-    { start: 124.66, end: 126.30, en: "this is [[spongy]]", cn: "这是[[海绵质地的/柔软的]]" },
-    { start: 126.33, end: 128.43, en: "the texture is soft like a [[sponge cake]]", cn: "摸起来像[[海绵蛋糕]]一样软" },
-    { start: 128.83, end: 130.40, en: "these leaves are [[spiky]]", cn: "这些叶子很[[尖]]" },
-    { start: 130.63, end: 133.90, en: "they are sharp and pointy [[spongy]] [[spiky]]", cn: "它们又尖又利。[[柔软的]]和[[带刺的]]" },
-    { start: 134.73, end: 136.30, en: "these orchids are beautiful", cn: "这些兰花真漂亮" },
-    { start: 147.46, end: 149.70, en: "alright guys just found [[monitor lizard]]", cn: "好了大家，刚找到了[[圆鼻巨蜥]]" },
-    { start: 150.46, end: 151.26, en: "check this out", cn: "快看这个" },
-    { start: 153.30, end: 154.20, en: "we did it guys", cn: "伙计们，我们做到了" },
-    { start: 154.20, end: 155.26, en: "found [[monitor lizard]]", cn: "找到[[圆鼻巨蜥]]了" },
-    { start: 158.30, end: 159.73, en: "look at how it [[crawls]]", cn: "看它是怎么[[爬行]]的" },
-    { start: 160.43, end: 162.33, en: "and it's got a [[forked tongue]]", cn: "它还有一条[[分叉的舌头]]" },
-    { start: 163.40, end: 167.06, en: "and the [[monitor lizard]] is [[crawling]] across the grass", cn: "这只[[圆鼻巨蜥]]正[[爬]]过草地" },
-    { start: 168.66, end: 169.93, en: "he's [[sticking his tongue out]]", cn: "它正[[伸出舌头]]" },
-    { start: 170.50, end: 172.46, en: "and I think that's to [[sense]] his environment", cn: "我觉得那是为了[[感知]]周围的环境" }
+    { start: 0.06, end: 3.50, en: "we just left the [[Botanical Gardens]] and [[chilled out]]", cn: "我们刚离开[[植物园]]，去[[放松]]了一下" },
+    { start: 3.63, end: 4.50, en: "had a rest", cn: "休息了一会儿" },
+    { start: 4.63, end: 8.50, en: "now we're gonna head out for some drinks and some food", cn: "现在我们要出发去喝几杯，吃点东西" },
+    { start: 11.00, end: 12.20, en: "we are crossing the road", cn: "我们正在过马路" },
+    { start: 12.20, end: 15.03, en: "and there are people passing on our left", cn: "有人正从我们的左边经过" },
+    { start: 20.50, end: 23.60, en: "so we have just arrived at the famous [[Raffles]]", cn: "我们刚到达著名的[[莱佛士酒店]]" },
+    { start: 24.40, end: 27.43, en: "and these houses are very [[fancy]]", cn: "这些房子非常[[豪华/别致]]" },
+    { start: 28.23, end: 30.00, en: "there's the next word [[fancy]]", cn: "这是下一个词：[[fancy]]" },
+    { start: 30.46, end: 32.40, en: "this is a large hotel", cn: "这是一座大型酒店" },
+    { start: 32.43, end: 34.70, en: "and the front of the building is [[lit up]]", cn: "建筑的正面被[[点亮/照亮]]了" },
+    { start: 34.70, end: 36.20, en: "with warm light", cn: "闪烁着暖光" },
+    { start: 36.83, end: 40.46, en: "this is a [[courtyard]] with a fountain in the background", cn: "这是一个[[庭院]]，背景里有一个喷泉" },
+    { start: 48.53, end: 50.13, en: "Jared is [[dishing up]] the food", cn: "Jared 正在把食物[[分装到盘子里]]" },
+    { start: 53.63, end: 54.43, en: "hmm", cn: "嗯~" },
+    { start: 54.80, end: 56.90, en: "we have some sweet breads", cn: "我们点了一些甜面包" },
+    { start: 57.26, end: 59.93, en: "which is noodles with [[stir fried]] seafood", cn: "这是海鲜[[炒]]面" },
+    { start: 60.86, end: 62.33, en: "some side salad", cn: "一些配餐沙拉" },
+    { start: 62.93, end: 66.30, en: "sweet chili sauce vegetable [[spring rolls]] and", cn: "甜辣酱、蔬菜[[春卷]]，还有" },
+    { start: 67.06, end: 68.66, en: "a beef", cn: "一份牛肉" },
+    { start: 69.06, end: 70.70, en: "[[rendang]] which is kind of curry", cn: "[[仁当]]（Rendang），是一种咖喱" },
+    { start: 71.33, end: 72.13, en: "how's it taste", cn: "味道怎么样？" },
+    { start: 77.63, end: 78.50, en: "yeah it's [[bloody lovely]]", cn: "哇，[[超级好吃]]" },
+    { start: 79.80, end: 81.60, en: "dinner was [[bloody lovely]]", cn: "晚餐真的[[太棒了]]" },
+    { start: 81.86, end: 83.63, en: "now we're walking through a [[tunnel]]", cn: "现在我们正穿过一条[[隧道]]" },
+    { start: 83.63, end: 86.20, en: "there are red lights on either side of the tunnel", cn: "隧道两旁亮着红灯" },
+    { start: 86.50, end: 89.33, en: "and [[funky]] artwork painted on the walls", cn: "墙上画着[[时髦酷炫的]]艺术作品" },
+    { start: 89.33, end: 92.10, en: "right now we're heading to an [[arcade bar]]", cn: "现在我们要去一家[[街机酒吧]]" },
+    { start: 95.90, end: 100.66, en: "we are in an [[arcade bar]] and I am drinking a [[pint]] cheers", cn: "我们在街机酒吧，我正喝着一[[品脱]]啤酒，干杯" },
+    { start: 102.10, end: 104.80, en: "the [[neon lights]] are flashing on the ceiling", cn: "天花板上的[[霓虹灯]]正在闪烁" },
+    { start: 105.43, end: 106.40, en: "this is the bar", cn: "这里是吧台" },
+    { start: 107.23, end: 109.63, en: "where the [[bartenders]] make your drinks", cn: "[[调酒师]]在这里为你调制饮品" },
+    { start: 110.33, end: 112.20, en: "this is called a [[joystick]]", cn: "这个叫做[[操纵杆/摇杆]]" },
+    { start: 114.70, end: 116.46, en: "and this is a [[coin slot]]", cn: "这是[[投币口]]" },
+    { start: 116.46, end: 118.80, en: "where you [[insert]] your coins into", cn: "就是你[[投入]]硬币的地方" },
+    { start: 124.23, end: 125.80, en: "the buttons are flashing", cn: "按钮在闪烁" },
+    { start: 126.23, end: 127.23, en: "it's time to play", cn: "到玩游戏的时间了" },
+    { start: 127.73, end: 129.80, en: "this game is called Master [[Sniper]]", cn: "这个游戏叫《王牌[[狙击手]]》" },
+    { start: 130.03, end: 131.13, en: "a [[sniper rifle]]", cn: "一把[[狙击步枪]]" },
+    { start: 131.13, end: 134.23, en: "is a gun that can shoot [[bullets]] from a long [[range]]", cn: "是一种可以远[[距离]]射出[[子弹]]的枪" },
+    { start: 134.66, end: 136.63, en: "or shoot Jared from a short range", cn: "或者近距离射击 Jared" },
+    { start: 137.33, end: 139.00, en: "this is a basketball game", cn: "这是一个篮球游戏" },
+    { start: 139.33, end: 141.70, en: "you throw the basketballs into the [[hoop]]", cn: "你要把篮球投进[[篮筐]]里" },
+    { start: 143.33, end: 144.86, en: "now we're playing [[darts]]", cn: "现在我们在玩[[飞镖]]" },
+    { start: 144.86, end: 147.60, en: "I am throwing the [[dart]] at the [[dartboard]]", cn: "我正把[[镖]]投向[[镖盘]]" },
+    { start: 152.86, end: 155.20, en: "I'm taking the darts out of the dart board", cn: "我正把飞镖从镖盘上拔下来" },
+    { start: 156.60, end: 158.40, en: "and handing them to Jared", cn: "然后把它们交给 Jared" },
+    { start: 158.80, end: 160.03, en: "it's his turn", cn: "轮到他了" },
+    { start: 162.86, end: 164.06, en: "we won a fish", cn: "我们赢到了一条鱼（奖品）" },
+    { start: 164.33, end: 166.43, en: "the night has been a success", cn: "今晚过得很成功" }
 ];
 
         let currentLineIdx = -1;
