@@ -18,7 +18,21 @@
             overflow: hidden; 
         }
 
-        /* 1. 视频区域：模仿 speakvlog 比例，调大占比 */
+        /* 新增/修改：标题条移动到最顶部 */
+        .video-info {
+            background: #fff;
+            padding: 12px 15px; /* 略微增加高度更美观 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
+            flex-shrink: 0;
+            z-index: 101;
+        }
+        .video-title { font-weight: bold; font-size: 16px; color: #333; }
+        .video-level { font-size: 11px; color: #52c41a; background: #f6ffed; border: 1px solid #b7eb8f; padding: 2px 8px; border-radius: 4px; }
+
+        /* 视频区域：紧跟在标题下方 */
         .video-fixed { 
             width: 100%; 
             background: #000; 
@@ -27,26 +41,13 @@
         }
         video { 
             width: 100%; 
-            max-height: 42vh; /* 视频高度占屏幕 42% */
+            max-height: 40vh; /* 调整高度比例 */
             aspect-ratio: 16 / 9; 
             display: block; 
             object-fit: contain; 
         }
 
-        /* 视频下方的标题条 */
-        .video-info {
-            background: #fff;
-            padding: 10px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #f0f0f0;
-            flex-shrink: 0;
-        }
-        .video-title { font-weight: bold; font-size: 15px; color: #333; }
-        .video-level { font-size: 11px; color: #52c41a; background: #f6ffed; border: 1px solid #b7eb8f; padding: 1px 6px; border-radius: 4px; }
-
-        /* 2. 模式切换栏 (固定不动) */
+        /* 模式切换栏 */
         .mode-tabs { 
             display: flex; 
             background: #fff; 
@@ -58,7 +59,7 @@
         .tab-item.active { color: var(--text-main); font-weight: bold; }
         .tab-item.active::after { content: ""; position: absolute; bottom: 0; left: 30%; width: 40%; height: 3px; background: var(--primary-color); border-radius: 2px; }
 
-        /* 3. 内容区域：弹性撑开，显示精致的卡片 */
+        /* 内容区域 */
         .content-container { 
             flex: 1; 
             overflow-y: auto; 
@@ -83,7 +84,7 @@
         .cn-text { color: var(--text-sub); font-size: 14px; line-height: 1.4; }
         .keyword { color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding: 0 1px; }
 
-        /* 4. 底部控制栏 */
+        /* 底部控制栏 */
         .control-bar { 
             position: fixed; bottom: 0; left: 0; width: 100%; height: 75px; 
             background: #fff; border-top: 1px solid #eee; 
@@ -95,17 +96,20 @@
         .play-main { width: 50px; height: 50px; background: var(--primary-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; box-shadow: 0 4px 12px rgba(82,196,26,0.3); }
 
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1001; }
+        
+        /* 循环按钮激活样式 */
+        .active-mode { color: var(--primary-color) !important; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="video-fixed">
-        <video id="mainVideo" playsinline controls preload="auto"></video>
+    <div class="video-info">
+        <span class="video-title">沉浸式学英语（1）</span>
+        <span class="video-level">难度：初级</span>
     </div>
 
-    <div class="video-info">
-        <span class="video-title">新加坡旅行（11）</span>
-        <span class="video-level">难度：中级</span>
+    <div class="video-fixed">
+        <video id="mainVideo" playsinline controls preload="auto"></video>
     </div>
 
     <div class="mode-tabs">
@@ -131,60 +135,36 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/18.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/24.1%E4%B8%8A%E4%BC%A0.mp4";
 
-        // 这里包含了完整的 22 条润色后的双语字幕数据
- const SUBTITLE_DATA = [
-    { start: 0.06, end: 3.50, en: "we just left the [[Botanical Gardens]] and [[chilled out]]", cn: "我们刚离开[[植物园]]，去[[放松]]了一下" },
-    { start: 3.63, end: 4.50, en: "had a rest", cn: "休息了一会儿" },
-    { start: 4.63, end: 8.50, en: "now we're gonna head out for some drinks and some food", cn: "现在我们要出发去喝几杯，吃点东西" },
-    { start: 11.00, end: 12.20, en: "we are crossing the road", cn: "我们正在过马路" },
-    { start: 12.20, end: 15.03, en: "and there are people passing on our left", cn: "有人正从我们的左边经过" },
-    { start: 20.50, end: 23.60, en: "so we have just arrived at the famous [[Raffles]]", cn: "我们刚到达著名的[[莱佛士酒店]]" },
-    { start: 24.40, end: 27.43, en: "and these houses are very [[fancy]]", cn: "这些房子非常[[豪华/别致]]" },
-    { start: 28.23, end: 30.00, en: "there's the next word [[fancy]]", cn: "这是下一个词：[[fancy]]" },
-    { start: 30.46, end: 32.40, en: "this is a large hotel", cn: "这是一座大型酒店" },
-    { start: 32.43, end: 34.70, en: "and the front of the building is [[lit up]]", cn: "建筑的正面被[[点亮/照亮]]了" },
-    { start: 34.70, end: 36.20, en: "with warm light", cn: "闪烁着暖光" },
-    { start: 36.83, end: 40.46, en: "this is a [[courtyard]] with a fountain in the background", cn: "这是一个[[庭院]]，背景里有一个喷泉" },
-    { start: 48.53, end: 50.13, en: "Jared is [[dishing up]] the food", cn: "Jared 正在把食物[[分装到盘子里]]" },
-    { start: 53.63, end: 54.43, en: "hmm", cn: "嗯~" },
-    { start: 54.80, end: 56.90, en: "we have some sweet breads", cn: "我们点了一些甜面包" },
-    { start: 57.26, end: 59.93, en: "which is noodles with [[stir fried]] seafood", cn: "这是海鲜[[炒]]面" },
-    { start: 60.86, end: 62.33, en: "some side salad", cn: "一些配餐沙拉" },
-    { start: 62.93, end: 66.30, en: "sweet chili sauce vegetable [[spring rolls]] and", cn: "甜辣酱、蔬菜[[春卷]]，还有" },
-    { start: 67.06, end: 68.66, en: "a beef", cn: "一份牛肉" },
-    { start: 69.06, end: 70.70, en: "[[rendang]] which is kind of curry", cn: "[[仁当]]（Rendang），是一种咖喱" },
-    { start: 71.33, end: 72.13, en: "how's it taste", cn: "味道怎么样？" },
-    { start: 77.63, end: 78.50, en: "yeah it's [[bloody lovely]]", cn: "哇，[[超级好吃]]" },
-    { start: 79.80, end: 81.60, en: "dinner was [[bloody lovely]]", cn: "晚餐真的[[太棒了]]" },
-    { start: 81.86, end: 83.63, en: "now we're walking through a [[tunnel]]", cn: "现在我们正穿过一条[[隧道]]" },
-    { start: 83.63, end: 86.20, en: "there are red lights on either side of the tunnel", cn: "隧道两旁亮着红灯" },
-    { start: 86.50, end: 89.33, en: "and [[funky]] artwork painted on the walls", cn: "墙上画着[[时髦酷炫的]]艺术作品" },
-    { start: 89.33, end: 92.10, en: "right now we're heading to an [[arcade bar]]", cn: "现在我们要去一家[[街机酒吧]]" },
-    { start: 95.90, end: 100.66, en: "we are in an [[arcade bar]] and I am drinking a [[pint]] cheers", cn: "我们在街机酒吧，我正喝着一[[品脱]]啤酒，干杯" },
-    { start: 102.10, end: 104.80, en: "the [[neon lights]] are flashing on the ceiling", cn: "天花板上的[[霓虹灯]]正在闪烁" },
-    { start: 105.43, end: 106.40, en: "this is the bar", cn: "这里是吧台" },
-    { start: 107.23, end: 109.63, en: "where the [[bartenders]] make your drinks", cn: "[[调酒师]]在这里为你调制饮品" },
-    { start: 110.33, end: 112.20, en: "this is called a [[joystick]]", cn: "这个叫做[[操纵杆/摇杆]]" },
-    { start: 114.70, end: 116.46, en: "and this is a [[coin slot]]", cn: "这是[[投币口]]" },
-    { start: 116.46, end: 118.80, en: "where you [[insert]] your coins into", cn: "就是你[[投入]]硬币的地方" },
-    { start: 124.23, end: 125.80, en: "the buttons are flashing", cn: "按钮在闪烁" },
-    { start: 126.23, end: 127.23, en: "it's time to play", cn: "到玩游戏的时间了" },
-    { start: 127.73, end: 129.80, en: "this game is called Master [[Sniper]]", cn: "这个游戏叫《王牌[[狙击手]]》" },
-    { start: 130.03, end: 131.13, en: "a [[sniper rifle]]", cn: "一把[[狙击步枪]]" },
-    { start: 131.13, end: 134.23, en: "is a gun that can shoot [[bullets]] from a long [[range]]", cn: "是一种可以远[[距离]]射出[[子弹]]的枪" },
-    { start: 134.66, end: 136.63, en: "or shoot Jared from a short range", cn: "或者近距离射击 Jared" },
-    { start: 137.33, end: 139.00, en: "this is a basketball game", cn: "这是一个篮球游戏" },
-    { start: 139.33, end: 141.70, en: "you throw the basketballs into the [[hoop]]", cn: "你要把篮球投进[[篮筐]]里" },
-    { start: 143.33, end: 144.86, en: "now we're playing [[darts]]", cn: "现在我们在玩[[飞镖]]" },
-    { start: 144.86, end: 147.60, en: "I am throwing the [[dart]] at the [[dartboard]]", cn: "我正把[[镖]]投向[[镖盘]]" },
-    { start: 152.86, end: 155.20, en: "I'm taking the darts out of the dart board", cn: "我正把飞镖从镖盘上拔下来" },
-    { start: 156.60, end: 158.40, en: "and handing them to Jared", cn: "然后把它们交给 Jared" },
-    { start: 158.80, end: 160.03, en: "it's his turn", cn: "轮到他了" },
-    { start: 162.86, end: 164.06, en: "we won a fish", cn: "我们赢到了一条鱼（奖品）" },
-    { start: 164.33, end: 166.43, en: "the night has been a success", cn: "今晚过得很成功" }
-];
+        const SUBTITLE_DATA = [
+           { start: 0.06, end: 1.26, en: "three years ago", cn: "三年前" },
+           { start: 1.56, end: 3.10, en: "when I met Chan", cn: "当我遇到 Chan 的时候" },
+           { start: 3.26, end: 5.90, en: "her English wasn't that good", cn: "她的英语还没那么好" },
+           { start: 6.16, end: 6.96, en: "hey", cn: "嘿" },
+           { start: 8.56, end: 9.36, en: "but now", cn: "但现在" },
+           { start: 9.80, end: 10.60, en: "she's [[fluent]]", cn: "她说话非常[[流利]]" },
+           { start: 10.96, end: 13.50, en: "her English is [[top notch]]", cn: "她的英语水平是[[顶尖的/一流的]]" },
+           { start: 13.76, end: 14.56, en: "oh", cn: "噢" },
+           { start: 14.66, end: 15.00, en: "so", cn: "那么" },
+           { start: 15.00, end: 22.16, en: "how did she go from not that good to very very good", cn: "她是怎样从不太好进步到非常非常棒的呢？" },
+           { start: 22.90, end: 23.06, en: "good morning everyone", cn: "大家早安" },
+           { start: 23.06, end: 23.50, en: "I'm Eric from Eric Speaks English", cn: "我是来自 Eric Speaks English 的 Eric" },
+           { start: 23.50, end: 27.06, en: "you might think the answer is because she's been dating me", cn: "你可能觉得答案是因为她在跟我谈恋爱" },
+           { start: 27.56, end: 28.46, en: "but it's not", cn: "但其实并不是" },
+           { start: 28.56, end: 32.53, en: "today I'll share with you the three tips I shared with", cn: "今天我会分享给你们我曾告诉过" },
+           { start: 32.53, end: 36.76, en: "Chan which helped her reach full [[fluency]] in English", cn: "Chan 的三个秘诀，正是这些帮她达到了英语全[[流利]]水平" },
+           { start: 37.13, end: 37.93, en: "but first", cn: "但在此之前..." },
+           { start: 48.70, end: 49.50, en: "咖啡", cn: "咖啡" },
+           { start: 53.26, end: 55.13, en: "this is a [[water tank]]", cn: "这是一个[[水箱]]" },
+           { start: 55.40, end: 57.76, en: "and this is a [[water dispenser]]", cn: "这是一个[[饮水机]]" },
+           { start: 58.20, end: 64.20, en: "I am [[filling up]] the water tank from the water dispenser", cn: "我正从饮水机里往水箱[[加满]]水" },
+           { start: 68.53, end: 71.66, en: "I am [[attaching]] the water tank to the coffee machine", cn: "我正把水箱[[安装]]到咖啡机上" },
+           { start: 72.26, end: 75.96, en: "I am taking the [[coffee pod]] and", cn: "我拿了一个[[咖啡胶囊]]，然后" },
+           { start: 75.96, end: 79.10, en: "putting it in the coffee machine", cn: "把它放进咖啡机里" },
+           { start: 81.80, end: 83.46, en: "I am pressing the button", cn: "我正按下按钮" },
+           { start: 85.33, end: 89.66, en: "the coffee is coming out of the machine into the [[mug]]", cn: "咖啡正从机器里流进[[马克杯]]" }
+        ];
 
         let currentLineIdx = -1;
         let config = { isLoop: false, langMode: 'both' };
@@ -210,7 +190,10 @@
                     <div class="en-text">${enFormatted}</div>
                     <div class="cn-text" style="display:${cnDisplay}">${item.cn}</div>
                 `;
-                card.onclick = () => { video.currentTime = item.start; video.play(); };
+                card.onclick = () => { 
+                    video.currentTime = item.start; 
+                    video.play(); 
+                };
                 list.appendChild(card);
             });
         }
@@ -233,7 +216,10 @@
         video.onplay = () => document.getElementById('playIcon').className = "fa-solid fa-pause";
         video.onpause = () => document.getElementById('playIcon').className = "fa-solid fa-play";
         function toggleLangMode() { config.langMode = config.langMode === 'both' ? 'en' : 'both'; renderSubtitles(); }
-        function toggleLoop() { config.isLoop = !config.isLoop; document.getElementById('loopBtn').classList.toggle('active-mode', config.isLoop); }
+        function toggleLoop() { 
+            config.isLoop = !config.isLoop; 
+            document.getElementById('loopBtn').classList.toggle('active-mode', config.isLoop); 
+        }
         function openDrawer() { document.getElementById('globalOverlay').style.display = 'block'; }
         function closeAll() { document.getElementById('globalOverlay').style.display = 'none'; }
 
@@ -241,6 +227,3 @@
     </script>
 </body>
 </html>
-
-
-
