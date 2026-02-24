@@ -104,7 +104,7 @@
 <body>
 
     <div class="video-info">
-        <span class="video-title">沉浸式学英语（5）</span>
+        <span class="video-title">沉浸式学英语（6）</span>
         <span class="video-level">难度：初级</span>
     </div>
 
@@ -135,53 +135,61 @@
 
     <script>
         const video = document.getElementById('mainVideo');
-        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/26.1%E4%B8%8A%E4%BC%A0.mp4";
+        video.src = "https://qqqqqqq111.oss-cn-beijing.aliyuncs.com/26.2%E4%B8%8A%E4%BC%A0.mp4";
 
-   const SUBTITLE_DATA = [
-    { start: 0.60, end: 5.76, en: "I would recommend you to watch English videos without the", cn: "我会建议你在看英文视频时，尝试去掉" },
-    { start: 5.76, end: 10.10, en: "subtitles while still understanding seventy to eighty percent", cn: "[[字幕]]，同时仍能理解百分之七八十的内容" },
-    { start: 10.76, end: 11.40, en: "why", cn: "为什么呢？" },
-    { start: 11.40, end: 11.80, en: "well", cn: "额" },
-    { start: 11.80, end: 14.70, en: "when you watch a video with the subtitles", cn: "当你看着字幕看视频时" },
-    { start: 15.03, end: 18.03, en: "you tend to [[fixate]] on the subtitles", cn: "你往往会把注意力[[死盯着]]在字幕上" },
-    { start: 18.36, end: 20.00, en: "you read the subtitles", cn: "你是在读字幕" },
-    { start: 20.40, end: 23.50, en: "and you don't watch the video and", cn: "而没有真正去观察视频画面" },
-    { start: 23.50, end: 25.50, en: "listen to the English being used", cn: "并聆听正在使用的英语" },
-    { start: 26.03, end: 26.56, en: "so", cn: "所以" },
-    { start: 26.56, end: 27.73, en: "without the subtitles", cn: "在没有字幕的情况下" },
-    { start: 27.93, end: 32.36, en: "you're training your brain to [[link]] the sounds", cn: "你是在训练大脑将听到的声音" },
-    { start: 32.53, end: 35.73, en: "that you hear with the [[visual meaning]]", cn: "与[[视觉含义]]联系起来" },
-    { start: 35.96, end: 36.80, en: "the [[context]]", cn: "也就是[[语境]]" },
-    { start: 37.20, end: 40.03, en: "now this is a much stronger [[hook]] in your brain", cn: "这会在你大脑中形成一个更牢固的[[记忆钩子]]" },
-    { start: 40.10, end: 42.03, en: "because our [[visual memory]] is very strong", cn: "因为我们的[[视觉记忆]]是非常强大的" },
-    { start: 42.56, end: 43.20, en: "so", cn: "所以" },
-    { start: 43.20, end: 44.53, en: "watching without subtitles", cn: "脱离字幕观看" },
-    { start: 44.90, end: 47.23, en: "understanding about seventy to eighty percent", cn: "并保持约百分之七八十的理解率" },
-    { start: 47.36, end: 47.76, en: "now", cn: "现在" },
-    { start: 47.76, end: 51.40, en: "I'm gonna share with you some of my favorite [[British TV shows]]", cn: "我要和你们分享一些我最喜欢的[[英剧]]" },
-    { start: 51.53, end: 53.56, en: "so you can practice this at home", cn: "这样你们就能在家练习了" },
-    { start: 53.90, end: 55.00, en: "if you're a [[beginner]]", cn: "如果你是[[初学者]]" },
-    { start: 55.30, end: 58.13, en: "I would recommend three different things", cn: "我会推荐三个不同的选择" },
-    { start: 58.50, end: 59.30, en: "first", cn: "第一" },
-    { start: 59.30, end: 60.20, en: "[[Peppa Pig]]", cn: "[[《小猪佩奇》]]" },
-    { start: 62.70, end: 63.50, en: "second", cn: "第二" },
-    { start: 63.70, end: 64.50, en: "[[Bluey]]", cn: "[[《布鲁伊》]]" },
-    { start: 66.80, end: 67.60, en: "third", cn: "第三" },
-    { start: 67.90, end: 70.16, en: "the movie [[Finding Nemo]]", cn: "电影[[《海底总动员》]]" },
-    { start: 70.70, end: 71.50, en: "Nemo", cn: "尼莫" },
-    { start: 71.60, end: 72.40, en: "Nemo", cn: "尼莫" },
-    { start: 73.40, end: 77.16, en: "all of these are children shows and children's movies", cn: "这些全是儿童剧和儿童电影" },
-    { start: 77.60, end: 78.03, en: "however", cn: "然而" },
-    { start: 78.03, end: 80.93, en: "they are fantastic for improving your", cn: "它们对于将你的英语水平" },
-    { start: 80.93, end: 83.33, en: "English from [[beginner]] to [[intermediate]]", cn: "从[[初级]]提升到[[中级]]是非常棒的" },
-    { start: 83.63, end: 87.03, en: "because the stories are simple and the episodes are short", cn: "因为故事很简单，而且每集都很短" },
-    { start: 87.70, end: 89.23, en: "if you're [[intermediate]]", cn: "如果你是[[中级水平]]" },
-    { start: 89.50, end: 91.53, en: "try [[sitcoms]] like [[Friends]]", cn: "试试像[[《老友记》]]这样的[[情景喜剧]]" },
-    { start: 92.16, end: 95.53, en: "I used Friends in the past to learn French and it worked", cn: "我过去曾通过《老友记》来学法语，确实有效" },
-    { start: 95.83, end: 96.76, en: "and blue", cn: "还有 blue" },
-    { start: 97.13, end: 97.73, en: "blah", cn: "（发音练习）" },
-    { start: 97.73, end: 98.33, en: "flew", cn: "（发音练习）" },
-    { start: 98.33, end: 99.13, en: "flag", cn: "（发音练习）" }
+  const SUBTITLE_DATA = [
+    { start: 0.76, end: 3.16, en: "you can also try [[TED ED]]", cn: "你也可以尝试看 [[TED ED]]" },
+    { start: 3.56, end: 7.36, en: "[[TED ED]] videos are shorter than the [[TED talks]]", cn: "[[TED ED]] 的视频比 [[TED 演讲]] 更短" },
+    { start: 7.70, end: 8.86, en: "and they have more [[visuals]]", cn: "而且它们有更多的[[视觉辅助/动画]]" },
+    { start: 8.93, end: 11.06, en: "so it's easier for you to understand", cn: "所以对你来说更容易理解" },
+    { start: 11.46, end: 13.36, en: "if you love [[documentaries]]", cn: "如果你喜欢[[纪录片]]" },
+    { start: 13.80, end: 16.80, en: "then I would recommend [[David Attenborough]]", cn: "那我推荐你关注 [[大卫·爱登堡]]" },
+    { start: 17.20, end: 17.50, en: "so", cn: "那么" },
+    { start: 17.50, end: 20.33, en: "[[David Attenborough]] is loved by", cn: "[[大卫·爱登堡]]深受" },
+    { start: 20.33, end: 22.33, en: "English people and by [[British people]]", cn: "英格兰人乃至全体[[英国人]]的喜爱" },
+    { start: 22.56, end: 25.06, en: "he is a [[national treasure]]", cn: "他是英国的[[国宝级人物]]" },
+    { start: 25.33, end: 28.76, en: "and his [[documentaries]] are all about the earth", cn: "他的[[纪录片]]全是关于地球、" },
+    { start: 29.26, end: 30.06, en: "animals", cn: "动物、" },
+    { start: 30.06, end: 30.86, en: "humans", cn: "以及人类的" },
+    { start: 31.10, end: 32.60, en: "and they are wonderful for practicing", cn: "它们非常适合用来练习" },
+    { start: 32.66, end: 36.30, en: "English because he speaks very slowly", cn: "英语，因为他说话语速很慢" },
+    { start: 36.93, end: 37.73, en: "very clearly", cn: "非常清晰" },
+    { start: 38.20, end: 41.66, en: "and you hear the same words repeating again and again", cn: "而且你会听到同样的单词反反复复出现" },
+    { start: 41.96, end: 43.96, en: "the two [[David Attenborough]] [[documentaries]] I", cn: "我为你推荐的两部[[大卫·爱登堡]][[纪录片]]" },
+    { start: 43.96, end: 46.40, en: "would recommend for you are [[Planet Earth]]", cn: "分别是[[《地球脉动》]]" },
+    { start: 46.86, end: 48.26, en: "which I think is on [[Netflix]]", cn: "我想这在 [[Netflix]] 上能看到" },
+    { start: 48.60, end: 50.73, en: "and the new one [[Kingdom]]", cn: "还有一部新作叫[[《王国》]]" },
+    { start: 51.90, end: 54.60, en: "other than that just search [[David Attenborough]]", cn: "除此之外，直接搜索[[大卫·爱登堡]]" },
+    { start: 54.96, end: 58.06, en: "[[documentaries]] and you'll find a lot of good content there", cn: "[[纪录片]]，你会发现很多优秀的素材" },
+    { start: 58.16, end: 61.73, en: "and if you're [[advanced]] the [[world is your oyster]] my friend", cn: "如果你是[[高阶]]水平，那[[世界就在你手中（随你施展）]]了，朋友" },
+    { start: 62.26, end: 63.60, en: "the TV is your [[roaster]]", cn: "电视就是你的“练兵场”" },
+    { start: 63.76, end: 65.33, en: "you can watch literally anything", cn: "你几乎可以看任何东西" },
+    { start: 65.73, end: 70.46, en: "my favorite comedy show is a show called [[Peep Show]]", cn: "我最喜欢的喜剧是一部叫作[[《窥视秀》]]的剧" },
+    { start: 70.86, end: 72.86, en: "and this is a [[British comedy]]", cn: "这是一部典型的[[英式喜剧]]" },
+    { start: 73.66, end: 74.96, en: "classic [[British Humor]]", cn: "经典的[[英式幽默]]" },
+    { start: 75.16, end: 77.13, en: "it's [[British humor]] at its [[peak]]", cn: "这是[[英式幽默]]的[[巅峰之作]]" },
+    { start: 77.33, end: 78.53, en: "[[Peep Show]] is [[hilarious]]", cn: "[[《窥视秀》]]非常[[搞笑]]" },
+    { start: 78.60, end: 79.56, en: "and if you're [[advanced]]", cn: "如果你已经处于[[高阶]]水平" },
+    { start: 79.60, end: 81.46, en: "it's gonna be wonderful to", cn: "通过它来了解" },
+    { start: 81.73, end: 83.13, en: "understand more about [[British culture]]", cn: "更多[[英国文化]]是非常棒的" },
+    { start: 83.36, end: 85.06, en: "the way that British people think", cn: "包括英国人的思考方式" },
+    { start: 85.50, end: 86.53, en: "on top of [[Peep Show]]", cn: "除了[[《窥视秀》]]之外" },
+    { start: 86.53, end: 88.60, en: "you can also watch other comedies like", cn: "你还可以看其他喜剧，比如" },
+    { start: 88.60, end: 91.80, en: "[[The Office]] or [[The Inbetweeners]]", cn: "[[《办公室》]]或[[《中间人》]]" },
+    { start: 92.16, end: 94.40, en: "[[The Inbetweeners]] has a lot of [[slang]]", cn: "[[《中间人》]]里有很多[[俚语]]" },
+    { start: 94.46, end: 96.13, en: "words that you could learn from", cn: "你可以从中学到很多词汇" },
+    { start: 96.36, end: 97.40, en: "again, if you're [[advanced]]", cn: "再次强调，如果你是[[高阶]]者" },
+    { start: 97.76, end: 99.86, en: "any [[input]] is good [[input]]", cn: "任何[[输入]]都是好的[[输入]]" },
+    { start: 100.73, end: 101.56, en: "the more you watch", cn: "你看得越多" },
+    { start: 101.56, end: 102.36, en: "the more you listen", cn: "听得越多" },
+    { start: 102.70, end: 103.76, en: "the more you improve", cn: "你的进步就越大" },
+    { start: 104.26, end: 106.50, en: "just [[repeat repeat repeat]]", cn: "只要[[重复，重复，再重复]]" },
+    { start: 106.50, end: 109.00, en: "after watching these films or videos", cn: "在看完这些电影或视频后" },
+    { start: 109.36, end: 112.00, en: "you can ask yourself these three questions", cn: "你可以问自己这三个问题" },
+    { start: 112.36, end: 113.50, en: "which will help your [[speaking]]", cn: "这会对你的[[口语]]大有裨益：" },
+    { start: 114.53, end: 115.76, en: "what did I just watch", cn: "我刚才看了什么？" },
+    { start: 116.10, end: 117.30, en: "what was it about", cn: "它是关于什么的？" },
+    { start: 117.50, end: 119.56, en: "and did I like it or not", cn: "我喜不喜欢它？" }
 ];
 
         let currentLineIdx = -1;
